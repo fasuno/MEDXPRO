@@ -467,7 +467,6 @@ Partial Class Profile
         '
         'txtenrolletype
         '
-        Me.txtenrolletype.Enabled = False
         Me.txtenrolletype.ForeColor = System.Drawing.Color.Black
         Me.txtenrolletype.Location = New System.Drawing.Point(103, 80)
         Me.txtenrolletype.Name = "txtenrolletype"
@@ -477,7 +476,6 @@ Partial Class Profile
         '
         'txtprov
         '
-        Me.txtprov.Enabled = False
         Me.txtprov.ForeColor = System.Drawing.Color.Black
         Me.txtprov.Location = New System.Drawing.Point(103, 54)
         Me.txtprov.Name = "txtprov"
@@ -496,7 +494,6 @@ Partial Class Profile
         '
         'txtemployer
         '
-        Me.txtemployer.Enabled = False
         Me.txtemployer.ForeColor = System.Drawing.Color.Black
         Me.txtemployer.Location = New System.Drawing.Point(103, 107)
         Me.txtemployer.Name = "txtemployer"
@@ -506,7 +503,6 @@ Partial Class Profile
         '
         'txtenrolnum
         '
-        Me.txtenrolnum.Enabled = False
         Me.txtenrolnum.ForeColor = System.Drawing.Color.Black
         Me.txtenrolnum.Location = New System.Drawing.Point(103, 133)
         Me.txtenrolnum.Name = "txtenrolnum"
@@ -541,11 +537,11 @@ Partial Class Profile
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label25.ForeColor = System.Drawing.Color.Black
-        Me.Label25.Location = New System.Drawing.Point(2, 58)
+        Me.Label25.Location = New System.Drawing.Point(18, 58)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(94, 15)
+        Me.Label25.Size = New System.Drawing.Size(78, 15)
         Me.Label25.TabIndex = 18
-        Me.Label25.Text = "Hmo / Retainer:"
+        Me.Label25.Text = "Account Cat:"
         '
         'Label24
         '

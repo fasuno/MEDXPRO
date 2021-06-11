@@ -41,12 +41,14 @@ Partial Class frmLabResult
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.lblreviewby = New System.Windows.Forms.Label()
+        Me.lblrqstnum = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lbltim = New System.Windows.Forms.Label()
         Me.lblreportby = New System.Windows.Forms.Label()
         Me.lbldte = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.lblrqstnum = New System.Windows.Forms.Label()
+        Me.Txtactcat = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.txtOname = New System.Windows.Forms.TextBox()
         Me.txtRqstby = New System.Windows.Forms.TextBox()
         Me.txtage = New System.Windows.Forms.TextBox()
@@ -103,15 +105,16 @@ Partial Class frmLabResult
         '
         'btnsave
         '
-        Me.btnsave.Enabled = False
         Me.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnsave.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnsave.ForeColor = System.Drawing.Color.DarkGreen
+        Me.btnsave.Image = CType(resources.GetObject("btnsave.Image"), System.Drawing.Image)
+        Me.btnsave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnsave.Location = New System.Drawing.Point(135, 269)
         Me.btnsave.Name = "btnsave"
         Me.btnsave.Size = New System.Drawing.Size(84, 25)
         Me.btnsave.TabIndex = 26
-        Me.btnsave.Text = "SAVE"
+        Me.btnsave.Text = "     SAVE"
         Me.btnsave.UseVisualStyleBackColor = True
         '
         'Label1
@@ -161,13 +164,15 @@ Partial Class frmLabResult
         '
         Me.BtnReview.Enabled = False
         Me.BtnReview.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnReview.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnReview.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnReview.ForeColor = System.Drawing.Color.DarkGreen
+        Me.BtnReview.Image = CType(resources.GetObject("BtnReview.Image"), System.Drawing.Image)
+        Me.BtnReview.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnReview.Location = New System.Drawing.Point(135, 269)
         Me.BtnReview.Name = "BtnReview"
         Me.BtnReview.Size = New System.Drawing.Size(84, 25)
         Me.BtnReview.TabIndex = 27
-        Me.BtnReview.Text = "REVIEW"
+        Me.BtnReview.Text = "    REVIEW"
         Me.BtnReview.UseVisualStyleBackColor = True
         '
         'Panel2
@@ -249,6 +254,7 @@ Partial Class frmLabResult
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.Label12)
         Me.Panel3.Controls.Add(Me.lblreviewby)
+        Me.Panel3.Controls.Add(Me.lblrqstnum)
         Me.Panel3.Controls.Add(Me.Label10)
         Me.Panel3.Controls.Add(Me.lbltim)
         Me.Panel3.Controls.Add(Me.lblreportby)
@@ -283,6 +289,18 @@ Partial Class frmLabResult
         Me.lblreviewby.TabIndex = 24
         Me.lblreviewby.Text = " "
         '
+        'lblrqstnum
+        '
+        Me.lblrqstnum.AutoSize = True
+        Me.lblrqstnum.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblrqstnum.ForeColor = System.Drawing.Color.Navy
+        Me.lblrqstnum.Location = New System.Drawing.Point(795, 8)
+        Me.lblrqstnum.Name = "lblrqstnum"
+        Me.lblrqstnum.Size = New System.Drawing.Size(95, 17)
+        Me.lblrqstnum.TabIndex = 22
+        Me.lblrqstnum.Text = "Request num"
+        Me.lblrqstnum.Visible = False
+        '
         'Label10
         '
         Me.Label10.AutoSize = True
@@ -298,7 +316,7 @@ Partial Class frmLabResult
         '
         Me.lbltim.AutoSize = True
         Me.lbltim.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltim.Location = New System.Drawing.Point(962, 3)
+        Me.lbltim.Location = New System.Drawing.Point(989, 3)
         Me.lbltim.Name = "lbltim"
         Me.lbltim.Size = New System.Drawing.Size(47, 17)
         Me.lbltim.TabIndex = 18
@@ -321,7 +339,7 @@ Partial Class frmLabResult
         '
         Me.lbldte.AutoSize = True
         Me.lbldte.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbldte.Location = New System.Drawing.Point(868, 3)
+        Me.lbldte.Location = New System.Drawing.Point(895, 3)
         Me.lbldte.Name = "lbldte"
         Me.lbldte.Size = New System.Drawing.Size(44, 17)
         Me.lbldte.TabIndex = 17
@@ -330,7 +348,8 @@ Partial Class frmLabResult
         'Panel4
         '
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel4.Controls.Add(Me.lblrqstnum)
+        Me.Panel4.Controls.Add(Me.Txtactcat)
+        Me.Panel4.Controls.Add(Me.Label11)
         Me.Panel4.Controls.Add(Me.txtOname)
         Me.Panel4.Controls.Add(Me.txtRqstby)
         Me.Panel4.Controls.Add(Me.txtage)
@@ -352,17 +371,28 @@ Partial Class frmLabResult
         Me.Panel4.Size = New System.Drawing.Size(779, 88)
         Me.Panel4.TabIndex = 16
         '
-        'lblrqstnum
+        'Txtactcat
         '
-        Me.lblrqstnum.AutoSize = True
-        Me.lblrqstnum.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblrqstnum.ForeColor = System.Drawing.Color.Navy
-        Me.lblrqstnum.Location = New System.Drawing.Point(577, 60)
-        Me.lblrqstnum.Name = "lblrqstnum"
-        Me.lblrqstnum.Size = New System.Drawing.Size(95, 17)
-        Me.lblrqstnum.TabIndex = 22
-        Me.lblrqstnum.Text = "Request num"
-        Me.lblrqstnum.Visible = False
+        Me.Txtactcat.BackColor = System.Drawing.Color.White
+        Me.Txtactcat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Txtactcat.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtactcat.ForeColor = System.Drawing.Color.Black
+        Me.Txtactcat.Location = New System.Drawing.Point(647, 55)
+        Me.Txtactcat.Name = "Txtactcat"
+        Me.Txtactcat.ReadOnly = True
+        Me.Txtactcat.Size = New System.Drawing.Size(120, 21)
+        Me.Txtactcat.TabIndex = 24
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.Navy
+        Me.Label11.Location = New System.Drawing.Point(541, 58)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(106, 15)
+        Me.Label11.TabIndex = 23
+        Me.Label11.Text = "Account category:"
         '
         'txtOname
         '
@@ -384,7 +414,7 @@ Partial Class frmLabResult
         Me.txtRqstby.Location = New System.Drawing.Point(308, 56)
         Me.txtRqstby.Name = "txtRqstby"
         Me.txtRqstby.ReadOnly = True
-        Me.txtRqstby.Size = New System.Drawing.Size(263, 20)
+        Me.txtRqstby.Size = New System.Drawing.Size(230, 20)
         Me.txtRqstby.TabIndex = 19
         '
         'txtage
@@ -619,4 +649,6 @@ Partial Class frmLabResult
     Friend WithEvents BtnReview As Button
     Friend WithEvents txtpwordrev As TextBox
     Friend WithEvents chkcompl As CheckBox
+    Friend WithEvents Txtactcat As TextBox
+    Friend WithEvents Label11 As Label
 End Class

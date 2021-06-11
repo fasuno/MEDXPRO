@@ -4,6 +4,7 @@ Imports System.Data.SqlClient
 Public Class FrmPharmacy
 
     Public Sub LoadALL()
+
         Dim tbls As New DataTable()
         cmd = New SqlCommand("Select * from Pend_DrugPresc", con)
 
@@ -52,7 +53,7 @@ Public Class FrmPharmacy
     Public Sub SortBiiled()
 
         Dim tbl As New DataTable()
-        cmd = New SqlCommand("Select Presc_num, Date, Hospital_num, Surname, Other_names, Age, Sex, Account_type, Total_cost, Billed_by, Payment_Status, Prescribed_By from PharmPend_Bill WHERE Date BETWEEN @dtfrom AND @dtto", con)
+        cmd = New SqlCommand("Select Presc_num, Date, Hospital_num, Surname, Other_names, Age, Sex, Account_type, Account_Category, Total_cost, Billed_by, Payment_Status, Prescribed_By from PharmPend_Bill WHERE Date BETWEEN @dtfrom AND @dtto", con)
         cmd.Parameters.Add("@dtfrom", SqlDbType.Date).Value = dtbillfrom.Value
         cmd.Parameters.Add("@dtto", SqlDbType.Date).Value = dtbillto.Value
         ' cmd.Parameters.Add("@Accnt", SqlDbType.VarChar).Value = CboBilled.Text
@@ -91,6 +92,7 @@ Public Class FrmPharmacy
     Private Sub DtgPendDrugrqst_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DtgPendDrugrqst.CellDoubleClick
         Dim frm As New FrmPTdrugs
 
+        FrmPTdrugs.txtpresnum.Text = DtgPendDrugrqst.CurrentRow.Cells(0).Value.ToString
         FrmPTdrugs.TxtSname.Text = DtgPendDrugrqst.CurrentRow.Cells(4).Value.ToString
         FrmPTdrugs.txtdate.Text = DtgPendDrugrqst.CurrentRow.Cells(1).Value
         FrmPTdrugs.txtHno.Text = DtgPendDrugrqst.CurrentRow.Cells(3).Value.ToString
@@ -98,8 +100,8 @@ Public Class FrmPharmacy
         FrmPTdrugs.txtage.Text = DtgPendDrugrqst.CurrentRow.Cells(6).Value.ToString
         FrmPTdrugs.txtsex.Text = DtgPendDrugrqst.CurrentRow.Cells(7).Value.ToString
         FrmPTdrugs.txtacct.Text = DtgPendDrugrqst.CurrentRow.Cells(8).Value.ToString
-
-        FrmPTdrugs.txtprescby.Text = DtgPendDrugrqst.CurrentRow.Cells(11).Value.ToString
+        FrmPTdrugs.Txtacctcat.Text = DtgPendDrugrqst.CurrentRow.Cells(9).Value.ToString
+        FrmPTdrugs.txtprescby.Text = DtgPendDrugrqst.CurrentRow.Cells(12).Value.ToString
 
         ' FrmPTdrugs.BillSeting() '///Get the percentage setiigns 
 
@@ -114,20 +116,21 @@ Public Class FrmPharmacy
     End Sub
 
     Private Sub Dtgbiiled_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dtgbiiled.CellDoubleClick
-        Dim frms = New FrmDrugsbill
+        'Dim frms = New FrmDrugsbill
 
         FrmDrugsbill.lblrqstid.Text = Dtgbiiled.CurrentRow.Cells(0).Value.ToString
         FrmDrugsbill.TxtSurname.Text = Dtgbiiled.CurrentRow.Cells(3).Value.ToString
         FrmDrugsbill.txtOthername.Text = Dtgbiiled.CurrentRow.Cells(4).Value.ToString
         FrmDrugsbill.txtdatebill.Text = Dtgbiiled.CurrentRow.Cells(1).Value
         FrmDrugsbill.txtHnum.Text = Dtgbiiled.CurrentRow.Cells(2).Value.ToString
-        FrmDrugsbill.txtbilledby.Text = Dtgbiiled.CurrentRow.Cells(9).Value.ToString
-        FrmDrugsbill.txtage.Text = Dtgbiiled.CurrentRow.Cells(6).Value.ToString
-        FrmDrugsbill.txtsex.Text = Dtgbiiled.CurrentRow.Cells(5).Value.ToString
+        FrmDrugsbill.txtbilledby.Text = Dtgbiiled.CurrentRow.Cells(10).Value.ToString
+        FrmDrugsbill.txtage.Text = Dtgbiiled.CurrentRow.Cells(5).Value.ToString
+        FrmDrugsbill.txtsex.Text = Dtgbiiled.CurrentRow.Cells(6).Value.ToString
         FrmDrugsbill.txtaccnt.Text = Dtgbiiled.CurrentRow.Cells(7).Value.ToString
-        FrmDrugsbill.LblTotalcost.Text = Dtgbiiled.CurrentRow.Cells(8).Value.ToString
-        FrmDrugsbill.LblPaymentstatus.Text = Dtgbiiled.CurrentRow.Cells(10).Value.ToString
-        FrmDrugsbill.txtpresby.Text = Dtgbiiled.CurrentRow.Cells(11).Value.ToString
+        FrmDrugsbill.Txtacctcat.Text = Dtgbiiled.CurrentRow.Cells(8).Value.ToString
+        FrmDrugsbill.LblTotalcost.Text = Dtgbiiled.CurrentRow.Cells(9).Value.ToString
+        FrmDrugsbill.LblPaymentstatus.Text = Dtgbiiled.CurrentRow.Cells(11).Value.ToString
+        FrmDrugsbill.txtpresby.Text = Dtgbiiled.CurrentRow.Cells(12).Value.ToString
 
         FrmDrugsbill.txtpword.Text = ""
 
@@ -153,4 +156,6 @@ Public Class FrmPharmacy
     Private Sub btnrloadtrtd_Click(sender As Object, e As EventArgs) Handles btnrloadtrtd.Click
         SortTreatedlist()
     End Sub
+
+
 End Class

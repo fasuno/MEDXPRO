@@ -2,10 +2,19 @@
 
 Public Class Consultations
 
-    Private Sub btnnewconsult_Click(sender As Object, e As EventArgs) Handles btnnewconsult.Click
-        'frmGenConsult.Close()
-        Dim fr = New frmGenConsult
-        fr.ShowDialog()
+    Public Sub LoadANCtogrid()
+
+        Dim tb As New DataTable
+
+        cmd = New SqlCommand("Select * from ANCVitals WHERE Hospital_Num=@hopnum", con)
+
+        cmd.Parameters.Add("@hopnum", SqlDbType.Int).Value = FrmPtRecords.Lblhopnum.Text
+
+        adapt = New SqlDataAdapter(cmd)
+
+        adapt.Fill(tb)
+        Me.Dgvanc.DataSource = tb
+
     End Sub
 
     Public Sub LoadConsultationgrid()
@@ -24,12 +33,16 @@ Public Class Consultations
     End Sub
 
     Private Sub consultaition_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
         LoadConsultationgrid()
-        '// Note we will do the same for all other special clinics
+            LoadANCtogrid()
+        ' End If
+
     End Sub
 
     Private Sub Dtggenconsult_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dtggenconsult.CellClick
-        Dim frm = New frmGenConsult
+        '    Dim frm = New frmGenConsult
 
         ' frmGenConsult.lbldate.Text = Dtggenconsult.CurrentRow.Cells(0).Value.ToString()
         ' frmGenConsult.lbltime.Text = Dtggenconsult.CurrentRow.Cells(1).Value.ToString()
@@ -50,7 +63,7 @@ Public Class Consultations
         FrmPtRecords.txtheight.Text = Dtggenconsult.CurrentRow.Cells(20).Value.ToString()
         FrmPtRecords.txtweight.Text = Dtggenconsult.CurrentRow.Cells(19).Value.ToString()
         FrmPtRecords.txtpulse.Text = Dtggenconsult.CurrentRow.Cells(18).Value.ToString()
-        FrmPtRecords.Label7.Text = Dtggenconsult.CurrentRow.Cells(17).Value.ToString() ''//this label shows temperature
+        FrmPtRecords.txttemp.Text = Dtggenconsult.CurrentRow.Cells(17).Value.ToString() ''//this label shows temperature
         FrmPtRecords.txtresp.Text = Dtggenconsult.CurrentRow.Cells(21).Value.ToString()
 
 
@@ -82,6 +95,127 @@ Public Class Consultations
         frmGenConsult.lbltime.Text = Dtggenconsult.CurrentRow.Cells(1).Value
 
         frmGenConsult.ShowDialog()
+
+
+
+    End Sub
+
+    Private Sub BtnNewcons_Click(sender As Object, e As EventArgs) Handles BtnNewcons.Click
+        frmGenConsult.Clearall()
+
+        frmGenConsult.lbldate.Text = Date.Now.Date
+        frmGenConsult.lbltime.Text = TimeOfDay
+
+        frmGenConsult.TxtExam.ReadOnly = False
+        frmGenConsult.TxtComp.ReadOnly = False
+        frmGenConsult.TxtPresComp.ReadOnly = False
+        frmGenConsult.TxtPastmed.ReadOnly = False
+        frmGenConsult.TxtDiag.ReadOnly = False
+        frmGenConsult.TxtFamhx.ReadOnly = False
+        frmGenConsult.TxtImmun.ReadOnly = False
+        frmGenConsult.Txtlabinv.ReadOnly = True
+        frmGenConsult.TxtRadinv.ReadOnly = True
+        frmGenConsult.TxtSocial.ReadOnly = False
+        frmGenConsult.txtSumm.ReadOnly = False
+        frmGenConsult.TxtTreatmnt.ReadOnly = True
+
+
+        frmGenConsult.ShowDialog()
+
+
+    End Sub
+
+    Private Sub BtnNewanc_Click(sender As Object, e As EventArgs) Handles BtnNewanc.Click
+
+        ShowPregBookingdetails()
+            FrmANCfollowUp.Btnsendvitals.BringToFront()
+            FrmANCfollowUp.Btnsendvitals.Enabled = True
+
+            FrmANCfollowUp.txtga.Text = ""
+            FrmANCfollowUp.txtprepos.Text = ""
+            FrmANCfollowUp.txtlie.Text = ""
+            FrmANCfollowUp.txtfh.Text = ""
+            FrmANCfollowUp.txturine.Text = ""
+            FrmANCfollowUp.txtbp.Text = ""
+            FrmANCfollowUp.txtwght.Text = ""
+        FrmANCfollowUp.txtheght.Text = ""
+        FrmANCfollowUp.txtpassw.Text = ""
+        FrmANCfollowUp.Txtremark.Text = ""
+
+        FrmANCfollowUp.BtnScan.Enabled = True
+        FrmANCfollowUp.BtnDrugs.Enabled = True
+        FrmANCfollowUp.Btnadmit.Enabled = True
+        FrmANCfollowUp.btnLAB.Enabled = True
+
+        FrmANCfollowUp.ShowDialog()
+
+        'FrmANCform.lblhospnum.Text = Dgvanc.CurrentRow.Cells(1).Value
+        'FrmANCform.ShowDialog()
+    End Sub
+
+    Public Sub ShowPregBookingdetails()
+
+        cmd = New SqlCommand("Select * from ANCBooking where Hospital_Num=@Hosp_Num and Booking_ID=@Bkid", con)
+        cmd.Parameters.Add("@Hosp_Num", SqlDbType.Int).Value = Dgvanc.CurrentRow.Cells(1).Value
+        cmd.Parameters.Add("@Bkid", SqlDbType.Int).Value = Dgvanc.CurrentRow.Cells(0).Value
+        adapt = New SqlDataAdapter(cmd)
+        Dim tbl As New DataTable
+
+        adapt.Fill(tbl)
+        If tbl.Rows.Count() > 0 Then
+
+            FrmANCfollowUp.dtbook.Value = tbl.Rows(0)(2)
+            FrmANCfollowUp.dtlmp.Value = tbl.Rows(0)(3)
+            FrmANCfollowUp.dtedd.Value = tbl.Rows(0)(4)
+            FrmANCfollowUp.txtgravs.Text = tbl.Rows(0)(5)
+            FrmANCfollowUp.txtpar.Text = tbl.Rows(0)(6)
+            FrmANCfollowUp.lblbkid.Text = tbl.Rows(0)(0)
+
+        End If
+
+    End Sub
+
+    Public Sub ShowFolwupvitals()
+
+        cmd = New SqlCommand("Select * from ANCVitals where Booking_ID=@Bkid AND Date=@Dte", con)
+
+        cmd.Parameters.Add("@Bkid", SqlDbType.Int).Value = Dgvanc.CurrentRow.Cells(0).Value
+        cmd.Parameters.Add("@Dte", SqlDbType.Date).Value = Dgvanc.CurrentRow.Cells(2).Value
+
+
+        adapt = New SqlDataAdapter(cmd)
+        Dim tbls As New DataTable
+
+        adapt.Fill(tbls)
+        If tbls.Rows.Count() > 0 Then
+
+            'FrmANCfollowUp.dtfolwup.Value = tbls.Rows(0)(2)
+            FrmANCfollowUp.txtga.Text = tbls.Rows(0)(4)
+            FrmANCfollowUp.txtheght.Text = tbls.Rows(0)(5)
+            FrmANCfollowUp.txtprepos.Text = tbls.Rows(0)(6)
+            FrmANCfollowUp.txtlie.Text = tbls.Rows(0)(7)
+            FrmANCfollowUp.txtfh.Text = tbls.Rows(0)(8)
+            FrmANCfollowUp.txtbp.Text = tbls.Rows(0)(9)
+            FrmANCfollowUp.txturine.Text = tbls.Rows(0)(10)
+            FrmANCfollowUp.txtwght.Text = tbls.Rows(0)(11)
+            FrmANCfollowUp.cboappnmnt.Text = tbls.Rows(0)(12)
+            FrmANCfollowUp.Txtremark.Text = tbls.Rows(0)(14)
+
+
+        End If
+
+    End Sub
+
+    Private Sub Dgvanc_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgvanc.CellDoubleClick
+        ShowFolwupvitals()
+        ShowPregBookingdetails()
+        FrmANCfollowUp.btnupdate.BringToFront()
+        FrmANCfollowUp.BtnScan.Enabled = False
+        FrmANCfollowUp.BtnDrugs.Enabled = False
+        FrmANCfollowUp.Btnadmit.Enabled = False
+        FrmANCfollowUp.btnLAB.Enabled = False
+
+        FrmANCfollowUp.ShowDialog()
     End Sub
 
 

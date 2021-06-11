@@ -4,8 +4,8 @@ Imports System.Data.SqlClient
 Public Class frmGenConsult
     Private Sub frmGenConsult_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Me.MdiParent = frmMain
-        lbldate.Text = Date.Now.Date
-        lbltime.Text = TimeOfDay
+        'lbldate.Text = Date.Now.Date
+        'lbltime.Text = TimeOfDay
 
     End Sub
 
@@ -175,7 +175,7 @@ Public Class frmGenConsult
         Try
 
             cmd.CommandType = System.Data.CommandType.Text
-            cmd.CommandText = "insert into Treated_Waitinglist values ('" & lbldate.Text & "', '" & lbltime.Text & "', '" & FrmPtRecords.lblsurname.Text & "', '" & FrmPtRecords.lblothernmaes.Text & "', '" & FrmPtRecords.LblHopNum.Text & "', '" & FrmPtRecords.lblage.Text & "', '" & FrmPtRecords.lblsex.Text & "', '" & FrmPtRecords.lblacct.Text & "', '" & Cboclinic.Text & "', '" & lblusrrname.Text & "')"
+            cmd.CommandText = "insert into Treated_Waitinglist values ('" & lbldate.Text & "', '" & lbltime.Text & "', '" & FrmPtRecords.Lblsurname.Text & "', '" & FrmPtRecords.Lblothernmaes.Text & "', '" & FrmPtRecords.Lblhopnum.Text & "', '" & FrmPtRecords.lblage.Text & "', '" & FrmPtRecords.lblsex.Text & "', '" & FrmPtRecords.lblacct.Text & "', '" & FrmPtRecords.Profile1.txtprov.Text & "', '" & Cboclinic.Text & "', '" & lblusrrname.Text & "')"
 
 
             cmd.Connection = con
@@ -245,7 +245,7 @@ Public Class frmGenConsult
     End Sub
 
     Private Sub btnLAB_Click(sender As Object, e As EventArgs) Handles btnLAB.Click
-        Dim form As New FrmLabrequest
+        ' Dim form As New FrmLabrequest
         FrmLabrequest.LoadLAbTest()
         FrmLabrequest.ShowDialog()
         FrmLabrequest.txttestname.Focus()
@@ -254,7 +254,7 @@ Public Class frmGenConsult
 
     Private Sub BtnDrugs_Click(sender As Object, e As EventArgs) Handles BtnDrugs.Click
 
-        Dim form As New FrmDrugsPresc
+        ' Dim form As New FrmDrugsPresc
         FrmDrugsPresc.LoadDrugs()
         FrmDrugsPresc.ShowDialog()
         FrmDrugsPresc.txtdrugname.Focus()
@@ -262,7 +262,8 @@ Public Class frmGenConsult
 
     Private Sub BtnScan_Click(sender As Object, e As EventArgs) Handles BtnScan.Click
 
-        Dim form As New FrmRadrequest
+        ' Dim form As New FrmRadrequest
+
         FrmRadrequest.LoadRAdlist()
         FrmRadrequest.ShowDialog()
         FrmRadrequest.txtInvType.Focus()
@@ -285,5 +286,35 @@ Public Class frmGenConsult
 
 
     End Sub
+
+    Public Sub Clearall()
+        TxtExam.Text = ""
+        TxtFamhx.Text = ""
+        TxtImmun.Text = ""
+        Txtlabinv.Text = ""
+        TxtPastmed.Text = ""
+        TxtPresComp.Text = ""
+        txtPword.Text = ""
+        TxtRadinv.Text = ""
+        TxtSocial.Text = ""
+        txtSumm.Text = ""
+        TxtTreatmnt.Text = ""
+        TxtComp.Text = ""
+        TxtDiag.Text = ""
+        Btnsave.Enabled = True
+        btnLAB.Enabled = True
+        BtnDrugs.Enabled = True
+        BtnScan.Enabled = True
+        Btnadmit.Enabled = True
+        lbldate.Text = ""
+        lbltime.Text = ""
+    End Sub
+
+    Private Sub Btnadmit_Click(sender As Object, e As EventArgs) Handles Btnadmit.Click
+        FrmAdmitpt.btnsend.BringToFront()
+        FrmAdmitpt.LoadDiagnosis()
+        FrmAdmitpt.ShowDialog()
+    End Sub
+
 
 End Class

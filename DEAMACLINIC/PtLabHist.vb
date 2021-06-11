@@ -2,6 +2,7 @@
 
 Public Class PtLabHist
     Private Sub Btnnew_Click(sender As Object, e As EventArgs) Handles Btnnew.Click
+        FrmLabrequest.LoadLAbTest()
         FrmLabrequest.ShowDialog()
 
     End Sub

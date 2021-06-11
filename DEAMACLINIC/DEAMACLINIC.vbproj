@@ -38,7 +38,7 @@
     <OptionExplicit>On</OptionExplicit>
   </PropertyGroup>
   <PropertyGroup>
-    <OptionCompare>Binary</OptionCompare>
+    <OptionCompare>Text</OptionCompare>
   </PropertyGroup>
   <PropertyGroup>
     <OptionStrict>Off</OptionStrict>
@@ -103,7 +103,31 @@
     <Compile Include="ANCfollowup.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="BedManager.Designer.vb">
+      <DependentUpon>BedManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BedManager.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CompanyInfo.Designer.vb">
+      <DependentUpon>CompanyInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyInfo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="connstring.vb" />
+    <Compile Include="FrmAdmitFolder.Designer.vb">
+      <DependentUpon>FrmAdmitFolder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdmitFolder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdmitpt.Designer.vb">
+      <DependentUpon>FrmAdmitpt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdmitpt.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmANCfollowUp.Designer.vb">
       <DependentUpon>FrmANCfollowUp.vb</DependentUpon>
     </Compile>
@@ -153,12 +177,6 @@
     <Compile Include="FrmANCreg.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBedlist.Designer.vb">
-      <DependentUpon>FrmBedlist.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FrmBedlist.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmCashier.Designer.vb">
       <DependentUpon>frmCashier.vb</DependentUpon>
     </Compile>
@@ -169,6 +187,12 @@
       <DependentUpon>FrmCashreceipt.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmCashreceipt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocUpload.Designer.vb">
+      <DependentUpon>FrmDocUpload.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocUpload.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmDrugPreview.Designer.vb">
@@ -187,12 +211,6 @@
       <DependentUpon>FrmDrugsPresc.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmDrugsPresc.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmEditTestDetails.Designer.vb">
-      <DependentUpon>FrmEditTestDetails.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FrmEditTestDetails.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmGenConsult.Designer.vb">
@@ -249,6 +267,12 @@
     <Compile Include="FrmMywaitinglist.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmNewAdmit.Designer.vb">
+      <DependentUpon>FrmNewAdmit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNewAdmit.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmNewdrugs.Designer.vb">
       <DependentUpon>FrmNewdrugs.vb</DependentUpon>
     </Compile>
@@ -261,6 +285,12 @@
     <Compile Include="FrmNewLabTest.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmNewRadInv.Designer.vb">
+      <DependentUpon>FrmNewRadInv.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNewRadInv.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmNursing.Designer.vb">
       <DependentUpon>frmNursing.vb</DependentUpon>
     </Compile>
@@ -271,6 +301,30 @@
       <DependentUpon>FrmPharmacy.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmPharmacy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrinlabrqst.Designer.vb">
+      <DependentUpon>FrmPrinlabrqst.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrinlabrqst.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrinRAdrqst.Designer.vb">
+      <DependentUpon>frmPrinRAdrqst.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrinRAdrqst.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrintDrugPresc.Designer.vb">
+      <DependentUpon>FrmPrintDrugPresc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrintDrugPresc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrintreceipt.Designer.vb">
+      <DependentUpon>FrmPrintreceipt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrintreceipt.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPTdrugs.Designer.vb">
@@ -352,6 +406,12 @@
     <Compile Include="FrmPtreg.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmScanlist.Designer.vb">
+      <DependentUpon>FrmScanlist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmScanlist.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmSettings.Designer.vb">
       <DependentUpon>FrmSettings.vb</DependentUpon>
     </Compile>
@@ -376,15 +436,32 @@
     <Compile Include="frmvitals.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmWardManager.Designer.vb">
+      <DependentUpon>FrmWardManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWardManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="NurseReport.Designer.vb">
+      <DependentUpon>NurseReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NurseReport.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Profile.Designer.vb">
       <DependentUpon>Profile.vb</DependentUpon>
@@ -410,6 +487,12 @@
     <Compile Include="PtRadHist.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="RoundNotes.Designer.vb">
+      <DependentUpon>RoundNotes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RoundNotes.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ServiceSetings.Designer.vb">
       <DependentUpon>ServiceSetings.vb</DependentUpon>
     </Compile>
@@ -426,6 +509,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ANCfollowup.resx">
       <DependentUpon>ANCfollowup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BedManager.resx">
+      <DependentUpon>BedManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyInfo.resx">
+      <DependentUpon>CompanyInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdmitFolder.resx">
+      <DependentUpon>FrmAdmitFolder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdmitpt.resx">
+      <DependentUpon>FrmAdmitpt.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmANCfollowUp.resx">
       <DependentUpon>FrmANCfollowUp.vb</DependentUpon>
@@ -454,14 +549,14 @@
     <EmbeddedResource Include="FrmAppointment.resx">
       <DependentUpon>FrmAppointment.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBedlist.resx">
-      <DependentUpon>FrmBedlist.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmCashier.resx">
       <DependentUpon>frmCashier.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCashreceipt.resx">
       <DependentUpon>FrmCashreceipt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocUpload.resx">
+      <DependentUpon>FrmDocUpload.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDrugPreview.resx">
       <DependentUpon>FrmDrugPreview.vb</DependentUpon>
@@ -471,9 +566,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDrugsPresc.resx">
       <DependentUpon>FrmDrugsPresc.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmEditTestDetails.resx">
-      <DependentUpon>FrmEditTestDetails.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGenConsult.resx">
       <DependentUpon>frmGenConsult.vb</DependentUpon>
@@ -502,17 +594,35 @@
     <EmbeddedResource Include="FrmMywaitinglist.resx">
       <DependentUpon>FrmMywaitinglist.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmNewAdmit.resx">
+      <DependentUpon>FrmNewAdmit.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmNewdrugs.resx">
       <DependentUpon>FrmNewdrugs.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNewLabTest.resx">
       <DependentUpon>FrmNewLabTest.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmNewRadInv.resx">
+      <DependentUpon>FrmNewRadInv.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNursing.resx">
       <DependentUpon>frmNursing.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPharmacy.resx">
       <DependentUpon>FrmPharmacy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrinlabrqst.resx">
+      <DependentUpon>FrmPrinlabrqst.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrinRAdrqst.resx">
+      <DependentUpon>frmPrinRAdrqst.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrintDrugPresc.resx">
+      <DependentUpon>FrmPrintDrugPresc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrintreceipt.resx">
+      <DependentUpon>FrmPrintreceipt.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPTdrugs.resx">
       <DependentUpon>FrmPTdrugs.vb</DependentUpon>
@@ -550,6 +660,9 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmScanlist.resx">
+      <DependentUpon>FrmScanlist.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSettings.resx">
       <DependentUpon>FrmSettings.vb</DependentUpon>
     </EmbeddedResource>
@@ -562,10 +675,17 @@
     <EmbeddedResource Include="frmvitals.resx">
       <DependentUpon>frmvitals.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmWardManager.resx">
+      <DependentUpon>FrmWardManager.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NurseReport.resx">
+      <DependentUpon>NurseReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.vb</DependentUpon>
@@ -578,6 +698,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PtRadHist.resx">
       <DependentUpon>PtRadHist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoundNotes.resx">
+      <DependentUpon>RoundNotes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ServiceSetings.resx">
       <DependentUpon>ServiceSetings.vb</DependentUpon>
@@ -607,7 +730,30 @@
     <Folder Include="REPORT\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\search.png" />
+    <None Include="Resources\accounting.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\refresh.png" />
     <Content Include="stest1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

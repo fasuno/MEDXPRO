@@ -15,7 +15,6 @@ Public Class Profile
 
             txtsurname.Text = tbl.Rows(0)(1).ToString()
             txtothernames.Text = tbl.Rows(0)(2).ToString()
-
             txtaccount.Text = tbl.Rows(0)(7).ToString()
             txtsex.Text = tbl.Rows(0)(9).ToString()
             txtmarital.Text = tbl.Rows(0)(10).ToString()

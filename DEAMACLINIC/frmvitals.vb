@@ -62,7 +62,7 @@ Public Class frmvitals
             Try
 
                 cmd.CommandType = System.Data.CommandType.Text
-                cmd.CommandText = "insert into Treated_Vitals values ('" & Datetaken.Value & "', '" & lbltime.Text & "', '" & lblsurname.Text & "', '" & lblothernames.Text & "', '" & lblhospnum.Text & "', '" & lblage.Text & "', '" & lblsex.Text & "', '" & lblaccounttype.Text & "', '" & TxtBp.Text & "', '" & txtTemp.Text & "', '" & txtPulse.Text & "', '" & txtWeight.Text & "', '" & txtHeight.Text & "', '" & txtResp.Text & "', '" & lblclinic.Text & "', '" & cbodoctor.Text & "', '" & cborooms.Text & "', '" & lbluser.Text & "')"
+                cmd.CommandText = "insert into Treated_Vitals values ('" & Datetaken.Value & "', '" & lbltime.Text & "', '" & lblsurname.Text & "', '" & lblothernames.Text & "', '" & lblhospnum.Text & "', '" & lblage.Text & "', '" & lblsex.Text & "', '" & lblaccounttype.Text & "', '" & TxtBp.Text & "', '" & txtTemp.Text & "', '" & txtPulse.Text & "', '" & txtWeight.Text & "', '" & txtHeight.Text & "', '" & txtResp.Text & "', '" & lblclinic.Text & "', '" & cbodoctor.Text & "', '" & cborooms.Text & "', '" & lbluser.Text & "', '" & lblcat.Text & "')"
 
 
                 cmd.Connection = con
@@ -223,7 +223,7 @@ Public Class frmvitals
         Try
 
             cmd.CommandType = System.Data.CommandType.Text
-            cmd.CommandText = "insert into Pend_WaitingList values ('" & Datetaken.Value & "', '" & lbltime.Text & "', '" & lblsurname.Text & "', '" & lblothernames.Text & "', '" & lblhospnum.Text & "', '" & lblage.Text & "', '" & lblsex.Text & "', '" & lblaccounttype.Text & "', '" & TxtBp.Text & "', '" & txtTemp.Text & "', '" & txtPulse.Text & "', '" & txtWeight.Text & "', '" & txtHeight.Text & "', '" & txtResp.Text & "', '" & lblclinic.Text & "', '" & cbodoctor.Text & "', '" & cborooms.Text & "', '" & lbluser.Text & "')"
+            cmd.CommandText = "insert into Pend_WaitingList values ('" & Datetaken.Value & "', '" & lbltime.Text & "', '" & lblsurname.Text & "', '" & lblothernames.Text & "', '" & lblhospnum.Text & "', '" & lblage.Text & "', '" & lblsex.Text & "', '" & lblaccounttype.Text & "', '" & TxtBp.Text & "', '" & txtTemp.Text & "', '" & txtPulse.Text & "', '" & txtWeight.Text & "', '" & txtHeight.Text & "', '" & txtResp.Text & "', '" & lblclinic.Text & "', '" & cbodoctor.Text & "', '" & cborooms.Text & "', '" & lbluser.Text & "', '" & lblcat.Text & "')"
 
             cmd.Connection = con
 
@@ -246,7 +246,7 @@ Public Class frmvitals
         lbltime.Text = timetaken.Text
     End Sub
 
-    Public Sub cleartxt()
+    Sub cleartxt()
         TxtBp.Text = ""
         txtHeight.Text = ""
         txtpass.Text = ""
@@ -254,4 +254,5 @@ Public Class frmvitals
         txtTemp.Text = ""
         txtWeight.Text = ""
     End Sub
+
 End Class

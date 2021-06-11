@@ -40,12 +40,16 @@ Partial Class AccountSet
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Lblacctid = New System.Windows.Forms.Label()
+        Me.Cbocat = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.SuspendLayout()
         '
         'Btnclr
         '
+        Me.Btnclr.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btnclr.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btnclr.Location = New System.Drawing.Point(314, 217)
+        Me.Btnclr.Location = New System.Drawing.Point(314, 245)
         Me.Btnclr.Name = "Btnclr"
         Me.Btnclr.Size = New System.Drawing.Size(74, 23)
         Me.Btnclr.TabIndex = 33
@@ -54,8 +58,10 @@ Partial Class AccountSet
         '
         'BtnEdit
         '
+        Me.BtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnEdit.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEdit.Location = New System.Drawing.Point(234, 217)
+        Me.BtnEdit.ForeColor = System.Drawing.Color.Green
+        Me.BtnEdit.Location = New System.Drawing.Point(234, 245)
         Me.BtnEdit.Name = "BtnEdit"
         Me.BtnEdit.Size = New System.Drawing.Size(74, 23)
         Me.BtnEdit.TabIndex = 32
@@ -64,8 +70,10 @@ Partial Class AccountSet
         '
         'BtnSave
         '
+        Me.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSave.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSave.Location = New System.Drawing.Point(234, 217)
+        Me.BtnSave.ForeColor = System.Drawing.Color.Green
+        Me.BtnSave.Location = New System.Drawing.Point(234, 245)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(74, 23)
         Me.BtnSave.TabIndex = 31
@@ -75,7 +83,7 @@ Partial Class AccountSet
         'txtemail
         '
         Me.txtemail.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtemail.Location = New System.Drawing.Point(152, 189)
+        Me.txtemail.Location = New System.Drawing.Point(152, 216)
         Me.txtemail.Name = "txtemail"
         Me.txtemail.Size = New System.Drawing.Size(288, 22)
         Me.txtemail.TabIndex = 30
@@ -83,7 +91,7 @@ Partial Class AccountSet
         'txtphone
         '
         Me.txtphone.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtphone.Location = New System.Drawing.Point(152, 166)
+        Me.txtphone.Location = New System.Drawing.Point(152, 190)
         Me.txtphone.Name = "txtphone"
         Me.txtphone.Size = New System.Drawing.Size(170, 22)
         Me.txtphone.TabIndex = 29
@@ -91,7 +99,7 @@ Partial Class AccountSet
         'txtcontact
         '
         Me.txtcontact.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtcontact.Location = New System.Drawing.Point(152, 140)
+        Me.txtcontact.Location = New System.Drawing.Point(152, 164)
         Me.txtcontact.Name = "txtcontact"
         Me.txtcontact.Size = New System.Drawing.Size(288, 22)
         Me.txtcontact.TabIndex = 28
@@ -99,7 +107,7 @@ Partial Class AccountSet
         'txtaddr
         '
         Me.txtaddr.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtaddr.Location = New System.Drawing.Point(152, 99)
+        Me.txtaddr.Location = New System.Drawing.Point(152, 123)
         Me.txtaddr.Multiline = True
         Me.txtaddr.Name = "txtaddr"
         Me.txtaddr.Size = New System.Drawing.Size(288, 37)
@@ -109,7 +117,7 @@ Partial Class AccountSet
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(97, 192)
+        Me.Label7.Location = New System.Drawing.Point(109, 219)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(42, 15)
         Me.Label7.TabIndex = 26
@@ -119,7 +127,7 @@ Partial Class AccountSet
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(57, 169)
+        Me.Label6.Location = New System.Drawing.Point(65, 193)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(85, 15)
         Me.Label6.TabIndex = 25
@@ -129,7 +137,7 @@ Partial Class AccountSet
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(84, 103)
+        Me.Label5.Location = New System.Drawing.Point(93, 127)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(56, 15)
         Me.Label5.TabIndex = 24
@@ -139,7 +147,7 @@ Partial Class AccountSet
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(49, 143)
+        Me.Label4.Location = New System.Drawing.Point(55, 167)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(95, 15)
         Me.Label4.TabIndex = 23
@@ -148,7 +156,7 @@ Partial Class AccountSet
         'txtcomp
         '
         Me.txtcomp.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtcomp.Location = New System.Drawing.Point(152, 73)
+        Me.txtcomp.Location = New System.Drawing.Point(152, 97)
         Me.txtcomp.Name = "txtcomp"
         Me.txtcomp.Size = New System.Drawing.Size(288, 22)
         Me.txtcomp.TabIndex = 22
@@ -156,7 +164,7 @@ Partial Class AccountSet
         'txtperc
         '
         Me.txtperc.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtperc.Location = New System.Drawing.Point(152, 47)
+        Me.txtperc.Location = New System.Drawing.Point(152, 71)
         Me.txtperc.Name = "txtperc"
         Me.txtperc.Size = New System.Drawing.Size(170, 22)
         Me.txtperc.TabIndex = 21
@@ -174,7 +182,7 @@ Partial Class AccountSet
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(27, 76)
+        Me.Label3.Location = New System.Drawing.Point(27, 100)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(122, 15)
         Me.Label3.TabIndex = 19
@@ -184,7 +192,7 @@ Partial Class AccountSet
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(67, 47)
+        Me.Label2.Location = New System.Drawing.Point(75, 71)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(73, 15)
         Me.Label2.TabIndex = 18
@@ -194,27 +202,58 @@ Partial Class AccountSet
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(55, 24)
+        Me.Label1.Location = New System.Drawing.Point(59, 24)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(84, 15)
+        Me.Label1.Size = New System.Drawing.Size(88, 15)
         Me.Label1.TabIndex = 17
-        Me.Label1.Text = "Account_Type"
+        Me.Label1.Text = "Account_Type:"
         '
         'Lblacctid
         '
         Me.Lblacctid.AutoSize = True
         Me.Lblacctid.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lblacctid.Location = New System.Drawing.Point(340, 221)
+        Me.Lblacctid.Location = New System.Drawing.Point(340, 245)
         Me.Lblacctid.Name = "Lblacctid"
         Me.Lblacctid.Size = New System.Drawing.Size(14, 15)
         Me.Lblacctid.TabIndex = 34
         Me.Lblacctid.Text = "2"
+        '
+        'Cbocat
+        '
+        Me.Cbocat.FormattingEnabled = True
+        Me.Cbocat.Items.AddRange(New Object() {"NORMAL", "CLASSIC", "VIP", "ELITE"})
+        Me.Cbocat.Location = New System.Drawing.Point(152, 46)
+        Me.Cbocat.Name = "Cbocat"
+        Me.Cbocat.Size = New System.Drawing.Size(170, 21)
+        Me.Cbocat.TabIndex = 35
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(87, 48)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(61, 15)
+        Me.Label8.TabIndex = 36
+        Me.Label8.Text = "Category:"
+        '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.Purple
+        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(459, 15)
+        Me.FlowLayoutPanel1.TabIndex = 38
         '
         'AccountSet
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.FlowLayoutPanel1)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Cbocat)
         Me.Controls.Add(Me.Btnclr)
         Me.Controls.Add(Me.BtnSave)
         Me.Controls.Add(Me.txtemail)
@@ -234,7 +273,7 @@ Partial Class AccountSet
         Me.Controls.Add(Me.BtnEdit)
         Me.Controls.Add(Me.Lblacctid)
         Me.Name = "AccountSet"
-        Me.Size = New System.Drawing.Size(518, 316)
+        Me.Size = New System.Drawing.Size(459, 279)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -258,4 +297,7 @@ Partial Class AccountSet
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Lblacctid As Label
+    Friend WithEvents Cbocat As ComboBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
 End Class

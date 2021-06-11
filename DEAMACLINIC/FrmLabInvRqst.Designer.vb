@@ -32,8 +32,8 @@ Partial Class FrmLabInvRqst
         Me.lbltim = New System.Windows.Forms.Label()
         Me.lbldte = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Txtrqstid = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Txtacctcat = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.txtOname = New System.Windows.Forms.TextBox()
         Me.txtrqstby = New System.Windows.Forms.TextBox()
         Me.txtage = New System.Windows.Forms.TextBox()
@@ -50,6 +50,8 @@ Partial Class FrmLabInvRqst
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Txtrqstid = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -108,7 +110,7 @@ Partial Class FrmLabInvRqst
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.Navy
-        Me.Label14.Location = New System.Drawing.Point(429, 9)
+        Me.Label14.Location = New System.Drawing.Point(372, 9)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(54, 17)
         Me.Label14.TabIndex = 20
@@ -119,7 +121,7 @@ Partial Class FrmLabInvRqst
         '
         Me.lbllab.AutoSize = True
         Me.lbllab.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbllab.Location = New System.Drawing.Point(485, 9)
+        Me.lbllab.Location = New System.Drawing.Point(428, 9)
         Me.lbllab.Name = "lbllab"
         Me.lbllab.Size = New System.Drawing.Size(80, 17)
         Me.lbllab.TabIndex = 19
@@ -130,7 +132,7 @@ Partial Class FrmLabInvRqst
         '
         Me.lbltim.AutoSize = True
         Me.lbltim.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltim.Location = New System.Drawing.Point(739, 9)
+        Me.lbltim.Location = New System.Drawing.Point(642, 10)
         Me.lbltim.Name = "lbltim"
         Me.lbltim.Size = New System.Drawing.Size(47, 17)
         Me.lbltim.TabIndex = 18
@@ -140,7 +142,7 @@ Partial Class FrmLabInvRqst
         '
         Me.lbldte.AutoSize = True
         Me.lbldte.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbldte.Location = New System.Drawing.Point(631, 9)
+        Me.lbldte.Location = New System.Drawing.Point(534, 10)
         Me.lbldte.Name = "lbldte"
         Me.lbldte.Size = New System.Drawing.Size(44, 17)
         Me.lbldte.TabIndex = 17
@@ -149,8 +151,8 @@ Partial Class FrmLabInvRqst
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.Txtrqstid)
-        Me.Panel1.Controls.Add(Me.Label12)
+        Me.Panel1.Controls.Add(Me.Txtacctcat)
+        Me.Panel1.Controls.Add(Me.Label13)
         Me.Panel1.Controls.Add(Me.txtOname)
         Me.Panel1.Controls.Add(Me.txtrqstby)
         Me.Panel1.Controls.Add(Me.txtage)
@@ -172,28 +174,28 @@ Partial Class FrmLabInvRqst
         Me.Panel1.Size = New System.Drawing.Size(803, 88)
         Me.Panel1.TabIndex = 16
         '
-        'Txtrqstid
+        'Txtacctcat
         '
-        Me.Txtrqstid.BackColor = System.Drawing.Color.White
-        Me.Txtrqstid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Txtrqstid.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txtrqstid.ForeColor = System.Drawing.Color.Black
-        Me.Txtrqstid.Location = New System.Drawing.Point(648, 56)
-        Me.Txtrqstid.Name = "Txtrqstid"
-        Me.Txtrqstid.ReadOnly = True
-        Me.Txtrqstid.Size = New System.Drawing.Size(78, 21)
-        Me.Txtrqstid.TabIndex = 22
+        Me.Txtacctcat.BackColor = System.Drawing.Color.White
+        Me.Txtacctcat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Txtacctcat.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtacctcat.ForeColor = System.Drawing.Color.Black
+        Me.Txtacctcat.Location = New System.Drawing.Point(630, 56)
+        Me.Txtacctcat.Name = "Txtacctcat"
+        Me.Txtacctcat.ReadOnly = True
+        Me.Txtacctcat.Size = New System.Drawing.Size(164, 21)
+        Me.Txtacctcat.TabIndex = 22
         '
-        'Label12
+        'Label13
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.Navy
-        Me.Label12.Location = New System.Drawing.Point(574, 59)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(71, 15)
-        Me.Label12.TabIndex = 21
-        Me.Label12.Text = "Request ID:"
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.Navy
+        Me.Label13.Location = New System.Drawing.Point(520, 59)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(106, 15)
+        Me.Label13.TabIndex = 21
+        Me.Label13.Text = "Account category:"
         '
         'txtOname
         '
@@ -213,10 +215,10 @@ Partial Class FrmLabInvRqst
         Me.txtrqstby.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtrqstby.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtrqstby.ForeColor = System.Drawing.Color.Black
-        Me.txtrqstby.Location = New System.Drawing.Point(308, 56)
+        Me.txtrqstby.Location = New System.Drawing.Point(290, 57)
         Me.txtrqstby.Name = "txtrqstby"
         Me.txtrqstby.ReadOnly = True
-        Me.txtrqstby.Size = New System.Drawing.Size(263, 21)
+        Me.txtrqstby.Size = New System.Drawing.Size(224, 21)
         Me.txtrqstby.TabIndex = 19
         '
         'txtage
@@ -264,7 +266,7 @@ Partial Class FrmLabInvRqst
         Me.txtdate.Location = New System.Drawing.Point(110, 56)
         Me.txtdate.Name = "txtdate"
         Me.txtdate.ReadOnly = True
-        Me.txtdate.Size = New System.Drawing.Size(107, 21)
+        Me.txtdate.Size = New System.Drawing.Size(89, 21)
         Me.txtdate.TabIndex = 14
         '
         'txtacct
@@ -273,10 +275,10 @@ Partial Class FrmLabInvRqst
         Me.txtacct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtacct.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtacct.ForeColor = System.Drawing.Color.Black
-        Me.txtacct.Location = New System.Drawing.Point(567, 31)
+        Me.txtacct.Location = New System.Drawing.Point(580, 30)
         Me.txtacct.Name = "txtacct"
         Me.txtacct.ReadOnly = True
-        Me.txtacct.Size = New System.Drawing.Size(227, 21)
+        Me.txtacct.Size = New System.Drawing.Size(214, 21)
         Me.txtacct.TabIndex = 13
         '
         'txtHno
@@ -351,7 +353,7 @@ Partial Class FrmLabInvRqst
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Navy
-        Me.Label6.Location = New System.Drawing.Point(221, 59)
+        Me.Label6.Location = New System.Drawing.Point(203, 60)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(85, 15)
         Me.Label6.TabIndex = 8
@@ -373,11 +375,36 @@ Partial Class FrmLabInvRqst
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Navy
-        Me.Label8.Location = New System.Drawing.Point(480, 30)
+        Me.Label8.Location = New System.Drawing.Point(493, 32)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(81, 15)
         Me.Label8.TabIndex = 10
         Me.Label8.Text = "Account type:"
+        '
+        'Txtrqstid
+        '
+        Me.Txtrqstid.BackColor = System.Drawing.Color.White
+        Me.Txtrqstid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Txtrqstid.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtrqstid.ForeColor = System.Drawing.Color.Black
+        Me.Txtrqstid.Location = New System.Drawing.Point(797, 9)
+        Me.Txtrqstid.Name = "Txtrqstid"
+        Me.Txtrqstid.ReadOnly = True
+        Me.Txtrqstid.Size = New System.Drawing.Size(26, 21)
+        Me.Txtrqstid.TabIndex = 22
+        Me.Txtrqstid.Visible = False
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.Navy
+        Me.Label12.Location = New System.Drawing.Point(719, 12)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(71, 15)
+        Me.Label12.TabIndex = 21
+        Me.Label12.Text = "Request ID:"
+        Me.Label12.Visible = False
         '
         'Panel2
         '
@@ -430,7 +457,9 @@ Partial Class FrmLabInvRqst
         '
         'Btnconfirm
         '
+        Me.Btnconfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btnconfirm.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btnconfirm.ForeColor = System.Drawing.Color.Green
         Me.Btnconfirm.Location = New System.Drawing.Point(89, 425)
         Me.Btnconfirm.Name = "Btnconfirm"
         Me.Btnconfirm.Size = New System.Drawing.Size(76, 28)
@@ -493,7 +522,9 @@ Partial Class FrmLabInvRqst
         'BtnSave
         '
         Me.BtnSave.BackColor = System.Drawing.Color.White
+        Me.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSave.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSave.ForeColor = System.Drawing.Color.Green
         Me.BtnSave.Location = New System.Drawing.Point(707, 425)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(144, 27)
@@ -518,8 +549,10 @@ Partial Class FrmLabInvRqst
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Lavender
-        Me.ClientSize = New System.Drawing.Size(862, 455)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(855, 455)
+        Me.Controls.Add(Me.Txtrqstid)
+        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Txtperc)
         Me.Controls.Add(Me.Btnconfirm)
         Me.Controls.Add(Me.Label10)
@@ -593,4 +626,6 @@ Partial Class FrmLabInvRqst
     Friend WithEvents Txtrqstid As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Txtperc As TextBox
+    Friend WithEvents Txtacctcat As TextBox
+    Friend WithEvents Label13 As Label
 End Class

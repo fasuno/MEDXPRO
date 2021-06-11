@@ -47,6 +47,10 @@ Public Class FrmLabResultpreview
             Dtgtestresult.Columns(0).Width = 180
             Dtgtestresult.Columns(0).DefaultCellStyle.ForeColor = Color.DarkBlue
 
+        Else
+            LblTest.Text = ""
+            MsgBox("NO RESULT FOUND FOR THE SELECTED TEST", MsgBoxStyle.Information, "LABORATORY")
+
         End If
 
     End Sub
@@ -65,7 +69,7 @@ Public Class FrmLabResultpreview
         If ntbl.Rows.Count() > 0 Then
             Txtdaterprt.Text = ntbl.Rows(0)(1)
             Txtnotes.Text = ntbl.Rows(0)(17).ToString()
-            Txtreprtby.Text = ntbl.Rows(0)(14).ToString()
+            Txtreprtby.Text = ntbl.Rows(0)(15).ToString()
         End If
 
     End Sub

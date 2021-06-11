@@ -22,13 +22,13 @@ Partial Class frmCashier
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCashier))
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -40,13 +40,9 @@ Partial Class frmCashier
         Me.Rdatfrom = New System.Windows.Forms.DateTimePicker()
         Me.DtgPendbills = New System.Windows.Forms.DataGridView()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Timeto = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.timeFrm = New System.Windows.Forms.DateTimePicker()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BtnCreate = New System.Windows.Forms.Button()
         Me.Chkviewall = New System.Windows.Forms.CheckBox()
@@ -108,18 +104,20 @@ Partial Class frmCashier
         'BtnFindbill
         '
         Me.BtnFindbill.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnFindbill.ForeColor = System.Drawing.Color.Red
-        Me.BtnFindbill.Location = New System.Drawing.Point(1017, 5)
+        Me.BtnFindbill.ForeColor = System.Drawing.Color.Green
+        Me.BtnFindbill.Image = CType(resources.GetObject("BtnFindbill.Image"), System.Drawing.Image)
+        Me.BtnFindbill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnFindbill.Location = New System.Drawing.Point(997, 5)
         Me.BtnFindbill.Name = "BtnFindbill"
-        Me.BtnFindbill.Size = New System.Drawing.Size(61, 27)
+        Me.BtnFindbill.Size = New System.Drawing.Size(81, 27)
         Me.BtnFindbill.TabIndex = 12
-        Me.BtnFindbill.Text = "Find"
+        Me.BtnFindbill.Text = "     Search"
         Me.BtnFindbill.UseVisualStyleBackColor = True
         '
         'Txtfindbill
         '
         Me.Txtfindbill.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Txtfindbill.Location = New System.Drawing.Point(823, 8)
+        Me.Txtfindbill.Location = New System.Drawing.Point(803, 9)
         Me.Txtfindbill.Name = "Txtfindbill"
         Me.Txtfindbill.Size = New System.Drawing.Size(188, 22)
         Me.Txtfindbill.TabIndex = 11
@@ -128,11 +126,13 @@ Partial Class frmCashier
         '
         Me.BtnreLbills.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnreLbills.ForeColor = System.Drawing.Color.Black
+        Me.BtnreLbills.Image = CType(resources.GetObject("BtnreLbills.Image"), System.Drawing.Image)
+        Me.BtnreLbills.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnreLbills.Location = New System.Drawing.Point(502, 4)
         Me.BtnreLbills.Name = "BtnreLbills"
-        Me.BtnreLbills.Size = New System.Drawing.Size(61, 27)
+        Me.BtnreLbills.Size = New System.Drawing.Size(75, 27)
         Me.BtnreLbills.TabIndex = 10
-        Me.BtnreLbills.Text = "Reload"
+        Me.BtnreLbills.Text = "      Reload"
         Me.BtnreLbills.UseVisualStyleBackColor = True
         '
         'Label1
@@ -165,28 +165,24 @@ Partial Class frmCashier
         Me.DtgPendbills.AllowUserToDeleteRows = False
         Me.DtgPendbills.AllowUserToOrderColumns = True
         Me.DtgPendbills.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Navy
-        Me.DtgPendbills.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.DtgPendbills.BackgroundColor = System.Drawing.Color.LightCyan
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Navy
+        Me.DtgPendbills.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle11
+        Me.DtgPendbills.BackgroundColor = System.Drawing.Color.Gainsboro
         Me.DtgPendbills.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DtgPendbills.Location = New System.Drawing.Point(-4, 49)
+        Me.DtgPendbills.Location = New System.Drawing.Point(0, 49)
         Me.DtgPendbills.Name = "DtgPendbills"
         Me.DtgPendbills.ReadOnly = True
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.DtgPendbills.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.DtgPendbills.RowsDefaultCellStyle = DataGridViewCellStyle12
         Me.DtgPendbills.Size = New System.Drawing.Size(1096, 345)
         Me.DtgPendbills.TabIndex = 0
         '
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.White
-        Me.TabPage2.Controls.Add(Me.Button1)
-        Me.TabPage2.Controls.Add(Me.Label3)
         Me.TabPage2.Controls.Add(Me.lbltotal)
         Me.TabPage2.Controls.Add(Me.Label8)
-        Me.TabPage2.Controls.Add(Me.Timeto)
         Me.TabPage2.Controls.Add(Me.Label7)
-        Me.TabPage2.Controls.Add(Me.timeFrm)
         Me.TabPage2.Controls.Add(Me.Panel2)
         Me.TabPage2.Controls.Add(Me.Dtgreceipts)
         Me.TabPage2.ForeColor = System.Drawing.Color.Black
@@ -197,33 +193,12 @@ Partial Class frmCashier
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "RECEIPTS"
         '
-        'Button1
-        '
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(636, 397)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(112, 28)
-        Me.Button1.TabIndex = 29
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(121, 404)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(20, 15)
-        Me.Label3.TabIndex = 25
-        Me.Label3.Text = "To"
-        '
         'lbltotal
         '
         Me.lbltotal.AutoSize = True
         Me.lbltotal.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbltotal.ForeColor = System.Drawing.Color.DarkRed
-        Me.lbltotal.Location = New System.Drawing.Point(388, 401)
+        Me.lbltotal.Location = New System.Drawing.Point(165, 403)
         Me.lbltotal.Name = "lbltotal"
         Me.lbltotal.Size = New System.Drawing.Size(21, 19)
         Me.lbltotal.TabIndex = 28
@@ -233,45 +208,25 @@ Partial Class frmCashier
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Strikeout), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(364, 401)
+        Me.Label8.Location = New System.Drawing.Point(141, 403)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(21, 19)
         Me.Label8.TabIndex = 27
         Me.Label8.Text = "N"
         '
-        'Timeto
-        '
-        Me.Timeto.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Timeto.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.Timeto.Location = New System.Drawing.Point(147, 400)
-        Me.Timeto.Name = "Timeto"
-        Me.Timeto.ShowUpDown = True
-        Me.Timeto.Size = New System.Drawing.Size(104, 22)
-        Me.Timeto.TabIndex = 24
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(278, 402)
+        Me.Label7.Location = New System.Drawing.Point(55, 404)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(83, 16)
         Me.Label7.TabIndex = 26
         Me.Label7.Text = "Total Sales:"
         '
-        'timeFrm
-        '
-        Me.timeFrm.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.timeFrm.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.timeFrm.Location = New System.Drawing.Point(16, 400)
-        Me.timeFrm.Name = "timeFrm"
-        Me.timeFrm.ShowUpDown = True
-        Me.timeFrm.Size = New System.Drawing.Size(102, 22)
-        Me.timeFrm.TabIndex = 23
-        '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.LightCyan
+        Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.BtnCreate)
         Me.Panel2.Controls.Add(Me.Chkviewall)
@@ -292,17 +247,19 @@ Partial Class frmCashier
         Me.BtnCreate.BackColor = System.Drawing.Color.White
         Me.BtnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCreate.ForeColor = System.Drawing.Color.Green
-        Me.BtnCreate.Location = New System.Drawing.Point(10, 3)
+        Me.BtnCreate.Image = CType(resources.GetObject("BtnCreate.Image"), System.Drawing.Image)
+        Me.BtnCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnCreate.Location = New System.Drawing.Point(3, 3)
         Me.BtnCreate.Name = "BtnCreate"
-        Me.BtnCreate.Size = New System.Drawing.Size(67, 28)
+        Me.BtnCreate.Size = New System.Drawing.Size(61, 28)
         Me.BtnCreate.TabIndex = 11
-        Me.BtnCreate.Text = " NEW"
+        Me.BtnCreate.Text = "      New"
         Me.BtnCreate.UseVisualStyleBackColor = False
         '
         'Chkviewall
         '
         Me.Chkviewall.AutoSize = True
-        Me.Chkviewall.Location = New System.Drawing.Point(812, 7)
+        Me.Chkviewall.Location = New System.Drawing.Point(781, 8)
         Me.Chkviewall.Name = "Chkviewall"
         Me.Chkviewall.Size = New System.Drawing.Size(72, 19)
         Me.Chkviewall.TabIndex = 10
@@ -313,30 +270,34 @@ Partial Class frmCashier
         '
         Me.Btnreload.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btnreload.ForeColor = System.Drawing.Color.Black
-        Me.Btnreload.Location = New System.Drawing.Point(563, 4)
+        Me.Btnreload.Image = CType(resources.GetObject("Btnreload.Image"), System.Drawing.Image)
+        Me.Btnreload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btnreload.Location = New System.Drawing.Point(534, 4)
         Me.Btnreload.Name = "Btnreload"
-        Me.Btnreload.Size = New System.Drawing.Size(61, 25)
+        Me.Btnreload.Size = New System.Drawing.Size(75, 25)
         Me.Btnreload.TabIndex = 9
-        Me.Btnreload.Text = "Reload"
+        Me.Btnreload.Text = "      Reload"
         Me.Btnreload.UseVisualStyleBackColor = True
         '
         'BtnFind
         '
         Me.BtnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnFind.ForeColor = System.Drawing.Color.Red
-        Me.BtnFind.Location = New System.Drawing.Point(1023, 4)
+        Me.BtnFind.ForeColor = System.Drawing.Color.Green
+        Me.BtnFind.Image = CType(resources.GetObject("BtnFind.Image"), System.Drawing.Image)
+        Me.BtnFind.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnFind.Location = New System.Drawing.Point(1006, 4)
         Me.BtnFind.Name = "BtnFind"
-        Me.BtnFind.Size = New System.Drawing.Size(61, 27)
+        Me.BtnFind.Size = New System.Drawing.Size(78, 27)
         Me.BtnFind.TabIndex = 8
-        Me.BtnFind.Text = "Find"
+        Me.BtnFind.Text = "       Search"
         Me.BtnFind.UseVisualStyleBackColor = True
         '
         'Txtfindreceipt
         '
         Me.Txtfindreceipt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Txtfindreceipt.Location = New System.Drawing.Point(865, 7)
+        Me.Txtfindreceipt.Location = New System.Drawing.Point(859, 7)
         Me.Txtfindreceipt.Name = "Txtfindreceipt"
-        Me.Txtfindreceipt.Size = New System.Drawing.Size(152, 22)
+        Me.Txtfindreceipt.Size = New System.Drawing.Size(141, 22)
         Me.Txtfindreceipt.TabIndex = 7
         '
         'Cbocashiers
@@ -344,7 +305,7 @@ Partial Class frmCashier
         Me.Cbocashiers.BackColor = System.Drawing.Color.Beige
         Me.Cbocashiers.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cbocashiers.FormattingEnabled = True
-        Me.Cbocashiers.Location = New System.Drawing.Point(630, 5)
+        Me.Cbocashiers.Location = New System.Drawing.Point(613, 5)
         Me.Cbocashiers.Name = "Cbocashiers"
         Me.Cbocashiers.Size = New System.Drawing.Size(162, 23)
         Me.Cbocashiers.TabIndex = 5
@@ -353,7 +314,7 @@ Partial Class frmCashier
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(315, 11)
+        Me.Label2.Location = New System.Drawing.Point(286, 11)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(20, 15)
         Me.Label2.TabIndex = 4
@@ -361,14 +322,14 @@ Partial Class frmCashier
         '
         'DateTo
         '
-        Me.DateTo.Location = New System.Drawing.Point(341, 7)
+        Me.DateTo.Location = New System.Drawing.Point(312, 7)
         Me.DateTo.Name = "DateTo"
         Me.DateTo.Size = New System.Drawing.Size(216, 22)
         Me.DateTo.TabIndex = 3
         '
         'Datefrom
         '
-        Me.Datefrom.Location = New System.Drawing.Point(95, 7)
+        Me.Datefrom.Location = New System.Drawing.Point(66, 7)
         Me.Datefrom.Name = "Datefrom"
         Me.Datefrom.Size = New System.Drawing.Size(214, 22)
         Me.Datefrom.TabIndex = 2
@@ -379,32 +340,32 @@ Partial Class frmCashier
         Me.Dtgreceipts.AllowUserToDeleteRows = False
         Me.Dtgreceipts.AllowUserToOrderColumns = True
         Me.Dtgreceipts.AllowUserToResizeRows = False
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Dtgreceipts.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Dtgreceipts.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.Dtgreceipts.BackgroundColor = System.Drawing.Color.FloralWhite
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Dtgreceipts.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dtgreceipts.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.Dtgreceipts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dtgreceipts.GridColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Dtgreceipts.Location = New System.Drawing.Point(3, 50)
         Me.Dtgreceipts.Name = "Dtgreceipts"
         Me.Dtgreceipts.ReadOnly = True
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.DarkRed
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Dtgreceipts.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        Me.Dtgreceipts.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.DarkRed
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dtgreceipts.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black
+        Me.Dtgreceipts.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.Dtgreceipts.Size = New System.Drawing.Size(1093, 344)
         Me.Dtgreceipts.TabIndex = 0
         '
@@ -455,13 +416,9 @@ Partial Class frmCashier
     Friend WithEvents BtnreLbills As Button
     Friend WithEvents BtnFindbill As Button
     Friend WithEvents Txtfindbill As TextBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents lbltotal As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents Timeto As DateTimePicker
     Friend WithEvents Label7 As Label
-    Friend WithEvents timeFrm As DateTimePicker
-    Friend WithEvents Button1 As Button
     Friend WithEvents Chkviewall As CheckBox
     Friend WithEvents BtnCreate As Button
 End Class

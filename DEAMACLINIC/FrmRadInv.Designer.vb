@@ -22,7 +22,7 @@ Partial Class FrmRadInv
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmRadInv))
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -58,6 +58,8 @@ Partial Class FrmRadInv
         Me.lbltime = New System.Windows.Forms.Label()
         Me.lbldate = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Txtactcat = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.txtdate = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -106,18 +108,20 @@ Partial Class FrmRadInv
         '
         Me.DtgPtRadInv.AllowUserToAddRows = False
         Me.DtgPtRadInv.AllowUserToDeleteRows = False
+        Me.DtgPtRadInv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.DtgPtRadInv.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DtgPtRadInv.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DtgPtRadInv.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DtgPtRadInv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DtgPtRadInv.Location = New System.Drawing.Point(4, 4)
         Me.DtgPtRadInv.Name = "DtgPtRadInv"
+        Me.DtgPtRadInv.ReadOnly = True
         Me.DtgPtRadInv.Size = New System.Drawing.Size(825, 232)
         Me.DtgPtRadInv.TabIndex = 0
         '
@@ -127,22 +131,24 @@ Partial Class FrmRadInv
         Me.Txtrqstid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Txtrqstid.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txtrqstid.ForeColor = System.Drawing.Color.Black
-        Me.Txtrqstid.Location = New System.Drawing.Point(648, 56)
+        Me.Txtrqstid.Location = New System.Drawing.Point(220, 10)
         Me.Txtrqstid.Name = "Txtrqstid"
         Me.Txtrqstid.ReadOnly = True
         Me.Txtrqstid.Size = New System.Drawing.Size(78, 21)
         Me.Txtrqstid.TabIndex = 22
+        Me.Txtrqstid.Visible = False
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Navy
-        Me.Label12.Location = New System.Drawing.Point(574, 59)
+        Me.Label12.Location = New System.Drawing.Point(146, 13)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(71, 15)
         Me.Label12.TabIndex = 21
         Me.Label12.Text = "Request ID:"
+        Me.Label12.Visible = False
         '
         'Label10
         '
@@ -203,10 +209,10 @@ Partial Class FrmRadInv
         Me.txtrqstby.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtrqstby.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtrqstby.ForeColor = System.Drawing.Color.Black
-        Me.txtrqstby.Location = New System.Drawing.Point(308, 56)
+        Me.txtrqstby.Location = New System.Drawing.Point(307, 56)
         Me.txtrqstby.Name = "txtrqstby"
         Me.txtrqstby.ReadOnly = True
-        Me.txtrqstby.Size = New System.Drawing.Size(263, 21)
+        Me.txtrqstby.Size = New System.Drawing.Size(221, 21)
         Me.txtrqstby.TabIndex = 19
         '
         'txtage
@@ -215,7 +221,7 @@ Partial Class FrmRadInv
         Me.txtage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtage.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtage.ForeColor = System.Drawing.Color.Black
-        Me.txtage.Location = New System.Drawing.Point(430, 30)
+        Me.txtage.Location = New System.Drawing.Point(432, 30)
         Me.txtage.Name = "txtage"
         Me.txtage.ReadOnly = True
         Me.txtage.Size = New System.Drawing.Size(44, 21)
@@ -282,20 +288,23 @@ Partial Class FrmRadInv
         '
         'BtnSave
         '
+        Me.BtnSave.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSave.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSave.ForeColor = System.Drawing.Color.Green
         Me.BtnSave.Location = New System.Drawing.Point(708, 426)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(144, 27)
         Me.BtnSave.TabIndex = 42
         Me.BtnSave.Text = "SEND FOR PAYMENT"
-        Me.BtnSave.UseVisualStyleBackColor = True
+        Me.BtnSave.UseVisualStyleBackColor = False
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Navy
-        Me.Label9.Location = New System.Drawing.Point(274, 31)
+        Me.Label9.Location = New System.Drawing.Point(274, 33)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(31, 15)
         Me.Label9.TabIndex = 11
@@ -328,7 +337,7 @@ Partial Class FrmRadInv
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Navy
-        Me.Label5.Location = New System.Drawing.Point(20, 31)
+        Me.Label5.Location = New System.Drawing.Point(19, 32)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(89, 15)
         Me.Label5.TabIndex = 7
@@ -339,7 +348,7 @@ Partial Class FrmRadInv
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Navy
-        Me.Label6.Location = New System.Drawing.Point(221, 59)
+        Me.Label6.Location = New System.Drawing.Point(218, 59)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(85, 15)
         Me.Label6.TabIndex = 8
@@ -350,7 +359,7 @@ Partial Class FrmRadInv
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Navy
-        Me.Label7.Location = New System.Drawing.Point(399, 30)
+        Me.Label7.Location = New System.Drawing.Point(396, 32)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(33, 15)
         Me.Label7.TabIndex = 9
@@ -361,7 +370,7 @@ Partial Class FrmRadInv
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Navy
-        Me.Label8.Location = New System.Drawing.Point(480, 30)
+        Me.Label8.Location = New System.Drawing.Point(480, 34)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(81, 15)
         Me.Label8.TabIndex = 10
@@ -382,7 +391,7 @@ Partial Class FrmRadInv
         Me.LblPayStat.AutoSize = True
         Me.LblPayStat.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblPayStat.ForeColor = System.Drawing.Color.DarkRed
-        Me.LblPayStat.Location = New System.Drawing.Point(299, 10)
+        Me.LblPayStat.Location = New System.Drawing.Point(421, 11)
         Me.LblPayStat.Name = "LblPayStat"
         Me.LblPayStat.Size = New System.Drawing.Size(61, 17)
         Me.LblPayStat.TabIndex = 39
@@ -393,7 +402,7 @@ Partial Class FrmRadInv
         Me.lblbilledby.AutoSize = True
         Me.lblbilledby.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblbilledby.ForeColor = System.Drawing.Color.Navy
-        Me.lblbilledby.Location = New System.Drawing.Point(12, 9)
+        Me.lblbilledby.Location = New System.Drawing.Point(67, 5)
         Me.lblbilledby.Name = "lblbilledby"
         Me.lblbilledby.Size = New System.Drawing.Size(71, 17)
         Me.lblbilledby.TabIndex = 38
@@ -405,7 +414,7 @@ Partial Class FrmRadInv
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.Navy
-        Me.Label14.Location = New System.Drawing.Point(430, 10)
+        Me.Label14.Location = New System.Drawing.Point(497, 19)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(54, 17)
         Me.Label14.TabIndex = 37
@@ -416,7 +425,7 @@ Partial Class FrmRadInv
         '
         Me.lblrad.AutoSize = True
         Me.lblrad.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblrad.Location = New System.Drawing.Point(486, 10)
+        Me.lblrad.Location = New System.Drawing.Point(553, 19)
         Me.lblrad.Name = "lblrad"
         Me.lblrad.Size = New System.Drawing.Size(73, 17)
         Me.lblrad.TabIndex = 36
@@ -446,8 +455,8 @@ Partial Class FrmRadInv
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.Txtrqstid)
-        Me.Panel1.Controls.Add(Me.Label12)
+        Me.Panel1.Controls.Add(Me.Txtactcat)
+        Me.Panel1.Controls.Add(Me.Label15)
         Me.Panel1.Controls.Add(Me.txtOname)
         Me.Panel1.Controls.Add(Me.txtrqstby)
         Me.Panel1.Controls.Add(Me.txtage)
@@ -468,6 +477,29 @@ Partial Class FrmRadInv
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(803, 88)
         Me.Panel1.TabIndex = 33
+        '
+        'Txtactcat
+        '
+        Me.Txtactcat.BackColor = System.Drawing.Color.White
+        Me.Txtactcat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Txtactcat.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtactcat.ForeColor = System.Drawing.Color.Black
+        Me.Txtactcat.Location = New System.Drawing.Point(645, 56)
+        Me.Txtactcat.Name = "Txtactcat"
+        Me.Txtactcat.ReadOnly = True
+        Me.Txtactcat.Size = New System.Drawing.Size(149, 21)
+        Me.Txtactcat.TabIndex = 22
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.Navy
+        Me.Label15.Location = New System.Drawing.Point(531, 59)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(109, 15)
+        Me.Label15.TabIndex = 21
+        Me.Label15.Text = "Account Category:"
         '
         'txtdate
         '
@@ -497,7 +529,7 @@ Partial Class FrmRadInv
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Navy
-        Me.Label11.Location = New System.Drawing.Point(180, 10)
+        Me.Label11.Location = New System.Drawing.Point(302, 11)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(113, 17)
         Me.Label11.TabIndex = 40
@@ -536,7 +568,7 @@ Partial Class FrmRadInv
         Me.LblRepby.AutoSize = True
         Me.LblRepby.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblRepby.ForeColor = System.Drawing.Color.Navy
-        Me.LblRepby.Location = New System.Drawing.Point(87, 9)
+        Me.LblRepby.Location = New System.Drawing.Point(8, 22)
         Me.LblRepby.Name = "LblRepby"
         Me.LblRepby.Size = New System.Drawing.Size(78, 17)
         Me.LblRepby.TabIndex = 52
@@ -558,6 +590,8 @@ Partial Class FrmRadInv
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
         Me.ClientSize = New System.Drawing.Size(862, 455)
+        Me.Controls.Add(Me.Txtrqstid)
+        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.txtpercent)
         Me.Controls.Add(Me.LblRepby)
         Me.Controls.Add(Me.LblRepTim)
@@ -641,4 +675,6 @@ Partial Class FrmRadInv
     Friend WithEvents txtpercent As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents txtdate As TextBox
+    Friend WithEvents Txtactcat As TextBox
+    Friend WithEvents Label15 As Label
 End Class

@@ -17,18 +17,26 @@ Public Class FrmPtreg
         '// If it Then exist show message Erase hospital number textbox For New entry
 
         If ctbl.Rows.Count() > 0 Then
-            MsgBox("Hospital Number has been used", MsgBoxStyle.Information, "Hospital number")
+            MsgBox("HOSPITAL NUMBER HAS BEEN ASSIGNED", MsgBoxStyle.Information, "MEDICAL RECORDS")
             txthospnum.Text = ""
             txthospnum.Focus()
 
+        ElseIf txtpass.Text = "" Then
+            MsgBox("PLEASE ENTER YOUR PASSWORD", MsgBoxStyle.Exclamation, "MEDICAL RECORDS")
+            txtpass.Focus()
         Else
 
-            '// Call the Checkuser method   
+            Dim msg = MsgBox("ARE YOU SURE YOU WANT TO SAVE ?", MsgBoxStyle.YesNo, "MEDICAL RECORDS")
+            If msg = MsgBoxResult.Yes Then
 
-            checkuser()      '// See the method to view code
+                '// Call the Checkuser method   
 
+                checkuser()      '// See the method to view code
+
+            Else
+                txtpass.Focus()
+            End If
         End If
-
         '// Call the reloaddtgfolder method to Refresh the folder datagrid
 
         reloaddtgfolder()
@@ -39,7 +47,7 @@ Public Class FrmPtreg
 
         ' Me.MdiParent = frmMain
         agecalc()
-        'LoadAccountype()
+        ' Populateacct()
     End Sub
 
     Private Sub btncls_Click(sender As Object, e As EventArgs) Handles btncls.Click
@@ -51,7 +59,7 @@ Public Class FrmPtreg
 
         Try
             input = InputBox("Enter Special Precauition / Allegies", "Precaution", "")
-            txtcaution.Text = (input.ToString)
+            txtcaution.Text = txtcaution.Text + "," + (input.ToString)
         Catch ex As Exception
             MessageBox.Show("Invalid", "error", MessageBoxButtons.OK)
 
@@ -60,30 +68,14 @@ Public Class FrmPtreg
 
     Private Sub Btnupdate_Click(sender As Object, e As EventArgs) Handles Btnupdate.Click
 
-        'con.Open() // Note" Connection must be closed, bcos i am calling the method 
-        '// in the Save button command where i have the connection opened already
-
-
-        Dim cmd As New SqlCommand("Select * from UsersReg where Password = @password", con)
-
-        cmd.Parameters.Add("@Password", SqlDbType.VarChar).Value = txtpass.Text
-
-        Dim adpt As New SqlDataAdapter(cmd)
-        Dim tbl As New DataTable()
-
-        adpt.Fill(tbl)
-
-        '// Check the Usersreg table for entry, it the password is wrong show message below
-
-        If tbl.Rows.Count() <= 0 Then
-            MsgBox("Invalid Paswword", MsgBoxStyle.Critical, "User Validation")
+        If txtpass.Text = "" Then
+            MsgBox("PLEASE ENTER YOUR PASSWORD", MsgBoxStyle.Exclamation, "MEDICAL RECORDS")
             txtpass.Focus()
 
         Else
 
-
             ' Try
-            Dim Update As String = "Update Pt_profile Set  Surname= '" & txtsurname.Text & "', Other_Names='" & txtothernames.Text & "', Date_of_birth='" & dbo.Text.ToString & "', Age_in_Years='" & txtyear.Text & "',Age_in_Months='" & txtmonths.Text & "',Account_type='" & cboacct.Text & "',Date_Registered='" & regdate.Text.ToString & "',Sex='" & cbosex.Text & "',Marital_status='" & cbomarital.Text & "',Religion='" & cborelig.Text & "',Occupation='" & cbooccup.Text & "',LGA='" & cbolga.Text & "',State_of_origin='" & cbostate.Text & "',Nationality='" & cbonat.Text & "',Home_address='" & txtadd.Text & "',Phone='" & txtphone.Text & "',Email='" & txtemail.Text & "',Kin_Name='" & txtkinname.Text & "',Kin_Address='" & txtkinadd.Text & "',Kin_phone='" & txtkinphone.Text & "',Kin_relationship='" & cborelat.Text & "',Inssurance_provider='" & Txtprovi.Text & "',Enrolle_type='" & cboenrol.Text & "',Employer='" & txtemployer.Text & "',Enrolle_Number='" & txtenrolnum.Text & "',NIN='" & txtnin.Text & "',Non_Nigerian='" & txtstate.Text & "',Precaution='" & txtcaution.Text & "' WHERE Hospital_Num='" & txthospnum.Text & "'"
+            Dim Update As String = "Update Pt_profile Set  Surname= '" & txtsurname.Text & "', Other_Names='" & txtothernames.Text & "', Date_of_birth='" & dbo.Text.ToString & "', Age_in_Years='" & txtyear.Text & "',Age_in_Months='" & txtmonths.Text & "',Account_type='" & cboacct.Text & "',Date_Registered='" & regdate.Text.ToString & "',Sex='" & cbosex.Text & "',Marital_status='" & cbomarital.Text & "',Religion='" & cborelig.Text & "',Occupation='" & cbooccup.Text & "',LGA='" & cbolga.Text & "',State_of_origin='" & cbostate.Text & "',Nationality='" & cbonat.Text & "',Home_address='" & txtadd.Text & "',Phone='" & txtphone.Text & "',Email='" & txtemail.Text & "',Kin_Name='" & txtkinname.Text & "',Kin_Address='" & txtkinadd.Text & "',Kin_phone='" & txtkinphone.Text & "',Kin_relationship='" & cborelat.Text & "',Account_Category='" & Txtprovi.Text & "',Enrolle_type='" & cboenrol.Text & "',Employer='" & txtemployer.Text & "',Enrolle_Number='" & txtenrolnum.Text & "',NIN='" & txtnin.Text & "',Non_Nigerian='" & txtstate.Text & "',Precaution='" & txtcaution.Text & "' WHERE Hospital_Num='" & txthospnum.Text & "'"
             ExecuteQuery(Update)
 
             MessageBox.Show("PATIENT PROFILE EDITED", "Update Profile", MessageBoxButtons.OK)
@@ -107,7 +99,7 @@ Public Class FrmPtreg
         Try
 
             Dim tbl As New DataTable
-            cmd = New SqlCommand("Select Account_Type from BillSetting", con)
+            cmd = New SqlCommand("Select Account_Category from BillSetting", con)
 
 
             adapt = New SqlDataAdapter(cmd)
@@ -134,20 +126,38 @@ Public Class FrmPtreg
 
     End Sub
 
+    Public Sub Populateacct()
+
+        Dim tbl As New DataTable
+        cmd = New SqlCommand("Select Account_Type from BillSetting ", con)
+
+
+        adapt = New SqlDataAdapter(cmd)
+
+        con.Open()   ' Open connection
+
+        adapt.Fill(tbl)
+        cboacct.DataSource = tbl
+        cboacct.DisplayMember = "Account_Type"
+
+
+        con.Close()
+
+    End Sub
+
     Private Sub cboacct_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboacct.SelectedIndexChanged
         If Me.cboacct.SelectedIndex = 1 Then
 
             Me.cboenrol.Enabled = True
-            Me.Txtprovi.Enabled = True
+            ' Me.Txtprovi.Enabled = True
             Me.txtenrolnum.Enabled = True
             Me.txtemployer.Enabled = True
-            LoadAccountype() '// Load Account type
 
         ElseIf Me.cboacct.SelectedIndex = 0Then
 
-            Txtprovi.Text = "Private"
+            ' Txtprovi.Text = "Private"
             Me.cboenrol.Enabled = False
-            Me.Txtprovi.Enabled = False
+            'Me.Txtprovi.Enabled = False
             Me.txtenrolnum.Enabled = False
             Me.txtemployer.Enabled = False
 
@@ -184,34 +194,12 @@ Public Class FrmPtreg
 
     Public Sub checkuser()
 
-        '// This method check if the password entere by the user is correct, if not
-        '// it will show the error message "invalid password
-        '// but if password is correct, it will save the data into the database
-
-        Dim cmd As New SqlCommand("Select * from UsersReg where Password = @password", Con)
-
-        cmd.Parameters.Add("@Password", SqlDbType.VarChar).Value = txtpass.Text
-
-        Dim adpt As New SqlDataAdapter(cmd)
-        Dim tbl As New DataTable()
-
-        adpt.Fill(tbl)
-
-        '// Check the Usersreg table for entry, it the password is wrong show message below
-
-        If tbl.Rows.Count() <= 0 Then
-            MsgBox("Invalid Paswword", MsgBoxStyle.Critical, "User Validation")
-            txtpass.Focus()
-        Else
-
-            '// Else if password is right, Commit the entry to datatbase
-
-            Try
+        Try
 
                 cmd.CommandType = System.Data.CommandType.Text
-                cmd.CommandText = "insert into Pt_Profile values ('" & txthospnum.Text & "', '" & txtsurname.Text & "', '" & txtothernames.Text & "', '" & dbo.Value & "', '" & txtyear.Text & "', '" & txtmonths.Text & "', '" & Txtdays.Text & "', '" & cboacct.Text & "', '" & regdate.Value & "', '" & cbosex.Text & "',  '" & cbomarital.Text & "', '" & cborelig.Text & "', '" & cbooccup.Text & "', '" & cbolga.Text & "', '" & cbostate.Text & "', '" & cbonat.Text & "', '" & txtadd.Text & "', '" & txtphone.Text & "', '" & txtemail.Text & "', '" & txtkinname.Text & "', '" & txtkinadd.Text & "', '" & txtkinphone.Text & "', '" & cborelat.Text & "', '" & Txtprovi.Text & "', '" & cboenrol.Text & "', '" & txtemployer.Text & "', '" & txtenrolnum.Text & "', '" & txtnin.Text & "', '" & txtstate.Text & "', '" & txtcaution.Text & "')"
+            cmd.CommandText = "insert into Pt_Profile values ('" & txthospnum.Text & "', '" & txtsurname.Text & "', '" & txtothernames.Text & "', '" & dbo.Value & "', '" & txtyear.Text & "', '" & txtmonths.Text & "', '" & Txtdays.Text & "', '" & cboacct.Text & "', '" & regdate.Value & "', '" & cbosex.Text & "',  '" & cbomarital.Text & "', '" & cborelig.Text & "', '" & cbooccup.Text & "', '" & cbolga.Text & "', '" & cbostate.Text & "', '" & cbonat.Text & "', '" & txtadd.Text & "', '" & txtphone.Text & "', '" & txtemail.Text & "', '" & txtkinname.Text & "', '" & txtkinadd.Text & "', '" & txtkinphone.Text & "', '" & cborelat.Text & "', '" & Txtprovi.Text & "', '" & cboenrol.Text & "', '" & txtemployer.Text & "', '" & txtenrolnum.Text & "', '" & txtnin.Text & "', '" & txtstate.Text & "', '" & txtcaution.Text & "', '" & Lbluser.Text & "')"
 
-                cmd.Connection = con
+            cmd.Connection = con
 
                 con.Open()
                 cmd.ExecuteNonQuery()
@@ -260,7 +248,7 @@ Public Class FrmPtreg
             txtyear.Text = ""
             txthospnum.Focus()
 
-        End If
+
 
     End Sub
 
@@ -297,16 +285,94 @@ Public Class FrmPtreg
     End Sub
 
     Private Sub dbo_ValueChanged(sender As Object, e As EventArgs) Handles dbo.ValueChanged
-
-        'call the age calculator method
-        agecalc()
+        If dbo.Value > DateTime.Today Then
+            MsgBox("YOU CANNOT CHOOSE FUTURE DATE", MsgBoxStyle.Critical, "INVALID DATE")
+            dbo.MaxDate = DateTime.Today
+        Else
+            'call the age calculator method
+            agecalc()
+        End If
     End Sub
 
+    Private Sub txthospnum_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txthospnum.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
 
+    Private Sub txtrecptnum_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtrecptnum.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub regdate_ValueChanged(sender As Object, e As EventArgs) Handles regdate.ValueChanged
+        'If regdate.Value > DateTime.Today Then
+        'MsgBox("YOU CANNOT CHOOSE FUTURE DATE", MsgBoxStyle.Critical, "Medx-pro")
+        'regdate.MaxDate = DateTime.Today
+        'ElseIf regdate.Value < DateTime.Today Then
+        '   MsgBox("YOU CANNOT BACKDATE", MsgBoxStyle.Critical, "Medx-pro")
+        '  regdate.MinDate = DateTime.Today
+        ' End If
+    End Sub
+
+    Public Sub showUserName()
+
+        '// This method is use to know the name of the doctor and save the name on the DOCTOR column once the password is correct
+        cmd = New SqlCommand("Select * from UsersReg where Password=@pass", con)
+        cmd.Parameters.Add("pass", SqlDbType.VarChar).Value = txtpass.Text
+
+        Dim adpt As New SqlDataAdapter(cmd)
+        Dim tbl As New DataTable()
+
+        adpt.Fill(tbl)
+
+        If tbl.Rows.Count() > 0 Then
+
+            'Display the person Full Name
+
+            Lbluser.Text = tbl.Rows(0)(1).ToString()
+
+        Else
+        End If
+
+    End Sub
+
+    Private Sub txtpass_Leave(sender As Object, e As EventArgs) Handles txtpass.Leave
+        Dim cmd As New SqlCommand("Select * from UsersReg where Password = @password", con)
+
+        cmd.Parameters.Add("@Password", SqlDbType.VarChar).Value = txtpass.Text
+
+        Dim adpt As New SqlDataAdapter(cmd)
+        Dim tbl As New DataTable()
+
+        adpt.Fill(tbl)
+
+        '// Check the Usersreg table for entry, it the password is wrong show message below
+
+        If tbl.Rows.Count() <= 0 Then
+            MsgBox("INVALID PASSWORD", MsgBoxStyle.Critical, "Medx-pro")
+            txtpass.Focus()
+        Else
+
+            showUserName()
+        End If
+    End Sub
+
+    Private Sub Btnupload_Click(sender As Object, e As EventArgs) Handles Btnupload.Click
+        FrmDocUpload.txthospnum.Text = txthospnum.Text
+        FrmDocUpload.Txtname.Text = txtsurname.Text + " " + txtothernames.Text
+        FrmDocUpload.BtnUpload.BringToFront()
+        FrmDocUpload.LoadScannefile()
+
+        FrmDocUpload.ShowDialog()
+    End Sub
 End Class
 
 
 
 
-' TO DO
-' Check if Password is correct and then put the name of the user in "Entry by" column

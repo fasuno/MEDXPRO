@@ -12,14 +12,17 @@ Public Class Frmrecords
     End Sub
 
     Private Sub BtnNewAppt_Click(sender As Object, e As EventArgs) Handles BtnNewAppt.Click
-        'Show appointment form
-        FrmAppointment.ShowDialog()
-        FrmAppointment.BtnReschedule.Enabled = False
+        Dim frmapt = New FrmAppointment
+        frmapt.ShowDialog()
+        frmapt.BtnReschedule.Enabled = False
 
     End Sub
 
     Private Sub Btnnew_Click(sender As Object, e As EventArgs) Handles Btnnew.Click
         Dim frm = New FrmPtreg
+
+        frm.Populateacct()
+
         frm.ShowDialog()
         frm.Btnupdate.SendToBack()
 
@@ -55,7 +58,7 @@ Public Class Frmrecords
 
         If tbl.Rows.Count() > 0 Then
 
-            Dim frm = New FrmPtreg
+            ' Dim frm = New FrmPtreg
 
             FrmPtreg.txthospnum.Text = tbl.Rows(0)(0).ToString()
             FrmPtreg.txtsurname.Text = tbl.Rows(0)(1).ToString()
@@ -85,6 +88,7 @@ Public Class Frmrecords
             FrmPtreg.txtnin.Text = tbl.Rows(0)(27).ToString()
             FrmPtreg.txtstate.Text = tbl.Rows(0)(28).ToString()
             FrmPtreg.txtcaution.Text = tbl.Rows(0)(27).ToString()
+
         End If
 
         FrmPtreg.Show()
@@ -157,7 +161,7 @@ Public Class Frmrecords
     End Sub
 
     Private Sub DtgApt_DoubleClick(sender As Object, e As EventArgs) Handles DtgApt.DoubleClick
-        Dim frm As New FrmAppointment
+        'Dim frm As New FrmAppointment
 
         FrmAppointment.Apptdate.Text = DtgApt.CurrentRow.Cells(0).Value.ToString()
         FrmAppointment.Apptime.Text = DtgApt.CurrentRow.Cells(1).Value.ToString()
@@ -168,6 +172,8 @@ Public Class Frmrecords
         FrmAppointment.txtsex.Text = DtgApt.CurrentRow.Cells(6).Value.ToString
         FrmAppointment.txtaccount.Text = DtgApt.CurrentRow.Cells(7).Value.ToString
         FrmAppointment.cboClinic.Text = DtgApt.CurrentRow.Cells(8).Value.ToString
+        FrmAppointment.Txtcat.Text = DtgApt.CurrentRow.Cells(9).Value.ToString
+
 
         FrmAppointment.Show()
         FrmAppointment.cboClinic.Enabled = True
@@ -178,10 +184,10 @@ Public Class Frmrecords
 
     End Sub
 
-    Private Sub btnfindfolder_Click(sender As Object, e As EventArgs) Handles btnfindfolder.Click
+    Public Sub SearchbySurname()
 
-        cmd = New SqlCommand("Select * from VwPtProfile where Hospital_Num=@Hospital_Num", con)
-        cmd.Parameters.Add("Hospital_Num", SqlDbType.VarChar).Value = txtfind.Text
+        cmd = New SqlCommand("Select * from VwPtProfile where Surname like @Name", con)
+        cmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = txtfind.Text
 
         adapt = New SqlDataAdapter(cmd)
         Dim tbl As New DataTable
@@ -191,11 +197,32 @@ Public Class Frmrecords
             Dtgfolder.DataSource = tbl
 
         Else
-            MessageBox.Show("The Folder number does not exist", "Folder", MessageBoxButtons.OK)
-
+            searchbyHospitalnum()
+            ' MessageBox.Show("THE FOLDER NUMBER DOES NOT EXIST", "FOLDER", MessageBoxButtons.OK)
         End If
 
-        ' ShowAges()
+    End Sub
+
+    Public Sub searchbyHospitalnum()
+        cmd = New SqlCommand("Select * from VwPtProfile where Hospital_Num=@Hospital_Num", con)
+        cmd.Parameters.Add("Hospital_Num", SqlDbType.Int).Value = txtfind.Text
+
+        adapt = New SqlDataAdapter(cmd)
+        Dim tbl As New DataTable
+
+        adapt.Fill(tbl)
+        If tbl.Rows.Count() > 0 Then
+            Dtgfolder.DataSource = tbl
+
+        Else
+        End If
+    End Sub
+
+    Private Sub btnfindfolder_Click(sender As Object, e As EventArgs) Handles btnfindfolder.Click
+        searchbyHospitalnum()
+        'SearchbyPhonenum()
+        'SearchbySurname()
+
 
     End Sub
 
@@ -212,7 +239,7 @@ Public Class Frmrecords
             DtgApt.DataSource = tbls
 
         Else
-            MessageBox.Show("The Folder number does not exist", "Appointment", MessageBoxButtons.OK)
+            MessageBox.Show("THE FOLDER NUMBER DOES NOT EXIST", "Appointment", MessageBoxButtons.OK)
 
         End If
 
@@ -362,9 +389,7 @@ Public Class Frmrecords
         Next
     End Sub
 
-    Private Sub TxtNewAnc_Click(sender As Object, e As EventArgs) Handles TxtNewAnc.Click
-        FrmANCreg.ShowDialog()
-    End Sub
+
 
     Private Sub btnsearchAnc_Click(sender As Object, e As EventArgs) Handles btnsearchAnc.Click
 
@@ -413,7 +438,7 @@ Public Class Frmrecords
             FrmANCreg.txtnat.Text = tbl.Rows(0)(12).ToString()
             FrmANCreg.txtadd.Text = tbl.Rows(0)(13).ToString()
             FrmANCreg.txtphone.Text = tbl.Rows(0)(14).ToString()
-            FrmANCreg.txtprov.Text = tbl.Rows(0)(16).ToString()
+            FrmANCreg.txtacctcat.Text = tbl.Rows(0)(16).ToString()
             FrmANCreg.txtenrolletype.Text = tbl.Rows(0)(17).ToString()
             FrmANCreg.txtemployer.Text = tbl.Rows(0)(18).ToString()
             FrmANCreg.txtenrolnum.Text = tbl.Rows(0)(19).ToString()
@@ -456,5 +481,7 @@ Public Class Frmrecords
         FrmANCreg.Show()
     End Sub
 
-
+    Private Sub BtnNewAnc_Click(sender As Object, e As EventArgs) Handles BtnNewAnc.Click
+        FrmANCreg.ShowDialog()
+    End Sub
 End Class

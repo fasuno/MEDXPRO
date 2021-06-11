@@ -182,11 +182,13 @@ Partial Class FrmNewLabTest
         Me.BtnSavetest.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSavetest.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSavetest.ForeColor = System.Drawing.Color.Black
-        Me.BtnSavetest.Location = New System.Drawing.Point(252, 106)
+        Me.BtnSavetest.Image = CType(resources.GetObject("BtnSavetest.Image"), System.Drawing.Image)
+        Me.BtnSavetest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnSavetest.Location = New System.Drawing.Point(273, 108)
         Me.BtnSavetest.Name = "BtnSavetest"
-        Me.BtnSavetest.Size = New System.Drawing.Size(81, 29)
+        Me.BtnSavetest.Size = New System.Drawing.Size(67, 29)
         Me.BtnSavetest.TabIndex = 15
-        Me.BtnSavetest.Text = "SAVE"
+        Me.BtnSavetest.Text = "      SAVE"
         Me.BtnSavetest.UseVisualStyleBackColor = True
         '
         'Btnedit
@@ -194,11 +196,13 @@ Partial Class FrmNewLabTest
         Me.Btnedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btnedit.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btnedit.ForeColor = System.Drawing.Color.Black
-        Me.Btnedit.Location = New System.Drawing.Point(339, 105)
+        Me.Btnedit.Image = CType(resources.GetObject("Btnedit.Image"), System.Drawing.Image)
+        Me.Btnedit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btnedit.Location = New System.Drawing.Point(273, 110)
         Me.Btnedit.Name = "Btnedit"
-        Me.Btnedit.Size = New System.Drawing.Size(81, 30)
+        Me.Btnedit.Size = New System.Drawing.Size(67, 27)
         Me.Btnedit.TabIndex = 14
-        Me.Btnedit.Text = "EDIT"
+        Me.Btnedit.Text = "     EDIT"
         Me.Btnedit.UseVisualStyleBackColor = True
         '
         'TxtMeasure
@@ -211,8 +215,9 @@ Partial Class FrmNewLabTest
         '
         'BtnTestpar
         '
+        Me.BtnTestpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnTestpar.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnTestpar.ForeColor = System.Drawing.Color.Black
+        Me.BtnTestpar.ForeColor = System.Drawing.Color.Navy
         Me.BtnTestpar.Location = New System.Drawing.Point(142, 155)
         Me.BtnTestpar.Name = "BtnTestpar"
         Me.BtnTestpar.Size = New System.Drawing.Size(209, 29)

@@ -1,0 +1,10 @@
+HOW LOAD DATA FRO DB TO A DATAGRISD WITH AN EXISTING DEFINED COLUMN
+
+1. CLICK ON THE DATAGRIDIEW EDITING BOX
+
+2. GO TO EACH COLUMNS PROPERTY AND SET THEIR "DataPropertyName" to the Database Column Name you want to display on the column
+
+**** FOR CHECK BOX VALUES**
+
+Do same, And Set the False Value to Zero(0), And The TrueValue to(1).
+Note: The DAtatype for Checkbox value should be set to (Tinyint) in the Database.

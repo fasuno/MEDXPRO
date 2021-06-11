@@ -15,7 +15,7 @@ Public Class FrmTestDetails
 
     Private Sub FrmTestDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadTestDetails()
-        TxtTest.Text = FrmNewLabTest.TxtTest.Text
+        'TxtTest.Text = FrmNewLabTest.TxtTest.Text
         LoadSubLabTestPara()
     End Sub
 
@@ -135,7 +135,7 @@ Public Class FrmTestDetails
         TxtParLowRang.Text = ""
         TxtparHighrange.Text = ""
         TxtTestPara.Focus()
-
+        BtnAdddetails.BringToFront()
         LoadTestDetails()
     End Sub
 

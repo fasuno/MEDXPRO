@@ -3,3 +3,9 @@ TO UPDATE EXISTING TABLE WITH NEW COLUMNS
 ALTER TABLE <table name>
 ADD <column name> [int] default (0) not nul
          <column name> [varchar]  null
+
+
+ALTER A COLUMN IN A TABLE
+
+ALTER TABLE <table name>
+ALTER COLUMN <column name> [varchar] (50) not null

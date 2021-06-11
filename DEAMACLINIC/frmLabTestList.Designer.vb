@@ -84,7 +84,7 @@ Partial Class frmLabTestList
         Me.Panel2.Controls.Add(Me.BtnNewtest)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.Cbotestgrp)
-        Me.Panel2.Location = New System.Drawing.Point(10, 3)
+        Me.Panel2.Location = New System.Drawing.Point(7, 3)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(789, 42)
         Me.Panel2.TabIndex = 1
@@ -103,19 +103,23 @@ Partial Class frmLabTestList
         '
         'BtnNewtest
         '
+        Me.BtnNewtest.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnNewtest.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnNewtest.Location = New System.Drawing.Point(3, 8)
+        Me.BtnNewtest.ForeColor = System.Drawing.Color.Navy
+        Me.BtnNewtest.Image = CType(resources.GetObject("BtnNewtest.Image"), System.Drawing.Image)
+        Me.BtnNewtest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnNewtest.Location = New System.Drawing.Point(3, 14)
         Me.BtnNewtest.Name = "BtnNewtest"
-        Me.BtnNewtest.Size = New System.Drawing.Size(62, 30)
+        Me.BtnNewtest.Size = New System.Drawing.Size(73, 24)
         Me.BtnNewtest.TabIndex = 1
-        Me.BtnNewtest.Text = "NEW"
+        Me.BtnNewtest.Text = "    NEW"
         Me.BtnNewtest.UseVisualStyleBackColor = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(74, 18)
+        Me.Label1.Location = New System.Drawing.Point(83, 18)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(100, 15)
         Me.Label1.TabIndex = 2
@@ -127,7 +131,7 @@ Partial Class frmLabTestList
         Me.Cbotestgrp.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cbotestgrp.FormattingEnabled = True
         Me.Cbotestgrp.Items.AddRange(New Object() {"CHEMICAL PATHOLOGY", "HERMATHOLOGY", "HORMONE", "MICRO BIOLOGY", "HISTOLOGY", "PROFILE"})
-        Me.Cbotestgrp.Location = New System.Drawing.Point(178, 14)
+        Me.Cbotestgrp.Location = New System.Drawing.Point(187, 14)
         Me.Cbotestgrp.Name = "Cbotestgrp"
         Me.Cbotestgrp.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Cbotestgrp.Size = New System.Drawing.Size(188, 23)

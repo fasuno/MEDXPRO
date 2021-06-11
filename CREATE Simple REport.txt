@@ -1,0 +1,9 @@
+1. Create A New DAtaSet
+2. Add A Table from the tools bar
+3. Right click The below of he Datatable and create a new query
+4. complete the query by adding parameter i.e WHERE ID =?
+5.cLICK On build query
+5. Next- Next then Finish
+7. Create a new Report and select the Dataset
+8. Remove the Grid, and ADD a table
+9. Design your report

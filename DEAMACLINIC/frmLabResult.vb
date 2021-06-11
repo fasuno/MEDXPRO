@@ -106,7 +106,7 @@ Public Class frmLabResult
             For Each row As DataGridViewRow In Dtgresults.Rows
 
                 Using con As New SqlConnection(constring)
-                    Using cmd As New SqlCommand("INSERT INTO LABRESULTS VALUES(@RqstNum, @Daterpt, @Timerpt, @Hospnum, @Surname, @Othernames, @Age, @Sex, @Account, @TestName, @Testpara, @Rslt, @Rnge, @Meas, @Reportby, @Daterqst, @RqstBy, @Note, @revwBy)", con)
+                    Using cmd As New SqlCommand("INSERT INTO LABRESULTS VALUES(@RqstNum, @Daterpt, @Timerpt, @Hospnum, @Surname, @Othernames, @Age, @Sex, @Account, @Accntcat, @TestName, @Testpara, @Rslt, @Rnge, @Meas, @Reportby, @Daterqst, @RqstBy, @Note, @revwBy)", con)
 
                         '// This insertion styles is a combination of datagridview values and other objects such as textboxe and label
                         '// All will be inserted alongside the values in Drugs presc form dtagridviews rows all at once
@@ -120,6 +120,7 @@ Public Class frmLabResult
                         cmd.Parameters.Add("@Age", SqlDbType.VarChar).Value = txtage.Text
                         cmd.Parameters.Add("@Sex", SqlDbType.VarChar).Value = txtsex.Text
                         cmd.Parameters.Add("@Account", SqlDbType.VarChar).Value = txtacct.Text
+                        cmd.Parameters.Add("@Accntcat", SqlDbType.VarChar).Value = Txtactcat.Text
 
                         cmd.Parameters.Add("@TestName", SqlDbType.VarChar).Value = DtgTest.CurrentRow.Cells(0).Value
                         ' cmd.Parameters.AddWithValue("@TestName", row.Cells("Test_Name").Value) '// Insert the value in the Datagridview test name cell
@@ -190,7 +191,6 @@ Public Class frmLabResult
 
         cmd = New SqlCommand("Select Test_Parameters,Result,Ref_Value,Measure from LABRESULTS where Request_Num=@RqsNum AND Test_Name=@Tname", con)
 
-
         cmd.Parameters.Add("@RqsNum", SqlDbType.Int).Value = lblrqstnum.Text
         cmd.Parameters.Add("@Tname", SqlDbType.VarChar).Value = DtgTest.CurrentRow.Cells(0).Value
 
@@ -200,7 +200,7 @@ Public Class frmLabResult
         adapt.Fill(tabl)
         If tabl.Rows.Count() > 0 Then
             Dtgresults.DataSource = tabl
-
+            Dtgresults.Columns(0).DefaultCellStyle.ForeColor = Color.DarkBlue
         Else
 
         End If
@@ -224,7 +224,7 @@ Public Class frmLabResult
 
         If tabls.Rows.Count() > 0 Then
 
-            Txtnote.Text = tabls.Rows(0)(17).ToString()
+            Txtnote.Text = tabls.Rows(0)(18).ToString()
             'lblreportby.Text = tabls.Rows(0)(14).ToString()
 
         Else
@@ -247,7 +247,7 @@ Public Class frmLabResult
         If tabls.Rows.Count() > 0 Then
 
 
-            lblreportby.Text = tabls.Rows(0)(14).ToString()
+            lblreportby.Text = tabls.Rows(0)(15).ToString()
 
         Else
         End If
@@ -360,7 +360,7 @@ Public Class frmLabResult
         Try
 
             cmd.CommandType = System.Data.CommandType.Text
-            cmd.CommandText = "insert into LabTestReview Values ('" & lblrqstnum.Text & "', '" & lbldte.Text.ToString & "', '" & lbltim.Text.ToString & "', '" & txtHnum.Text & "', '" & TxtSname.Text & "', '" & txtOname.Text & "',  '" & txtage.Text & "', '" & txtsex.Text & "', '" & txtacct.Text & "',   '" & txtRqstby.Text & "', '" & TxtRqstdate.Text & "','" & lblreportby.Text & "')"
+            cmd.CommandText = "insert into LabTestReview Values ('" & lblrqstnum.Text & "', '" & lbldte.Text.ToString & "', '" & lbltim.Text.ToString & "', '" & txtHnum.Text & "', '" & TxtSname.Text & "', '" & txtOname.Text & "',  '" & txtage.Text & "', '" & txtsex.Text & "', '" & txtacct.Text & "', '" & Txtactcat.Text & "',   '" & txtRqstby.Text & "', '" & TxtRqstdate.Text & "','" & lblreportby.Text & "')"
 
             cmd.Connection = con
             con.Open()
@@ -472,12 +472,13 @@ Public Class frmLabResult
     End Sub
 
     Private Sub txtpassw_Leave(sender As Object, e As EventArgs) Handles txtpassw.Leave
-
+        CheckPassowrd()
         showScientistname()
 
     End Sub
 
     Private Sub txtpwordrev_Leave(sender As Object, e As EventArgs) Handles txtpwordrev.Leave
+        CheckPassowrd()
         showReviewer()
         txtpassw.Enabled = False
     End Sub
@@ -495,7 +496,7 @@ Public Class frmLabResult
         Try
 
             cmd.CommandType = System.Data.CommandType.Text
-            cmd.CommandText = "insert into LabTreated Values ('" & lblrqstnum.Text & "', '" & lbldte.Text.ToString & "', '" & lbltim.Text.ToString & "', '" & txtHnum.Text & "', '" & TxtSname.Text & "', '" & txtOname.Text & "',  '" & txtage.Text & "', '" & txtsex.Text & "', '" & txtacct.Text & "',   '" & txtRqstby.Text & "', '" & TxtRqstdate.Text & "','" & lblreportby.Text & "')"
+            cmd.CommandText = "insert into LabTreated Values ('" & lblrqstnum.Text & "', '" & lbldte.Text.ToString & "', '" & lbltim.Text.ToString & "', '" & txtHnum.Text & "', '" & TxtSname.Text & "', '" & txtOname.Text & "',  '" & txtage.Text & "', '" & txtsex.Text & "', '" & txtacct.Text & "', '" & Txtactcat.Text & "',  '" & txtRqstby.Text & "', '" & TxtRqstdate.Text & "','" & lblreportby.Text & "')"
 
             cmd.Connection = con
             con.Open()

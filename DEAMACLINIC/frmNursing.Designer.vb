@@ -22,9 +22,9 @@ Partial Class frmNursing
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmNursing))
         Me.tabnursing = New System.Windows.Forms.TabControl()
         Me.tpgpending = New System.Windows.Forms.TabPage()
@@ -67,7 +67,7 @@ Partial Class frmNursing
         Me.tabnursing.Controls.Add(Me.tpgpending)
         Me.tabnursing.Controls.Add(Me.TabPage2)
         Me.tabnursing.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tabnursing.Location = New System.Drawing.Point(0, 10)
+        Me.tabnursing.Location = New System.Drawing.Point(0, 8)
         Me.tabnursing.Name = "tabnursing"
         Me.tabnursing.SelectedIndex = 0
         Me.tabnursing.Size = New System.Drawing.Size(1136, 557)
@@ -115,27 +115,27 @@ Partial Class frmNursing
         Me.dtgpendingvitals.AllowUserToAddRows = False
         Me.dtgpendingvitals.AllowUserToDeleteRows = False
         Me.dtgpendingvitals.AllowUserToOrderColumns = True
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black
-        Me.dtgpendingvitals.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Black
+        Me.dtgpendingvitals.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
         Me.dtgpendingvitals.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.dtgpendingvitals.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtgpendingvitals.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtgpendingvitals.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
         Me.dtgpendingvitals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dtgpendingvitals.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dtgpendingvitals.DefaultCellStyle = DataGridViewCellStyle12
         Me.dtgpendingvitals.GridColor = System.Drawing.Color.Black
         Me.dtgpendingvitals.Location = New System.Drawing.Point(3, 51)
         Me.dtgpendingvitals.Name = "dtgpendingvitals"
@@ -163,7 +163,7 @@ Partial Class frmNursing
         '
         Me.chkAllPendVitals.AutoSize = True
         Me.chkAllPendVitals.ForeColor = System.Drawing.Color.Black
-        Me.chkAllPendVitals.Location = New System.Drawing.Point(809, 14)
+        Me.chkAllPendVitals.Location = New System.Drawing.Point(799, 15)
         Me.chkAllPendVitals.Name = "chkAllPendVitals"
         Me.chkAllPendVitals.Size = New System.Drawing.Size(70, 19)
         Me.chkAllPendVitals.TabIndex = 17
@@ -199,7 +199,7 @@ Partial Class frmNursing
         'txtpendVit
         '
         Me.txtpendVit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtpendVit.Location = New System.Drawing.Point(885, 12)
+        Me.txtpendVit.Location = New System.Drawing.Point(875, 13)
         Me.txtpendVit.Name = "txtpendVit"
         Me.txtpendVit.Size = New System.Drawing.Size(153, 21)
         Me.txtpendVit.TabIndex = 12
@@ -210,11 +210,13 @@ Partial Class frmNursing
         Me.btnrefvitals.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnrefvitals.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnrefvitals.ForeColor = System.Drawing.Color.Navy
+        Me.btnrefvitals.Image = CType(resources.GetObject("btnrefvitals.Image"), System.Drawing.Image)
+        Me.btnrefvitals.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnrefvitals.Location = New System.Drawing.Point(636, 11)
         Me.btnrefvitals.Name = "btnrefvitals"
-        Me.btnrefvitals.Size = New System.Drawing.Size(68, 23)
+        Me.btnrefvitals.Size = New System.Drawing.Size(89, 23)
         Me.btnrefvitals.TabIndex = 11
-        Me.btnrefvitals.Text = "Refresh"
+        Me.btnrefvitals.Text = "     Refresh"
         Me.btnrefvitals.UseVisualStyleBackColor = False
         '
         'btnfindpendvit
@@ -223,11 +225,13 @@ Partial Class frmNursing
         Me.btnfindpendvit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnfindpendvit.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnfindpendvit.ForeColor = System.Drawing.Color.Green
-        Me.btnfindpendvit.Location = New System.Drawing.Point(1043, 11)
+        Me.btnfindpendvit.Image = CType(resources.GetObject("btnfindpendvit.Image"), System.Drawing.Image)
+        Me.btnfindpendvit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnfindpendvit.Location = New System.Drawing.Point(1033, 11)
         Me.btnfindpendvit.Name = "btnfindpendvit"
-        Me.btnfindpendvit.Size = New System.Drawing.Size(75, 24)
+        Me.btnfindpendvit.Size = New System.Drawing.Size(85, 24)
         Me.btnfindpendvit.TabIndex = 13
-        Me.btnfindpendvit.Text = "Search"
+        Me.btnfindpendvit.Text = "     Search"
         Me.btnfindpendvit.UseVisualStyleBackColor = False
         '
         'cbopenvitals
@@ -251,7 +255,7 @@ Partial Class frmNursing
         Me.TabPage2.Location = New System.Drawing.Point(4, 24)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1128, 529)
+        Me.TabPage2.Size = New System.Drawing.Size(1128, 525)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "  TREATED"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -263,7 +267,7 @@ Partial Class frmNursing
         Me.dtgtreatedvitals.AllowUserToResizeRows = False
         Me.dtgtreatedvitals.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.dtgtreatedvitals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtgtreatedvitals.Location = New System.Drawing.Point(4, 52)
+        Me.dtgtreatedvitals.Location = New System.Drawing.Point(6, 52)
         Me.dtgtreatedvitals.Name = "dtgtreatedvitals"
         Me.dtgtreatedvitals.ReadOnly = True
         Me.dtgtreatedvitals.Size = New System.Drawing.Size(1116, 440)
@@ -303,14 +307,14 @@ Partial Class frmNursing
         Me.Panel2.Controls.Add(Me.cbotreatedvit)
         Me.Panel2.Location = New System.Drawing.Point(4, 6)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1128, 40)
+        Me.Panel2.Size = New System.Drawing.Size(1118, 40)
         Me.Panel2.TabIndex = 2
         '
         'chkviewalltreatedvitals
         '
         Me.chkviewalltreatedvitals.AutoSize = True
         Me.chkviewalltreatedvitals.ForeColor = System.Drawing.Color.Black
-        Me.chkviewalltreatedvitals.Location = New System.Drawing.Point(811, 14)
+        Me.chkviewalltreatedvitals.Location = New System.Drawing.Point(794, 16)
         Me.chkviewalltreatedvitals.Name = "chkviewalltreatedvitals"
         Me.chkviewalltreatedvitals.Size = New System.Drawing.Size(70, 19)
         Me.chkviewalltreatedvitals.TabIndex = 18
@@ -323,7 +327,7 @@ Partial Class frmNursing
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(383, 16)
+        Me.Label1.Location = New System.Drawing.Point(378, 16)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(20, 15)
         Me.Label1.TabIndex = 16
@@ -331,7 +335,7 @@ Partial Class frmNursing
         '
         'TreatVitDtto
         '
-        Me.TreatVitDtto.Location = New System.Drawing.Point(417, 12)
+        Me.TreatVitDtto.Location = New System.Drawing.Point(402, 12)
         Me.TreatVitDtto.Name = "TreatVitDtto"
         Me.TreatVitDtto.Size = New System.Drawing.Size(210, 21)
         Me.TreatVitDtto.TabIndex = 15
@@ -346,7 +350,7 @@ Partial Class frmNursing
         'txttrtvitals
         '
         Me.txttrtvitals.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txttrtvitals.Location = New System.Drawing.Point(887, 12)
+        Me.txttrtvitals.Location = New System.Drawing.Point(870, 14)
         Me.txttrtvitals.Name = "txttrtvitals"
         Me.txttrtvitals.Size = New System.Drawing.Size(153, 21)
         Me.txttrtvitals.TabIndex = 12
@@ -357,11 +361,13 @@ Partial Class frmNursing
         Me.btnreftrtvital.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnreftrtvital.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnreftrtvital.ForeColor = System.Drawing.Color.Navy
-        Me.btnreftrtvital.Location = New System.Drawing.Point(636, 11)
+        Me.btnreftrtvital.Image = CType(resources.GetObject("btnreftrtvital.Image"), System.Drawing.Image)
+        Me.btnreftrtvital.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnreftrtvital.Location = New System.Drawing.Point(617, 11)
         Me.btnreftrtvital.Name = "btnreftrtvital"
-        Me.btnreftrtvital.Size = New System.Drawing.Size(68, 23)
+        Me.btnreftrtvital.Size = New System.Drawing.Size(88, 23)
         Me.btnreftrtvital.TabIndex = 11
-        Me.btnreftrtvital.Text = "Refresh"
+        Me.btnreftrtvital.Text = "     Refresh"
         Me.btnreftrtvital.UseVisualStyleBackColor = False
         '
         'btnFindtrtvitals
@@ -370,11 +376,13 @@ Partial Class frmNursing
         Me.btnFindtrtvitals.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnFindtrtvitals.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFindtrtvitals.ForeColor = System.Drawing.Color.Green
-        Me.btnFindtrtvitals.Location = New System.Drawing.Point(1046, 11)
+        Me.btnFindtrtvitals.Image = CType(resources.GetObject("btnFindtrtvitals.Image"), System.Drawing.Image)
+        Me.btnFindtrtvitals.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnFindtrtvitals.Location = New System.Drawing.Point(1025, 11)
         Me.btnFindtrtvitals.Name = "btnFindtrtvitals"
-        Me.btnFindtrtvitals.Size = New System.Drawing.Size(75, 24)
+        Me.btnFindtrtvitals.Size = New System.Drawing.Size(80, 24)
         Me.btnFindtrtvitals.TabIndex = 13
-        Me.btnFindtrtvitals.Text = "Search"
+        Me.btnFindtrtvitals.Text = "     Search"
         Me.btnFindtrtvitals.UseVisualStyleBackColor = False
         '
         'cbotreatedvit

@@ -37,7 +37,7 @@ Public Class FrmANCreg
             txtnat.Text = tbl.Rows(0)(15).ToString()
             txtadd.Text = tbl.Rows(0)(16).ToString()
             txtphone.Text = tbl.Rows(0)(17).ToString()
-            txtprov.Text = tbl.Rows(0)(23).ToString()
+            txtacctcat.Text = tbl.Rows(0)(23).ToString()
             txtenrolletype.Text = tbl.Rows(0)(24).ToString()
             txtemployer.Text = tbl.Rows(0)(25).ToString()
             txtenrolnum.Text = tbl.Rows(0)(26).ToString()
@@ -86,7 +86,7 @@ Public Class FrmANCreg
             txthusname.Focus()
 
         Else
-            '// Check If pt has been register today
+            '// Check If pt has been register 
             Dim cmd As New SqlCommand("Select * from ANCRegister where Hospital_Num = '" & txtsearch.Text & "' AND Delivery_Status = '" & lblstatus.Text & "'", con)
 
             Dim adpt As New SqlDataAdapter(cmd)
@@ -109,7 +109,7 @@ Public Class FrmANCreg
                     Try
 
                         cmd.CommandType = System.Data.CommandType.Text
-                        cmd.CommandText = "insert into ANCRegister values ('" & dtreg.Value & "', '" & txtsearch.Text & "', '" & txtsurname.Text & "', '" & txtothernames.Text & "', '" & Txtdob.Text & "', '" & txtyear.Text & "', '" & txtsex.Text & "', '" & txtmarital.Text & "', '" & txtreli.Text & "', '" & txtoccup.Text & "', '" & txtlga.Text & "', '" & txtstate.Text & "', '" & txtnat.Text & "', '" & txtadd.Text & "', '" & txtphone.Text & "', '" & txtaccount.Text & "', '" & txtprov.Text & "', '" & txtenrolletype.Text & "', '" & txtemployer.Text & "', '" & txtenrolnum.Text & "', '" & txthusname.Text & "', '" & txthusadd.Text & "', '" & txthusphone.Text & "', '" & txtHusoccup.Text & "', '" & txthusempl.Text & "', '" & lbluser.Text & "','" & lblstatus.Text & "')"
+                        cmd.CommandText = "insert into ANCRegister values ('" & dtreg.Value & "', '" & txtsearch.Text & "', '" & txtsurname.Text & "', '" & txtothernames.Text & "', '" & Txtdob.Text & "', '" & txtyear.Text & "', '" & txtsex.Text & "', '" & txtmarital.Text & "', '" & txtreli.Text & "', '" & txtoccup.Text & "', '" & txtlga.Text & "', '" & txtstate.Text & "', '" & txtnat.Text & "', '" & txtadd.Text & "', '" & txtphone.Text & "', '" & txtaccount.Text & "', '" & txtacctcat.Text & "', '" & txtenrolletype.Text & "', '" & txtemployer.Text & "', '" & txtenrolnum.Text & "', '" & txthusname.Text & "', '" & txthusadd.Text & "', '" & txthusphone.Text & "', '" & txtHusoccup.Text & "', '" & txthusempl.Text & "', '" & lbluser.Text & "','" & lblstatus.Text & "')"
 
                         cmd.Connection = con
 
@@ -178,7 +178,7 @@ Public Class FrmANCreg
         txtmarital.Text = ""
         txtoccup.Text = ""
         txtemployer.Text = ""
-        txtprov.Text = ""
+        txtacctcat.Text = ""
         txtphone.Text = ""
         txtlga.Text = ""
         txtstate.Text = ""
@@ -198,7 +198,7 @@ Public Class FrmANCreg
         Try
 
             cmd.CommandType = System.Data.CommandType.Text
-            cmd.CommandText = "insert into Appntmnt values ('" & dtreg.Value & "', '" & lbltime.Text & "', '" & txtsurname.Text & "', '" & txtothernames.Text & "', '" & txtsearch.Text & "', '" & txtyear.Text & "', '" & txtsex.Text & "', '" & txtaccount.Text & "', '" & lblclinic.Text & "')"
+            cmd.CommandText = "insert into Appntmnt values ('" & dtreg.Value & "', '" & lbltime.Text & "', '" & txtsurname.Text & "', '" & txtothernames.Text & "', '" & txtsearch.Text & "', '" & txtyear.Text & "', '" & txtsex.Text & "', '" & txtaccount.Text & "', '" & lblclinic.Text & "', '" & txtacctcat.Text & "')"
 
             cmd.Connection = con
 
@@ -220,7 +220,7 @@ Public Class FrmANCreg
         Try
 
             cmd.CommandType = System.Data.CommandType.Text
-            cmd.CommandText = "insert into Pending_Vitals values ('" & dtreg.Value & "', '" & lbltime.Text & "', '" & txtsurname.Text & "', '" & txtothernames.Text & "', '" & txtsearch.Text & "', '" & txtyear.Text & "', '" & txtsex.Text & "', '" & txtaccount.Text & "', '" & lblclinic.Text & "')"
+            cmd.CommandText = "insert into Pending_Vitals values ('" & dtreg.Value & "', '" & lbltime.Text & "', '" & txtsurname.Text & "', '" & txtothernames.Text & "', '" & txtsearch.Text & "', '" & txtyear.Text & "', '" & txtsex.Text & "', '" & txtaccount.Text & "', '" & lblclinic.Text & "', '" & txtacctcat.Text & "')"
 
             cmd.Connection = con
 
@@ -267,5 +267,6 @@ Public Class FrmANCreg
             Me.Close()
         End If
     End Sub
+
 
 End Class

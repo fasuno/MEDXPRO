@@ -1,0 +1,22 @@
+To copy data from one table to another
+Follow the directions for copying column definitions above.
+
+ Note
+
+Before you begin to copy data from one table to another, make sure that the data types in the destination columns are compatible with the data types of the source columns
+
+Open a new Query Editor window.
+
+Right-click the Query Editor, and then click Design Query in Editor.
+
+In the Add Table dialog box, select the source and destination table, click Add, and then close the Add Table dialog box.
+
+Right-click an open area of the Query Editor, point to Change Type, and then click Insert Results.
+
+In the Choose Target Table for Insert Results dialog box, select the destination table.
+
+In the upper portion of the Query Designer, click the source column in the source table.
+
+The Query Designer has now created an INSERT query. Click OK to place the query into the original Query Editor window.
+
+Execute the query to insert the data from the source table to the destination table.

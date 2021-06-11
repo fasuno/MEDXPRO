@@ -22,15 +22,15 @@ Partial Class FrmPharmacy
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPharmacy))
+        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle37 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle38 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle39 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle40 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DttreatTo = New System.Windows.Forms.DateTimePicker()
         Me.Dttreat = New System.Windows.Forms.DateTimePicker()
@@ -114,21 +114,23 @@ Partial Class FrmPharmacy
         'btnrloadtrtd
         '
         Me.btnrloadtrtd.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnrloadtrtd.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnrloadtrtd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnrloadtrtd.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnrloadtrtd.ForeColor = System.Drawing.Color.Navy
-        Me.btnrloadtrtd.Location = New System.Drawing.Point(479, 10)
+        Me.btnrloadtrtd.Image = CType(resources.GetObject("btnrloadtrtd.Image"), System.Drawing.Image)
+        Me.btnrloadtrtd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnrloadtrtd.Location = New System.Drawing.Point(476, 5)
         Me.btnrloadtrtd.Name = "btnrloadtrtd"
-        Me.btnrloadtrtd.Size = New System.Drawing.Size(68, 23)
+        Me.btnrloadtrtd.Size = New System.Drawing.Size(94, 27)
         Me.btnrloadtrtd.TabIndex = 11
-        Me.btnrloadtrtd.Text = "Refresh"
+        Me.btnrloadtrtd.Text = "      Refresh"
         Me.btnrloadtrtd.UseVisualStyleBackColor = False
         '
         'chkAllRqst
         '
         Me.chkAllRqst.AutoSize = True
         Me.chkAllRqst.ForeColor = System.Drawing.Color.Black
-        Me.chkAllRqst.Location = New System.Drawing.Point(811, 14)
+        Me.chkAllRqst.Location = New System.Drawing.Point(793, 14)
         Me.chkAllRqst.Name = "chkAllRqst"
         Me.chkAllRqst.Size = New System.Drawing.Size(70, 19)
         Me.chkAllRqst.TabIndex = 17
@@ -164,7 +166,7 @@ Partial Class FrmPharmacy
         'txtFindRqst
         '
         Me.txtFindRqst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtFindRqst.Location = New System.Drawing.Point(887, 12)
+        Me.txtFindRqst.Location = New System.Drawing.Point(869, 12)
         Me.txtFindRqst.Name = "txtFindRqst"
         Me.txtFindRqst.Size = New System.Drawing.Size(153, 21)
         Me.txtFindRqst.TabIndex = 12
@@ -172,14 +174,16 @@ Partial Class FrmPharmacy
         'btnrefresh
         '
         Me.btnrefresh.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnrefresh.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnrefresh.ForeColor = System.Drawing.Color.Navy
-        Me.btnrefresh.Location = New System.Drawing.Point(485, 12)
+        Me.btnrefresh.Image = CType(resources.GetObject("btnrefresh.Image"), System.Drawing.Image)
+        Me.btnrefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnrefresh.Location = New System.Drawing.Point(485, 11)
         Me.btnrefresh.Name = "btnrefresh"
-        Me.btnrefresh.Size = New System.Drawing.Size(68, 23)
+        Me.btnrefresh.Size = New System.Drawing.Size(91, 24)
         Me.btnrefresh.TabIndex = 11
-        Me.btnrefresh.Text = "Refresh"
+        Me.btnrefresh.Text = "     Refresh"
         Me.btnrefresh.UseVisualStyleBackColor = False
         '
         'btnfindRqst
@@ -188,11 +192,13 @@ Partial Class FrmPharmacy
         Me.btnfindRqst.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnfindRqst.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnfindRqst.ForeColor = System.Drawing.Color.Green
-        Me.btnfindRqst.Location = New System.Drawing.Point(1045, 11)
+        Me.btnfindRqst.Image = CType(resources.GetObject("btnfindRqst.Image"), System.Drawing.Image)
+        Me.btnfindRqst.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnfindRqst.Location = New System.Drawing.Point(1028, 8)
         Me.btnfindRqst.Name = "btnfindRqst"
-        Me.btnfindRqst.Size = New System.Drawing.Size(65, 24)
+        Me.btnfindRqst.Size = New System.Drawing.Size(89, 24)
         Me.btnfindRqst.TabIndex = 13
-        Me.btnfindRqst.Text = "Search"
+        Me.btnfindRqst.Text = "      Search"
         Me.btnfindRqst.UseVisualStyleBackColor = False
         '
         'Label5
@@ -225,37 +231,39 @@ Partial Class FrmPharmacy
         Me.btnfindtrtd.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnfindtrtd.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnfindtrtd.ForeColor = System.Drawing.Color.Green
-        Me.btnfindtrtd.Location = New System.Drawing.Point(1013, 10)
+        Me.btnfindtrtd.Image = CType(resources.GetObject("btnfindtrtd.Image"), System.Drawing.Image)
+        Me.btnfindtrtd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnfindtrtd.Location = New System.Drawing.Point(1013, 9)
         Me.btnfindtrtd.Name = "btnfindtrtd"
-        Me.btnfindtrtd.Size = New System.Drawing.Size(75, 24)
+        Me.btnfindtrtd.Size = New System.Drawing.Size(80, 24)
         Me.btnfindtrtd.TabIndex = 13
-        Me.btnfindtrtd.Text = "Search"
+        Me.btnfindtrtd.Text = "     Search"
         Me.btnfindtrtd.UseVisualStyleBackColor = False
         '
         'dtgTreatrqst
         '
         Me.dtgTreatrqst.AllowUserToAddRows = False
         Me.dtgTreatrqst.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Navy
-        Me.dtgTreatrqst.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle33.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle33.ForeColor = System.Drawing.Color.Navy
+        Me.dtgTreatrqst.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle33
         Me.dtgTreatrqst.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.dtgTreatrqst.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dtgTreatrqst.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dtgTreatrqst.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle34.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle34.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle34.ForeColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dtgTreatrqst.DefaultCellStyle = DataGridViewCellStyle34
         Me.dtgTreatrqst.GridColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.dtgTreatrqst.Location = New System.Drawing.Point(3, 51)
         Me.dtgTreatrqst.Name = "dtgTreatrqst"
         Me.dtgTreatrqst.ReadOnly = True
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        Me.dtgTreatrqst.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle35.ForeColor = System.Drawing.Color.Black
+        Me.dtgTreatrqst.RowsDefaultCellStyle = DataGridViewCellStyle35
         Me.dtgTreatrqst.Size = New System.Drawing.Size(1119, 440)
         Me.dtgTreatrqst.TabIndex = 6
         '
@@ -297,7 +305,7 @@ Partial Class FrmPharmacy
         Me.Panel1.Controls.Add(Me.btnfindRqst)
         Me.Panel1.Location = New System.Drawing.Point(1, 5)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1128, 40)
+        Me.Panel1.Size = New System.Drawing.Size(1124, 40)
         Me.Panel1.TabIndex = 0
         '
         'TabPend
@@ -317,23 +325,23 @@ Partial Class FrmPharmacy
         '
         Me.DtgPendDrugrqst.AllowUserToAddRows = False
         Me.DtgPendDrugrqst.AllowUserToDeleteRows = False
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.DtgPendDrugrqst.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle36.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.DtgPendDrugrqst.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle36
         Me.DtgPendDrugrqst.BackgroundColor = System.Drawing.Color.White
         Me.DtgPendDrugrqst.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DtgPendDrugrqst.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle37.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle37.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DtgPendDrugrqst.DefaultCellStyle = DataGridViewCellStyle37
         Me.DtgPendDrugrqst.Location = New System.Drawing.Point(0, 51)
         Me.DtgPendDrugrqst.Name = "DtgPendDrugrqst"
         Me.DtgPendDrugrqst.ReadOnly = True
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        Me.DtgPendDrugrqst.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle38.ForeColor = System.Drawing.Color.Black
+        Me.DtgPendDrugrqst.RowsDefaultCellStyle = DataGridViewCellStyle38
         Me.DtgPendDrugrqst.Size = New System.Drawing.Size(1125, 433)
         Me.DtgPendDrugrqst.TabIndex = 1
         '
@@ -362,7 +370,7 @@ Partial Class FrmPharmacy
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.Maroon
+        Me.Panel3.BackColor = System.Drawing.Color.DarkMagenta
         Me.Panel3.Controls.Add(Me.ChkAllbill)
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Controls.Add(Me.dtbillto)
@@ -423,12 +431,12 @@ Partial Class FrmPharmacy
         'Btnrefbill
         '
         Me.Btnrefbill.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Btnrefbill.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Btnrefbill.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btnrefbill.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btnrefbill.ForeColor = System.Drawing.Color.DarkRed
-        Me.Btnrefbill.Location = New System.Drawing.Point(481, 12)
+        Me.Btnrefbill.Location = New System.Drawing.Point(481, 11)
         Me.Btnrefbill.Name = "Btnrefbill"
-        Me.Btnrefbill.Size = New System.Drawing.Size(68, 23)
+        Me.Btnrefbill.Size = New System.Drawing.Size(77, 24)
         Me.Btnrefbill.TabIndex = 11
         Me.Btnrefbill.Text = "Refresh"
         Me.Btnrefbill.UseVisualStyleBackColor = False
@@ -450,15 +458,15 @@ Partial Class FrmPharmacy
         '
         Me.Dtgbiiled.AllowUserToAddRows = False
         Me.Dtgbiiled.AllowUserToDeleteRows = False
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
-        Me.Dtgbiiled.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle39.ForeColor = System.Drawing.Color.Black
+        Me.Dtgbiiled.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle39
         Me.Dtgbiiled.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.Dtgbiiled.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dtgbiiled.Location = New System.Drawing.Point(5, 49)
         Me.Dtgbiiled.Name = "Dtgbiiled"
         Me.Dtgbiiled.ReadOnly = True
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Maroon
-        Me.Dtgbiiled.RowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle40.ForeColor = System.Drawing.Color.Maroon
+        Me.Dtgbiiled.RowsDefaultCellStyle = DataGridViewCellStyle40
         Me.Dtgbiiled.Size = New System.Drawing.Size(1120, 438)
         Me.Dtgbiiled.TabIndex = 0
         '

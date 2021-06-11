@@ -80,7 +80,7 @@ Partial Class AncProfile
         '
         'GroupBox2
         '
-        Me.GroupBox2.BackColor = System.Drawing.Color.Gainsboro
+        Me.GroupBox2.BackColor = System.Drawing.Color.White
         Me.GroupBox2.Controls.Add(Me.txthusempl)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.txtHusoccup)
@@ -210,7 +210,7 @@ Partial Class AncProfile
         '
         'GroupBox4
         '
-        Me.GroupBox4.BackColor = System.Drawing.Color.Gainsboro
+        Me.GroupBox4.BackColor = System.Drawing.Color.White
         Me.GroupBox4.Controls.Add(Me.txtenrolletype)
         Me.GroupBox4.Controls.Add(Me.txtprov)
         Me.GroupBox4.Controls.Add(Me.txtaccount)
@@ -311,11 +311,11 @@ Partial Class AncProfile
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label25.ForeColor = System.Drawing.Color.Black
-        Me.Label25.Location = New System.Drawing.Point(2, 53)
+        Me.Label25.Location = New System.Drawing.Point(10, 53)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(94, 15)
+        Me.Label25.Size = New System.Drawing.Size(86, 15)
         Me.Label25.TabIndex = 18
-        Me.Label25.Text = "Hmo / Retainer:"
+        Me.Label25.Text = "Acct category:"
         '
         'Label24
         '
@@ -341,7 +341,7 @@ Partial Class AncProfile
         '
         'GroupBox3
         '
-        Me.GroupBox3.BackColor = System.Drawing.Color.Gainsboro
+        Me.GroupBox3.BackColor = System.Drawing.Color.White
         Me.GroupBox3.Controls.Add(Me.txtyear)
         Me.GroupBox3.Controls.Add(Me.txtdob)
         Me.GroupBox3.Controls.Add(Me.txtnat)

@@ -22,9 +22,10 @@ Partial Class Frmrecords
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frmrecords))
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Tabrec = New System.Windows.Forms.TabControl()
         Me.Tabpagfolder = New System.Windows.Forms.TabPage()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -44,7 +45,6 @@ Partial Class Frmrecords
         Me.Label8 = New System.Windows.Forms.Label()
         Me.dtto = New System.Windows.Forms.DateTimePicker()
         Me.dtfrom = New System.Windows.Forms.DateTimePicker()
-        Me.btndelete = New System.Windows.Forms.Button()
         Me.txtfind = New System.Windows.Forms.TextBox()
         Me.btnview = New System.Windows.Forms.Button()
         Me.btnfindfolder = New System.Windows.Forms.Button()
@@ -81,7 +81,7 @@ Partial Class Frmrecords
         Me.BtnRefANC = New System.Windows.Forms.Button()
         Me.Txtsearchanc = New System.Windows.Forms.TextBox()
         Me.btnsearchAnc = New System.Windows.Forms.Button()
-        Me.TxtNewAnc = New System.Windows.Forms.Button()
+        Me.BtnNewAnc = New System.Windows.Forms.Button()
         Me.Tabrec.SuspendLayout()
         Me.Tabpagfolder.SuspendLayout()
         CType(Me.Dtgfolder, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -149,6 +149,10 @@ Partial Class Frmrecords
         '
         Me.Dtgfolder.AllowUserToAddRows = False
         Me.Dtgfolder.AllowUserToDeleteRows = False
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Purple
+        Me.Dtgfolder.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
+        Me.Dtgfolder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.Dtgfolder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dtgfolder.Location = New System.Drawing.Point(2, 47)
         Me.Dtgfolder.Name = "Dtgfolder"
@@ -158,13 +162,12 @@ Partial Class Frmrecords
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.MistyRose
+        Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.Controls.Add(Me.viewallfolder)
         Me.Panel3.Controls.Add(Me.Panel8)
         Me.Panel3.Controls.Add(Me.Label8)
         Me.Panel3.Controls.Add(Me.dtto)
         Me.Panel3.Controls.Add(Me.dtfrom)
-        Me.Panel3.Controls.Add(Me.btndelete)
         Me.Panel3.Controls.Add(Me.txtfind)
         Me.Panel3.Controls.Add(Me.btnview)
         Me.Panel3.Controls.Add(Me.btnfindfolder)
@@ -295,7 +298,7 @@ Partial Class Frmrecords
         Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label8.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(383, 14)
+        Me.Label8.Location = New System.Drawing.Point(303, 14)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(20, 15)
         Me.Label8.TabIndex = 7
@@ -303,36 +306,24 @@ Partial Class Frmrecords
         '
         'dtto
         '
-        Me.dtto.Location = New System.Drawing.Point(417, 10)
+        Me.dtto.Location = New System.Drawing.Point(337, 10)
         Me.dtto.Name = "dtto"
         Me.dtto.Size = New System.Drawing.Size(210, 20)
         Me.dtto.TabIndex = 6
         '
         'dtfrom
         '
-        Me.dtfrom.Location = New System.Drawing.Point(163, 10)
+        Me.dtfrom.Location = New System.Drawing.Point(83, 10)
         Me.dtfrom.Name = "dtfrom"
         Me.dtfrom.Size = New System.Drawing.Size(211, 20)
         Me.dtfrom.TabIndex = 5
         '
-        'btndelete
-        '
-        Me.btndelete.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btndelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btndelete.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btndelete.ForeColor = System.Drawing.Color.Navy
-        Me.btndelete.Location = New System.Drawing.Point(79, 10)
-        Me.btndelete.Name = "btndelete"
-        Me.btndelete.Size = New System.Drawing.Size(75, 23)
-        Me.btndelete.TabIndex = 3
-        Me.btndelete.Text = "Delete"
-        Me.btndelete.UseVisualStyleBackColor = False
-        '
         'txtfind
         '
+        Me.txtfind.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtfind.Location = New System.Drawing.Point(870, 10)
         Me.txtfind.Name = "txtfind"
-        Me.txtfind.Size = New System.Drawing.Size(170, 20)
+        Me.txtfind.Size = New System.Drawing.Size(170, 21)
         Me.txtfind.TabIndex = 4
         '
         'btnview
@@ -341,11 +332,13 @@ Partial Class Frmrecords
         Me.btnview.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnview.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnview.ForeColor = System.Drawing.Color.Navy
-        Me.btnview.Location = New System.Drawing.Point(636, 7)
+        Me.btnview.Image = CType(resources.GetObject("btnview.Image"), System.Drawing.Image)
+        Me.btnview.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnview.Location = New System.Drawing.Point(556, 7)
         Me.btnview.Name = "btnview"
-        Me.btnview.Size = New System.Drawing.Size(68, 25)
+        Me.btnview.Size = New System.Drawing.Size(90, 25)
         Me.btnview.TabIndex = 2
-        Me.btnview.Text = "Refresh"
+        Me.btnview.Text = "     Refresh"
         Me.btnview.UseVisualStyleBackColor = False
         '
         'btnfindfolder
@@ -354,11 +347,13 @@ Partial Class Frmrecords
         Me.btnfindfolder.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnfindfolder.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnfindfolder.ForeColor = System.Drawing.Color.Green
-        Me.btnfindfolder.Location = New System.Drawing.Point(1046, 7)
+        Me.btnfindfolder.Image = CType(resources.GetObject("btnfindfolder.Image"), System.Drawing.Image)
+        Me.btnfindfolder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnfindfolder.Location = New System.Drawing.Point(1044, 7)
         Me.btnfindfolder.Name = "btnfindfolder"
-        Me.btnfindfolder.Size = New System.Drawing.Size(75, 26)
+        Me.btnfindfolder.Size = New System.Drawing.Size(86, 26)
         Me.btnfindfolder.TabIndex = 4
-        Me.btnfindfolder.Text = "Search"
+        Me.btnfindfolder.Text = "    Search"
         Me.btnfindfolder.UseVisualStyleBackColor = False
         '
         'Btnnew
@@ -367,11 +362,13 @@ Partial Class Frmrecords
         Me.Btnnew.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Btnnew.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btnnew.ForeColor = System.Drawing.Color.Navy
-        Me.Btnnew.Location = New System.Drawing.Point(2, 10)
+        Me.Btnnew.Image = CType(resources.GetObject("Btnnew.Image"), System.Drawing.Image)
+        Me.Btnnew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btnnew.Location = New System.Drawing.Point(2, 8)
         Me.Btnnew.Name = "Btnnew"
         Me.Btnnew.Size = New System.Drawing.Size(75, 23)
         Me.Btnnew.TabIndex = 1
-        Me.Btnnew.Text = "New"
+        Me.Btnnew.Text = "   New"
         Me.Btnnew.UseVisualStyleBackColor = False
         '
         'TabPageappt
@@ -418,12 +415,12 @@ Partial Class Frmrecords
         Me.DtgApt.Location = New System.Drawing.Point(5, 48)
         Me.DtgApt.Name = "DtgApt"
         Me.DtgApt.ReadOnly = True
-        Me.DtgApt.Size = New System.Drawing.Size(1136, 371)
+        Me.DtgApt.Size = New System.Drawing.Size(1149, 371)
         Me.DtgApt.TabIndex = 1
         '
         'Panel4
         '
-        Me.Panel4.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Panel4.BackColor = System.Drawing.Color.White
         Me.Panel4.Controls.Add(Me.CBOaptclinic)
         Me.Panel4.Controls.Add(Me.viewallappt)
         Me.Panel4.Controls.Add(Me.Panel5)
@@ -437,16 +434,16 @@ Partial Class Frmrecords
         Me.Panel4.ForeColor = System.Drawing.Color.White
         Me.Panel4.Location = New System.Drawing.Point(4, 3)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1129, 42)
+        Me.Panel4.Size = New System.Drawing.Size(1151, 42)
         Me.Panel4.TabIndex = 2
         '
         'CBOaptclinic
         '
         Me.CBOaptclinic.FormattingEnabled = True
         Me.CBOaptclinic.Items.AddRange(New Object() {"SELECT CLINIC", "GOPD", "MOPD", "POPD", "SOPD", "ANC", "GYNAE", "A&E", "EUROLOGY", "DEMATOLOGY", "ART"})
-        Me.CBOaptclinic.Location = New System.Drawing.Point(66, 11)
+        Me.CBOaptclinic.Location = New System.Drawing.Point(75, 16)
         Me.CBOaptclinic.Name = "CBOaptclinic"
-        Me.CBOaptclinic.Size = New System.Drawing.Size(119, 21)
+        Me.CBOaptclinic.Size = New System.Drawing.Size(131, 21)
         Me.CBOaptclinic.TabIndex = 6
         Me.CBOaptclinic.Text = "  SELECT CLINIC"
         '
@@ -455,7 +452,7 @@ Partial Class Frmrecords
         Me.viewallappt.AutoSize = True
         Me.viewallappt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.viewallappt.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.viewallappt.Location = New System.Drawing.Point(792, 11)
+        Me.viewallappt.Location = New System.Drawing.Point(801, 16)
         Me.viewallappt.Name = "viewallappt"
         Me.viewallappt.Size = New System.Drawing.Size(77, 21)
         Me.viewallappt.TabIndex = 9
@@ -568,8 +565,8 @@ Partial Class Frmrecords
         Me.Label4.AutoSize = True
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(436, 16)
+        Me.Label4.ForeColor = System.Drawing.Color.Navy
+        Me.Label4.Location = New System.Drawing.Point(423, 18)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(20, 15)
         Me.Label4.TabIndex = 7
@@ -577,21 +574,21 @@ Partial Class Frmrecords
         '
         'dto
         '
-        Me.dto.Location = New System.Drawing.Point(468, 12)
+        Me.dto.Location = New System.Drawing.Point(448, 15)
         Me.dto.Name = "dto"
         Me.dto.Size = New System.Drawing.Size(209, 20)
         Me.dto.TabIndex = 6
         '
         'from
         '
-        Me.from.Location = New System.Drawing.Point(218, 12)
+        Me.from.Location = New System.Drawing.Point(212, 16)
         Me.from.Name = "from"
         Me.from.Size = New System.Drawing.Size(206, 20)
         Me.from.TabIndex = 5
         '
         'Txtsearchappt
         '
-        Me.Txtsearchappt.Location = New System.Drawing.Point(880, 9)
+        Me.Txtsearchappt.Location = New System.Drawing.Point(884, 16)
         Me.Txtsearchappt.Name = "Txtsearchappt"
         Me.Txtsearchappt.Size = New System.Drawing.Size(160, 20)
         Me.Txtsearchappt.TabIndex = 4
@@ -602,24 +599,28 @@ Partial Class Frmrecords
         Me.Btnref.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Btnref.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btnref.ForeColor = System.Drawing.Color.Navy
-        Me.Btnref.Location = New System.Drawing.Point(685, 10)
+        Me.Btnref.Image = CType(resources.GetObject("Btnref.Image"), System.Drawing.Image)
+        Me.Btnref.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btnref.Location = New System.Drawing.Point(663, 11)
         Me.Btnref.Name = "Btnref"
-        Me.Btnref.Size = New System.Drawing.Size(69, 23)
+        Me.Btnref.Size = New System.Drawing.Size(93, 24)
         Me.Btnref.TabIndex = 2
-        Me.Btnref.Text = "Refresh"
+        Me.Btnref.Text = "    Refresh"
         Me.Btnref.UseVisualStyleBackColor = False
         '
         'btnsearchAppt
         '
         Me.btnsearchAppt.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnsearchAppt.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnsearchAppt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnsearchAppt.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnsearchAppt.ForeColor = System.Drawing.Color.Green
-        Me.btnsearchAppt.Location = New System.Drawing.Point(1046, 6)
+        Me.btnsearchAppt.Image = CType(resources.GetObject("btnsearchAppt.Image"), System.Drawing.Image)
+        Me.btnsearchAppt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnsearchAppt.Location = New System.Drawing.Point(1046, 10)
         Me.btnsearchAppt.Name = "btnsearchAppt"
-        Me.btnsearchAppt.Size = New System.Drawing.Size(75, 26)
+        Me.btnsearchAppt.Size = New System.Drawing.Size(95, 26)
         Me.btnsearchAppt.TabIndex = 4
-        Me.btnsearchAppt.Text = "Search"
+        Me.btnsearchAppt.Text = "     Search"
         Me.btnsearchAppt.UseVisualStyleBackColor = False
         '
         'BtnNewAppt
@@ -628,11 +629,13 @@ Partial Class Frmrecords
         Me.BtnNewAppt.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnNewAppt.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNewAppt.ForeColor = System.Drawing.Color.Navy
+        Me.BtnNewAppt.Image = CType(resources.GetObject("BtnNewAppt.Image"), System.Drawing.Image)
+        Me.BtnNewAppt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnNewAppt.Location = New System.Drawing.Point(4, 10)
         Me.BtnNewAppt.Name = "BtnNewAppt"
-        Me.BtnNewAppt.Size = New System.Drawing.Size(58, 23)
+        Me.BtnNewAppt.Size = New System.Drawing.Size(65, 29)
         Me.BtnNewAppt.TabIndex = 1
-        Me.BtnNewAppt.Text = "New"
+        Me.BtnNewAppt.Text = "     New"
         Me.BtnNewAppt.UseVisualStyleBackColor = False
         '
         'TabPagediag
@@ -652,21 +655,21 @@ Partial Class Frmrecords
         '
         Me.DtgANC.AllowUserToAddRows = False
         Me.DtgANC.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Purple
-        Me.DtgANC.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Purple
+        Me.DtgANC.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle11
         Me.DtgANC.BackgroundColor = System.Drawing.Color.White
         Me.DtgANC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DtgANC.Location = New System.Drawing.Point(3, 47)
         Me.DtgANC.Name = "DtgANC"
         Me.DtgANC.ReadOnly = True
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.DtgANC.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
+        Me.DtgANC.RowsDefaultCellStyle = DataGridViewCellStyle12
         Me.DtgANC.Size = New System.Drawing.Size(1149, 374)
         Me.DtgANC.TabIndex = 1
         '
         'Panel6
         '
-        Me.Panel6.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.Panel6.BackColor = System.Drawing.Color.Lavender
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel6.Controls.Add(Me.Label6)
         Me.Panel6.Controls.Add(Me.DtAncTo)
@@ -674,7 +677,7 @@ Partial Class Frmrecords
         Me.Panel6.Controls.Add(Me.BtnRefANC)
         Me.Panel6.Controls.Add(Me.Txtsearchanc)
         Me.Panel6.Controls.Add(Me.btnsearchAnc)
-        Me.Panel6.Controls.Add(Me.TxtNewAnc)
+        Me.Panel6.Controls.Add(Me.BtnNewAnc)
         Me.Panel6.ForeColor = System.Drawing.Color.White
         Me.Panel6.Location = New System.Drawing.Point(5, 0)
         Me.Panel6.Name = "Panel6"
@@ -687,7 +690,7 @@ Partial Class Frmrecords
         Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label6.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(324, 19)
+        Me.Label6.Location = New System.Drawing.Point(290, 19)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(20, 15)
         Me.Label6.TabIndex = 7
@@ -696,7 +699,7 @@ Partial Class Frmrecords
         'DtAncTo
         '
         Me.DtAncTo.CalendarFont = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DtAncTo.Location = New System.Drawing.Point(350, 17)
+        Me.DtAncTo.Location = New System.Drawing.Point(316, 17)
         Me.DtAncTo.Name = "DtAncTo"
         Me.DtAncTo.Size = New System.Drawing.Size(213, 20)
         Me.DtAncTo.TabIndex = 6
@@ -704,7 +707,7 @@ Partial Class Frmrecords
         'DtAncFrm
         '
         Me.DtAncFrm.CalendarFont = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DtAncFrm.Location = New System.Drawing.Point(111, 17)
+        Me.DtAncFrm.Location = New System.Drawing.Point(77, 17)
         Me.DtAncFrm.Name = "DtAncFrm"
         Me.DtAncFrm.Size = New System.Drawing.Size(207, 20)
         Me.DtAncFrm.TabIndex = 5
@@ -715,11 +718,13 @@ Partial Class Frmrecords
         Me.BtnRefANC.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnRefANC.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnRefANC.ForeColor = System.Drawing.Color.Navy
-        Me.BtnRefANC.Location = New System.Drawing.Point(569, 9)
+        Me.BtnRefANC.Image = CType(resources.GetObject("BtnRefANC.Image"), System.Drawing.Image)
+        Me.BtnRefANC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnRefANC.Location = New System.Drawing.Point(535, 14)
         Me.BtnRefANC.Name = "BtnRefANC"
-        Me.BtnRefANC.Size = New System.Drawing.Size(75, 28)
+        Me.BtnRefANC.Size = New System.Drawing.Size(85, 24)
         Me.BtnRefANC.TabIndex = 3
-        Me.BtnRefANC.Text = "Reload"
+        Me.BtnRefANC.Text = "     Reload"
         Me.BtnRefANC.UseVisualStyleBackColor = False
         '
         'Txtsearchanc
@@ -736,25 +741,29 @@ Partial Class Frmrecords
         Me.btnsearchAnc.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnsearchAnc.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnsearchAnc.ForeColor = System.Drawing.Color.Green
+        Me.btnsearchAnc.Image = CType(resources.GetObject("btnsearchAnc.Image"), System.Drawing.Image)
+        Me.btnsearchAnc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnsearchAnc.Location = New System.Drawing.Point(1030, 13)
         Me.btnsearchAnc.Name = "btnsearchAnc"
-        Me.btnsearchAnc.Size = New System.Drawing.Size(75, 26)
+        Me.btnsearchAnc.Size = New System.Drawing.Size(86, 26)
         Me.btnsearchAnc.TabIndex = 4
-        Me.btnsearchAnc.Text = "Search"
+        Me.btnsearchAnc.Text = "    Search"
         Me.btnsearchAnc.UseVisualStyleBackColor = False
         '
-        'TxtNewAnc
+        'BtnNewAnc
         '
-        Me.TxtNewAnc.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.TxtNewAnc.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.TxtNewAnc.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtNewAnc.ForeColor = System.Drawing.Color.Navy
-        Me.TxtNewAnc.Location = New System.Drawing.Point(5, 11)
-        Me.TxtNewAnc.Name = "TxtNewAnc"
-        Me.TxtNewAnc.Size = New System.Drawing.Size(75, 28)
-        Me.TxtNewAnc.TabIndex = 1
-        Me.TxtNewAnc.Text = "New"
-        Me.TxtNewAnc.UseVisualStyleBackColor = False
+        Me.BtnNewAnc.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnNewAnc.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnNewAnc.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnNewAnc.ForeColor = System.Drawing.Color.Navy
+        Me.BtnNewAnc.Image = CType(resources.GetObject("BtnNewAnc.Image"), System.Drawing.Image)
+        Me.BtnNewAnc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnNewAnc.Location = New System.Drawing.Point(5, 11)
+        Me.BtnNewAnc.Name = "BtnNewAnc"
+        Me.BtnNewAnc.Size = New System.Drawing.Size(67, 28)
+        Me.BtnNewAnc.TabIndex = 1
+        Me.BtnNewAnc.Text = "    New"
+        Me.BtnNewAnc.UseVisualStyleBackColor = False
         '
         'Frmrecords
         '
@@ -769,7 +778,7 @@ Partial Class Frmrecords
         Me.MaximizeBox = False
         Me.Name = "Frmrecords"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "   MEDICAL RECORDS"
+        Me.Text = "sssss"
         Me.Tabrec.ResumeLayout(False)
         Me.Tabpagfolder.ResumeLayout(False)
         Me.Tabpagfolder.PerformLayout()
@@ -822,7 +831,7 @@ Partial Class Frmrecords
     Friend WithEvents BtnRefANC As Button
     Friend WithEvents Txtsearchanc As TextBox
     Friend WithEvents btnsearchAnc As Button
-    Friend WithEvents TxtNewAnc As Button
+    Friend WithEvents BtnNewAnc As Button
     Friend WithEvents Tabpagfolder As TabPage
     Friend WithEvents Dtgfolder As DataGridView
     Friend WithEvents Panel3 As Panel
@@ -838,7 +847,6 @@ Partial Class Frmrecords
     Friend WithEvents Label8 As Label
     Friend WithEvents dtto As DateTimePicker
     Friend WithEvents dtfrom As DateTimePicker
-    Friend WithEvents btndelete As Button
     Friend WithEvents txtfind As TextBox
     Friend WithEvents btnview As Button
     Friend WithEvents btnfindfolder As Button

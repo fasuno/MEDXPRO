@@ -48,8 +48,9 @@ Public Class FrmLabInvRqst
 
     Public Sub BillPercentage()
 
-        cmd = New SqlCommand("Select * from BillSetting where Account_type=@Acct", con)
+        cmd = New SqlCommand("Select * from BillSetting where Account_type=@Acct And Account_Category=@Actcat", con)
         cmd.Parameters.Add("@Acct", SqlDbType.NVarChar).Value = txtacct.Text
+        cmd.Parameters.Add("@Actcat", SqlDbType.NVarChar).Value = Txtacctcat.Text
 
         Dim adpt As New SqlDataAdapter(cmd)
         Dim tbl As New DataTable()
@@ -130,15 +131,16 @@ Public Class FrmLabInvRqst
     End Sub
 
     Private Sub txtpword_Leave(sender As Object, e As EventArgs) Handles txtpword.Leave
-        showLabAttendatName()
         CheckPassowrd()
+        showLabAttendatName()
+
     End Sub
 
     Public Sub PopulatePendLabBill()
         Try
 
             cmd.CommandType = System.Data.CommandType.Text
-            cmd.CommandText = "insert into Pend_LABBill Values ('" & Txtrqstid.Text & "', '" & lbldte.Text.ToString & "', '" & lbltim.Text.ToString & "', '" & txtHno.Text & "', '" & TxtSname.Text & "', '" & txtOname.Text & "',  '" & txtage.Text & "', '" & txtsex.Text & "', '" & txtacct.Text & "', '" & LblTotalcost.Text & "', '" & lblbilledby.Text & "', '" & LblPayStatus.Text & "','" & txtrqstby.Text & "', '" & txtdate.Text & "')"
+            cmd.CommandText = "insert into Pend_LABBill Values ('" & Txtrqstid.Text & "', '" & lbldte.Text.ToString & "', '" & lbltim.Text.ToString & "', '" & txtHno.Text & "', '" & TxtSname.Text & "', '" & txtOname.Text & "',  '" & txtage.Text & "', '" & txtsex.Text & "', '" & txtacct.Text & "', '" & Txtacctcat.Text & "', '" & LblTotalcost.Text & "', '" & lblbilledby.Text & "', '" & LblPayStatus.Text & "', '" & txtrqstby.Text & "', '" & txtdate.Text & "')"
 
             cmd.Connection = con
             con.Open()
@@ -155,7 +157,7 @@ Public Class FrmLabInvRqst
         Try
 
             cmd.CommandType = System.Data.CommandType.Text
-            cmd.CommandText = "insert into PendingBills Values ('" & Txtrqstid.Text & "', '" & lbldte.Text.ToString & "', '" & lbltim.Text.ToString & "', '" & txtHno.Text & "', '" & TxtSname.Text & "', '" & txtOname.Text & "', '" & LblTotalcost.Text & "',  '" & lbllab.Text & "', '" & txtacct.Text & "', '" & lblbilledby.Text & "')"
+            cmd.CommandText = "insert into PendingBills Values ('" & Txtrqstid.Text & "', '" & lbldte.Text.ToString & "', '" & lbltim.Text.ToString & "', '" & txtHno.Text & "', '" & TxtSname.Text & "', '" & txtOname.Text & "', '" & LblTotalcost.Text & "',  '" & lbllab.Text & "', '" & txtacct.Text & "', '" & lblbilledby.Text & "', '" & Txtacctcat.Text & "')"
 
             cmd.Connection = con
             con.Open()
@@ -176,7 +178,7 @@ Public Class FrmLabInvRqst
             For Each row As DataGridViewRow In DtgPtLabTest.Rows
 
                 Using con As New SqlConnection(constring)
-                    Using cmd As New SqlCommand("INSERT INTO AllLABBilled VALUES(@RqstID, @Dte, @Tim, @Hnum, @Sname, @Onames, @TestName, @Comm, @Age, @Sex, @Acnt, @cost, @BBy, @Rby, @Service, @PayStat)", con)
+                    Using cmd As New SqlCommand("INSERT INTO AllLABBilled VALUES(@RqstID, @Dte, @Tim, @Hnum, @Sname, @Onames, @TestName, @Comm, @Age, @Sex, @Acnt, @ActCat, @cost, @BBy, @Rby, @Service, @PayStat)", con)
 
                         cmd.Parameters.Add("@RqstID", SqlDbType.Int).Value = Txtrqstid.Text
                         cmd.Parameters.Add("@Dte", SqlDbType.Date).Value = lbldte.Text
@@ -189,7 +191,7 @@ Public Class FrmLabInvRqst
                         cmd.Parameters.Add("@Age", SqlDbType.VarChar).Value = txtage.Text
                         cmd.Parameters.Add("@Sex", SqlDbType.VarChar).Value = txtsex.Text
                         cmd.Parameters.Add("@Acnt", SqlDbType.VarChar).Value = txtacct.Text
-                        ' cmd.Parameters.AddWithValue("@Qtygvn", row.Cells("Qty_given").Value)
+                        cmd.Parameters.AddWithValue("@ActCat", SqlDbType.VarChar).Value = Txtacctcat.Text
                         cmd.Parameters.AddWithValue("@cost", row.Cells("COST").Value)
                         'cmd.Parameters.Add("@cost", SqlDbType.Int).Value = DtgPtLabTest.Rows(0).Cells(2).Value
                         ' cmd.Parameters.AddWithValue("@Tcost", row.Cells("Total_Cost").Value)
@@ -237,4 +239,17 @@ Public Class FrmLabInvRqst
         Me.Close()
     End Sub
 
+    Private Sub BtnPrint_Click(sender As Object, e As EventArgs) Handles BtnPrint.Click
+        FrmPrinlabrqst.Lblptname.Text = TxtSname.Text + " " + txtOname.Text
+        FrmPrinlabrqst.Lblaccount.Text = txtacct.Text + " | " + Txtacctcat.Text
+        FrmPrinlabrqst.lblhospnum.Text = txtHno.Text
+        FrmPrinlabrqst.lblsex.Text = txtsex.Text
+        FrmPrinlabrqst.lblage.Text = txtage.Text
+        FrmPrinlabrqst.lblpresby.Text = txtrqstby.Text
+        FrmPrinlabrqst.lblbillby.Text = lblbilledby.Text
+        FrmPrinlabrqst.lbltotbill.Text = LblTotalcost.Text
+        FrmPrinlabrqst.LBLID.Text = Txtrqstid.Text
+
+        FrmPrinlabrqst.Show()
+    End Sub
 End Class

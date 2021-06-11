@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmANCinfo
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,10 @@ Partial Class FrmANCinfo
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmANCinfo))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -207,9 +207,9 @@ Partial Class FrmANCinfo
         Me.DTgpreg.AllowUserToAddRows = False
         Me.DTgpreg.AllowUserToResizeColumns = False
         Me.DTgpreg.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Purple
-        Me.DTgpreg.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Purple
+        Me.DTgpreg.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DTgpreg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.DTgpreg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DTgpreg.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.BkId, Me.HospNo, Me.Delvdate, Me.Dur, Me.Comp, Me.Lab, Me.Sex, Me.Puep, Me.Bthw})
@@ -288,7 +288,7 @@ Partial Class FrmANCinfo
         '
         Me.Btnaddentry.BackColor = System.Drawing.Color.White
         Me.Btnaddentry.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btnaddentry.ForeColor = System.Drawing.Color.Purple
+        Me.Btnaddentry.ForeColor = System.Drawing.Color.Navy
         Me.Btnaddentry.Location = New System.Drawing.Point(516, 59)
         Me.Btnaddentry.Name = "Btnaddentry"
         Me.Btnaddentry.Size = New System.Drawing.Size(91, 25)
@@ -438,9 +438,9 @@ Partial Class FrmANCinfo
         Me.dtgprepreg.AllowUserToAddRows = False
         Me.dtgprepreg.AllowUserToResizeColumns = False
         Me.dtgprepreg.AllowUserToResizeRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Purple
-        Me.dtgprepreg.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Purple
+        Me.dtgprepreg.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dtgprepreg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.dtgprepreg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtgprepreg.Location = New System.Drawing.Point(4, 89)
@@ -555,7 +555,7 @@ Partial Class FrmANCinfo
         Me.GroupBox1.Controls.Add(Me.Label26)
         Me.GroupBox1.Controls.Add(Me.Label25)
         Me.GroupBox1.Controls.Add(Me.Label24)
-        Me.GroupBox1.ForeColor = System.Drawing.Color.Purple
+        Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.GroupBox1.Location = New System.Drawing.Point(9, 58)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(689, 150)
@@ -622,8 +622,9 @@ Partial Class FrmANCinfo
         '
         'cbogen
         '
+        Me.cbogen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbogen.FormattingEnabled = True
-        Me.cbogen.Items.AddRange(New Object() {"Male", "Female"})
+        Me.cbogen.Items.AddRange(New Object() {"AA", "AO", "BB", "BO", "AB", "OO", "AS", "SS"})
         Me.cbogen.Location = New System.Drawing.Point(505, 97)
         Me.cbogen.Name = "cbogen"
         Me.cbogen.Size = New System.Drawing.Size(132, 23)
@@ -631,8 +632,9 @@ Partial Class FrmANCinfo
         '
         'CboBldgp
         '
+        Me.CboBldgp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CboBldgp.FormattingEnabled = True
-        Me.CboBldgp.Items.AddRange(New Object() {"Male", "Female"})
+        Me.CboBldgp.Items.AddRange(New Object() {"A+ve", "B+ve", "AB+ve", "O+ve", "A-ve", "B-ve", "AB-ve", "O-ve"})
         Me.CboBldgp.Location = New System.Drawing.Point(80, 97)
         Me.CboBldgp.Name = "CboBldgp"
         Me.CboBldgp.Size = New System.Drawing.Size(132, 23)
@@ -649,8 +651,9 @@ Partial Class FrmANCinfo
         '
         'CboGrpRH
         '
+        Me.CboGrpRH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CboGrpRH.FormattingEnabled = True
-        Me.CboGrpRH.Items.AddRange(New Object() {"Male", "Female"})
+        Me.CboGrpRH.Items.AddRange(New Object() {"Negative", "Possitive"})
         Me.CboGrpRH.Location = New System.Drawing.Point(290, 97)
         Me.CboGrpRH.Name = "CboGrpRH"
         Me.CboGrpRH.Size = New System.Drawing.Size(140, 23)
@@ -1194,13 +1197,13 @@ Partial Class FrmANCinfo
         Me.txtdelivsta.ReadOnly = True
         Me.txtdelivsta.Size = New System.Drawing.Size(128, 21)
         Me.txtdelivsta.TabIndex = 20
-        Me.txtdelivsta.Text = " "
+        Me.txtdelivsta.Text = "PENDING"
         '
         'Label52
         '
         Me.Label52.AutoSize = True
         Me.Label52.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label52.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label52.ForeColor = System.Drawing.Color.Navy
         Me.Label52.Location = New System.Drawing.Point(364, 110)
         Me.Label52.Name = "Label52"
         Me.Label52.Size = New System.Drawing.Size(95, 15)
@@ -1302,6 +1305,7 @@ Partial Class FrmANCinfo
         'DtBooked
         '
         Me.DtBooked.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DtBooked.Enabled = False
         Me.DtBooked.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DtBooked.Location = New System.Drawing.Point(98, 6)
         Me.DtBooked.Name = "DtBooked"
@@ -1312,7 +1316,7 @@ Partial Class FrmANCinfo
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label9.ForeColor = System.Drawing.Color.Navy
         Me.Label9.Location = New System.Drawing.Point(261, 60)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(97, 15)
@@ -1323,7 +1327,7 @@ Partial Class FrmANCinfo
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label8.ForeColor = System.Drawing.Color.Navy
         Me.Label8.Location = New System.Drawing.Point(21, 110)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(71, 15)
@@ -1334,7 +1338,7 @@ Partial Class FrmANCinfo
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label7.ForeColor = System.Drawing.Color.Navy
         Me.Label7.Location = New System.Drawing.Point(364, 85)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(83, 15)
@@ -1345,7 +1349,7 @@ Partial Class FrmANCinfo
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label6.ForeColor = System.Drawing.Color.Navy
         Me.Label6.Location = New System.Drawing.Point(27, 85)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(65, 15)
@@ -1356,7 +1360,7 @@ Partial Class FrmANCinfo
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label5.ForeColor = System.Drawing.Color.Navy
         Me.Label5.Location = New System.Drawing.Point(39, 60)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(53, 15)
@@ -1367,7 +1371,7 @@ Partial Class FrmANCinfo
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label4.ForeColor = System.Drawing.Color.Navy
         Me.Label4.Location = New System.Drawing.Point(161, 61)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(37, 15)
@@ -1378,7 +1382,7 @@ Partial Class FrmANCinfo
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label3.ForeColor = System.Drawing.Color.Navy
         Me.Label3.Location = New System.Drawing.Point(322, 36)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(36, 15)
@@ -1389,7 +1393,7 @@ Partial Class FrmANCinfo
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label2.ForeColor = System.Drawing.Color.Navy
         Me.Label2.Location = New System.Drawing.Point(54, 36)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(38, 15)
@@ -1400,7 +1404,7 @@ Partial Class FrmANCinfo
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label1.ForeColor = System.Drawing.Color.Navy
         Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(80, 15)
@@ -1425,11 +1429,13 @@ Partial Class FrmANCinfo
         Me.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnsave.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnsave.ForeColor = System.Drawing.Color.Green
-        Me.btnsave.Location = New System.Drawing.Point(620, 388)
+        Me.btnsave.Image = CType(resources.GetObject("btnsave.Image"), System.Drawing.Image)
+        Me.btnsave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnsave.Location = New System.Drawing.Point(621, 389)
         Me.btnsave.Name = "btnsave"
-        Me.btnsave.Size = New System.Drawing.Size(91, 28)
+        Me.btnsave.Size = New System.Drawing.Size(72, 28)
         Me.btnsave.TabIndex = 30
-        Me.btnsave.Text = "SAVE"
+        Me.btnsave.Text = "      SAVE"
         Me.btnsave.UseVisualStyleBackColor = False
         '
         'Label51

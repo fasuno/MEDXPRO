@@ -2,9 +2,6 @@
 
 Public Class frmusers
 
-    'Dim Con As New SqlConnection("Server=HAVILAH-PC; DAtabase=DEAMACLINIC; Integrated Security=true")
-
-    ' establish a query  execution command
     Public Sub ExecuteQuery(query As String)
         Dim cmd As New SqlCommand(query, Con)
         con.Close()
@@ -16,7 +13,6 @@ Public Class frmusers
     End Sub
 
     Private Sub btncancel_Click(sender As Object, e As EventArgs) Handles btncancel.Click
-
         Me.Hide()
     End Sub
 
@@ -24,13 +20,13 @@ Public Class frmusers
 
         con.Open()
 
-        Dim cmd As New SqlCommand("Select * from UsersReg where Username = @User", con)
+        Dim cmd As New SqlCommand("Select * from UsersReg Where Username = @User", con)
 
         cmd.Parameters.AddWithValue("@User", txtusername.Text)
 
         Dim dr As SqlDataReader = cmd.ExecuteReader
         If dr.HasRows Then
-            MsgBox("THE USERNAME ALREADY EXIST, PLEASE CHOOSE ANOTHER", MsgBoxStyle.Information, "NEW USER")
+            MsgBox("THE USERNAME ALREADY EXIST, PLEASE CHOOSE ANOTHER", MsgBoxStyle.Information, "MEDXPRO USER")
             txtusername.Text = ""
             txtusername.Focus()
 
@@ -42,9 +38,9 @@ Public Class frmusers
             Try
                 cmd.CommandType = System.Data.CommandType.Text
 
-                cmd.CommandText = "INSERT INTO  UsersReg VALUES('" & txtid.Text & "', '" & txtfullname.Text & "', '" & txtusername.Text & "', '" & txtpassword.Text & "','" & cbodept.Text & "', '" & cborole.Text & "')"
+                cmd.CommandText = "INSERT INTO  UsersReg VALUES('" & txtfullname.Text & "', '" & txtusername.Text & "', '" & txtpassword.Text & "', '" & Txtroleid.Text & "','" & cborole.Text & "')"
 
-            cmd.Connection = con
+                cmd.Connection = con
                 cmd.ExecuteNonQuery()
 
                 MsgBox("NEW USER CREATED", MsgBoxStyle.Information, "NEW USER")
@@ -54,70 +50,113 @@ Public Class frmusers
 
             End Try
 
-            txtid.Text = ""
-        txtfullname.Text = ""
-        txtusername.Text = ""
-        txtpassword.Text = ""
-        cborole.Text = ""
-        cbodept.Text = ""
-        txtid.Focus()
+            Txtroleid.Text = ""
+            txtfullname.Text = ""
+            txtusername.Text = ""
+            txtpassword.Text = ""
+            cborole.Text = ""
+
+            Me.Close()
 
         End If
     End Sub
 
     Private Sub btnupdate_Click(sender As Object, e As EventArgs) Handles btnupdate.Click
 
-        Dim updateQuery As String = "Update UsersRwg Set  User_id= '" & txtid.Text & "', Full_name = '" & txtfullname.Text & "', Username = '" & txtusername.Text & "', Password = '" & txtpassword.Text & "', Department= '" & cbodept.Text & "', Role= '" & cborole.Text & "', WHERE User_id = '" & txtid.Text & "'"
+        Dim updateQuery As String = "Update UsersReg Set  Roleid= '" & Txtroleid.Text & "', Full_name = '" & txtfullname.Text & "', Username = '" & txtusername.Text & "', Password = '" & txtpassword.Text & "', Role= '" & cborole.Text & "' WHERE User_id = '" & TxtuserId.Text & "'"
 
         ExecuteQuery(updateQuery)
 
-        MessageBox.Show("User Details Edited Successfully")
+        MessageBox.Show("USER DETAILS SUCCESSFULLY EDITED")
 
-        txtid.Text = ""
+        TxtuserId.Text = ""
         txtfullname.Text = ""
         txtusername.Text = ""
         txtpassword.Text = ""
-        cbodept.Text = ""
+        Txtroleid.Text = ""
         cborole.Text = ""
 
+        Me.Close()
     End Sub
 
-    Private Sub txtusername_Leave(sender As Object, e As EventArgs) Handles txtusername.Leave
-        '// This will add the texh on label17 @havilah.com to the useername.
+    Public Sub PopulaeUSersrole()
 
-        ' Dim a As String
+        Dim tbl As New DataTable
+        cmd = New SqlCommand("Select Role from UsersRole ", con)
 
-        'a = txtusername.Text + Label7.Text
-        'txtusername.Text = a
+
+        adapt = New SqlDataAdapter(cmd)
+
+        ' con.Open()   ' Open connection
+
+        adapt.Fill(tbl)
+        cborole.DataSource = tbl
+        cborole.DisplayMember = "Role"
+
+        ' con.Close()
+
     End Sub
 
-    Public Sub checkusername()
+    Private Sub frmusers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadALLUsers()
+        PopulaeUSersrole()
+        cborole.Text = ""
+        btnsave.BringToFront()
+    End Sub
+
+    Public Sub showuroleID()
+
+        cmd = New SqlCommand("Select * from UsersRole where Role=@rol", con)
+        cmd.Parameters.Add("@rol", SqlDbType.VarChar).Value = cborole.Text
+
+        Dim adpt As New SqlDataAdapter(cmd)
+        Dim tbl As New DataTable()
+
+        adpt.Fill(tbl)
+
+        If tbl.Rows.Count() > 0 Then
+
+            'Display Role ID
+
+            Txtroleid.Text = tbl.Rows(0)(0).ToString()
+
+        Else
 
 
-        con.Open()
-        cmd = New SqlCommand("Select * from UsersReg where Username=@user", Con)
+        End If
 
-        cmd.Parameters.AddWithValue("@user", txtusername.Text)
-        Using dtr As SqlDataReader = cmd.ExecuteReader
+    End Sub
 
-            '// If it Then exist show message Erase hospital number textbox For New entry
+    Private Sub cborole_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cborole.SelectedIndexChanged
+        showuroleID()
 
-            If dtr.HasRows Then
-                MsgBox("The USERNAME already exist", MsgBoxStyle.Information, "USERS REGISTRATION")
-                txtusername.Text = ""
-                txtusername.Focus()
+    End Sub
 
-            Else
-                dtr.Close()
+    Public Sub LoadALLUsers()
 
+        Dim tbl As New DataTable
 
-                '//Close the datareader and insert the following data when the save button is hit again
+        cmd = New SqlCommand("Select User_Id, Full_Name, Username, Password, Role FROM UsersReg ", con)
 
+        adapt = New SqlDataAdapter(cmd)
 
-                'con.Close()
-            End If
-        End Using
+        adapt.Fill(tbl)
+        Dgvusers.DataSource = tbl
+        Dgvusers.Columns(0).Visible = False
+        Dgvusers.Columns(3).Visible = False
+        Dgvusers.AutoResizeColumns()
 
+    End Sub
+
+    Private Sub Dgvusers_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgvusers.CellDoubleClick
+
+        txtfullname.Text = Dgvusers.CurrentRow.Cells(1).Value.ToString
+        TxtuserId.Text = Dgvusers.CurrentRow.Cells(0).Value.ToString
+        txtusername.Text = Dgvusers.CurrentRow.Cells(2).Value.ToString
+        txtpassword.Text = Dgvusers.CurrentRow.Cells(3).Value.ToString
+        cborole.Text = Dgvusers.CurrentRow.Cells(4).Value.ToString
+
+        btnupdate.BringToFront()
     End Sub
 
 

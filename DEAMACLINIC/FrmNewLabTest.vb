@@ -26,6 +26,7 @@ Public Class FrmNewLabTest
     End Sub
 
     Private Sub BtnTestpar_Click(sender As Object, e As EventArgs) Handles BtnTestpar.Click
+        FrmTestDetails.TxtTest.Text = TxtTest.Text
         FrmTestDetails.ShowDialog()
     End Sub
 
@@ -64,7 +65,7 @@ Public Class FrmNewLabTest
     Public Sub UpdateTEST()
 
         Try
-            Dim Updat As String = "Update LAB_LIST Set TEST_NAME='" & TxtTest.Text & "', GROUPS='" & Cbogroup.Text & "', PCOST='" & TxtPrivCost.Text & "', NHIS='" & TxtNhisCost.Text & "', RETAINERS='" & TxtCompCost.Text & "', MEASURE='" & TxtMeasure.Text & "' WHERE Test_Name='" & frmLabTestList.DtgAllLabTest.CurrentRow.Cells(0).Value & "' "
+            Dim Updat As String = "Update LAB_LIST Set TEST_NAME='" & TxtTest.Text & "', GROUPS='" & Cbogroup.Text & "', COST='" & TxtPrivCost.Text & "', NHIS='" & TxtNhisCost.Text & "', RETAINERS='" & TxtCompCost.Text & "', MEASURE='" & TxtMeasure.Text & "' WHERE Test_Name='" & frmLabTestList.DtgAllLabTest.CurrentRow.Cells(0).Value & "' "
             con.Open()
             ExecuteQuery(Updat)
             con.Close()
@@ -83,5 +84,6 @@ Public Class FrmNewLabTest
     Private Sub Btnedit_Click_1(sender As Object, e As EventArgs) Handles Btnedit.Click
         UpdateTEST()
     End Sub
+
 
 End Class

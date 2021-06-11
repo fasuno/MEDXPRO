@@ -35,12 +35,15 @@ Public Class FrmRadViewResult
         adapt.Fill(tbl)
         If tbl.Rows.Count() > 0 Then
 
-            TxtRadresult.Text = tbl.Rows(0)(18).ToString
+            TxtRadresult.Text = tbl.Rows(0)(19).ToString
 
             lblinvest.Text = Dtgradinvest.CurrentRow.Cells(0).Value.ToString
             Txtreptby.Text = Dtgradinvest.CurrentRow.Cells(2).Value.ToString
 
         Else
+
+            MsgBox("NO RESULT FOUND FOR THE SELECTED INVESTIGATION", MsgBoxStyle.Information, "RADIOLOGY")
+
         End If
 
     End Sub

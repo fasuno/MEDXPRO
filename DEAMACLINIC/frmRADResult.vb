@@ -72,7 +72,7 @@ Public Class frmRADResult
         adapt.Fill(tbl)
         If tbl.Rows.Count() > 0 Then
 
-            TxtRadresult.Text = tbl.Rows(0)(18).ToString()
+            TxtRadresult.Text = tbl.Rows(0)(19).ToString()
 
             lblinvest.Text = Dtgradinvest.CurrentRow.Cells(0).Value.ToString
             Lblreprtby.Text = Dtgradinvest.CurrentRow.Cells(2).Value.ToString
@@ -176,7 +176,7 @@ Public Class frmRADResult
     Public Sub UpdateREsult()
 
         Try
-            Dim Updat As String = ("Update RadRequestAndResult Set Result = '" & TxtRadresult.Text & "', Date_reported = '" & lbldte.Text & "', Time_reported = '" & lbltim.Text & "', Reported_by = '" & Lblreprtby.Text & "', Status='" & lbltrtd.Text.ToString & "' WHERE Request_Num='" & Lblrqstnum.Text & "' AND Investigation = '" & lblinvest.Text.ToString & "'")
+            Dim Updat As String = ("Update RadRequestAndResult Set Result = '" & TxtRadresult.Text.ToString & "', Date_reported = '" & lbldte.Text & "', Time_reported = '" & lbltim.Text & "', Reported_by = '" & Lblreprtby.Text & "', Status='" & lbltrtd.Text.ToString & "' WHERE Request_Num='" & Lblrqstnum.Text & "' AND Investigation = '" & lblinvest.Text.ToString & "'")
 
             con.Open()
             ExecuteQuery(Updat)

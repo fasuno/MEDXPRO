@@ -21,7 +21,7 @@ Public Class frmLabTestList
     End Sub
 
     Private Sub DtgAllLabTest_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DtgAllLabTest.CellDoubleClick
-        Dim frms As New FrmNewLabTest
+        'Dim frms = New FrmNewLabTest
 
         FrmNewLabTest.TxtTest.Text = DtgAllLabTest.CurrentRow.Cells(0).Value.ToString
         FrmNewLabTest.Cbogroup.Text = DtgAllLabTest.CurrentRow.Cells(1).Value.ToString
@@ -30,17 +30,17 @@ Public Class frmLabTestList
         FrmNewLabTest.TxtNhisCost.Text = DtgAllLabTest.CurrentRow.Cells(3).Value.ToString
         FrmNewLabTest.TxtCompCost.Text = DtgAllLabTest.CurrentRow.Cells(4).Value.ToString
 
-        FrmNewLabTest.ShowDialog()
+
         'FrmNewLabTest.BtnSavetest.Enabled 
 
-        FrmNewLabTest.Btnedit.Enabled = True
-
+        FrmNewLabTest.Btnedit.BringToFront()
+        FrmNewLabTest.ShowDialog()
 
     End Sub
 
     Private Sub BtnNewtest_Click_1(sender As Object, e As EventArgs) Handles BtnNewtest.Click
+        'Dim frmn = New FrmNewLabTest
 
-        FrmNewLabTest.ShowDialog()
         FrmNewLabTest.TxtCompCost.Text = ""
         FrmNewLabTest.TxtMeasure.Text = ""
         FrmNewLabTest.TxtNhisCost.Text = ""
@@ -48,8 +48,10 @@ Public Class frmLabTestList
         FrmNewLabTest.TxtTest.Text = ""
         FrmNewLabTest.TxtCompCost.Text = ""
         FrmNewLabTest.Cbogroup.Text = ""
-        ' FrmNewLabTest.BtnEdit.Enabled = True
-        ' FrmNewLabTest.BtnSavetest.Enabled = False
+        FrmNewLabTest.Btnedit.Enabled = True
+        FrmNewLabTest.BtnSavetest.BringToFront()
+
+        FrmNewLabTest.ShowDialog()
 
     End Sub
 

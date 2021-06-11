@@ -22,7 +22,7 @@ Partial Class FrmDrugsbill
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmDrugsbill))
         Me.lblbilledby = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -36,10 +36,12 @@ Partial Class FrmDrugsbill
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Txtacctcat = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.txtdatebill = New System.Windows.Forms.Label()
-        Me.txtbilledby = New System.Windows.Forms.TextBox()
         Me.txtOthername = New System.Windows.Forms.TextBox()
         Me.txtpresby = New System.Windows.Forms.TextBox()
+        Me.txtbilledby = New System.Windows.Forms.TextBox()
         Me.txtage = New System.Windows.Forms.TextBox()
         Me.txtsex = New System.Windows.Forms.TextBox()
         Me.TxtSurname = New System.Windows.Forms.TextBox()
@@ -70,7 +72,7 @@ Partial Class FrmDrugsbill
         Me.lblbilledby.AutoSize = True
         Me.lblbilledby.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblbilledby.ForeColor = System.Drawing.Color.Navy
-        Me.lblbilledby.Location = New System.Drawing.Point(210, 59)
+        Me.lblbilledby.Location = New System.Drawing.Point(558, 33)
         Me.lblbilledby.Name = "lblbilledby"
         Me.lblbilledby.Size = New System.Drawing.Size(71, 17)
         Me.lblbilledby.TabIndex = 28
@@ -102,14 +104,14 @@ Partial Class FrmDrugsbill
         Me.DtgDrugbill.AllowUserToAddRows = False
         Me.DtgDrugbill.AllowUserToDeleteRows = False
         Me.DtgDrugbill.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DtgDrugbill.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DtgDrugbill.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DtgDrugbill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DtgDrugbill.Location = New System.Drawing.Point(4, 4)
         Me.DtgDrugbill.Name = "DtgDrugbill"
@@ -161,7 +163,7 @@ Partial Class FrmDrugsbill
         'BtnPrint
         '
         Me.BtnPrint.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnPrint.Location = New System.Drawing.Point(41, 424)
+        Me.BtnPrint.Location = New System.Drawing.Point(8, 425)
         Me.BtnPrint.Name = "BtnPrint"
         Me.BtnPrint.Size = New System.Drawing.Size(74, 28)
         Me.BtnPrint.TabIndex = 18
@@ -170,7 +172,9 @@ Partial Class FrmDrugsbill
         '
         'BtnSave
         '
+        Me.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSave.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSave.ForeColor = System.Drawing.Color.Green
         Me.BtnSave.Location = New System.Drawing.Point(665, 424)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(144, 27)
@@ -189,11 +193,13 @@ Partial Class FrmDrugsbill
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Txtacctcat)
+        Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.txtdatebill)
-        Me.Panel1.Controls.Add(Me.txtbilledby)
-        Me.Panel1.Controls.Add(Me.lblbilledby)
         Me.Panel1.Controls.Add(Me.txtOthername)
         Me.Panel1.Controls.Add(Me.txtpresby)
+        Me.Panel1.Controls.Add(Me.txtbilledby)
+        Me.Panel1.Controls.Add(Me.lblbilledby)
         Me.Panel1.Controls.Add(Me.txtage)
         Me.Panel1.Controls.Add(Me.txtsex)
         Me.Panel1.Controls.Add(Me.TxtSurname)
@@ -207,33 +213,44 @@ Partial Class FrmDrugsbill
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Location = New System.Drawing.Point(26, 37)
+        Me.Panel1.Location = New System.Drawing.Point(4, 37)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(803, 88)
+        Me.Panel1.Size = New System.Drawing.Size(847, 88)
         Me.Panel1.TabIndex = 14
+        '
+        'Txtacctcat
+        '
+        Me.Txtacctcat.BackColor = System.Drawing.Color.White
+        Me.Txtacctcat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Txtacctcat.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtacctcat.ForeColor = System.Drawing.Color.Black
+        Me.Txtacctcat.Location = New System.Drawing.Point(404, 57)
+        Me.Txtacctcat.Name = "Txtacctcat"
+        Me.Txtacctcat.ReadOnly = True
+        Me.Txtacctcat.Size = New System.Drawing.Size(134, 21)
+        Me.Txtacctcat.TabIndex = 32
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.Navy
+        Me.Label11.Location = New System.Drawing.Point(292, 60)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(106, 15)
+        Me.Label11.TabIndex = 31
+        Me.Label11.Text = "Account category:"
         '
         'txtdatebill
         '
         Me.txtdatebill.AutoSize = True
         Me.txtdatebill.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.txtdatebill.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtdatebill.Location = New System.Drawing.Point(105, 59)
+        Me.txtdatebill.Location = New System.Drawing.Point(477, 31)
         Me.txtdatebill.Name = "txtdatebill"
         Me.txtdatebill.Size = New System.Drawing.Size(14, 19)
         Me.txtdatebill.TabIndex = 30
         Me.txtdatebill.Text = " "
-        '
-        'txtbilledby
-        '
-        Me.txtbilledby.BackColor = System.Drawing.Color.White
-        Me.txtbilledby.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbilledby.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbilledby.ForeColor = System.Drawing.Color.Black
-        Me.txtbilledby.Location = New System.Drawing.Point(280, 57)
-        Me.txtbilledby.Name = "txtbilledby"
-        Me.txtbilledby.ReadOnly = True
-        Me.txtbilledby.Size = New System.Drawing.Size(194, 21)
-        Me.txtbilledby.TabIndex = 29
         '
         'txtOthername
         '
@@ -253,11 +270,23 @@ Partial Class FrmDrugsbill
         Me.txtpresby.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtpresby.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtpresby.ForeColor = System.Drawing.Color.Black
-        Me.txtpresby.Location = New System.Drawing.Point(567, 58)
+        Me.txtpresby.Location = New System.Drawing.Point(635, 58)
         Me.txtpresby.Name = "txtpresby"
         Me.txtpresby.ReadOnly = True
-        Me.txtpresby.Size = New System.Drawing.Size(227, 21)
+        Me.txtpresby.Size = New System.Drawing.Size(208, 21)
         Me.txtpresby.TabIndex = 19
+        '
+        'txtbilledby
+        '
+        Me.txtbilledby.BackColor = System.Drawing.Color.White
+        Me.txtbilledby.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtbilledby.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbilledby.ForeColor = System.Drawing.Color.Black
+        Me.txtbilledby.Location = New System.Drawing.Point(635, 30)
+        Me.txtbilledby.Name = "txtbilledby"
+        Me.txtbilledby.ReadOnly = True
+        Me.txtbilledby.Size = New System.Drawing.Size(208, 21)
+        Me.txtbilledby.TabIndex = 29
         '
         'txtage
         '
@@ -265,7 +294,7 @@ Partial Class FrmDrugsbill
         Me.txtage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtage.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtage.ForeColor = System.Drawing.Color.Black
-        Me.txtage.Location = New System.Drawing.Point(430, 30)
+        Me.txtage.Location = New System.Drawing.Point(355, 30)
         Me.txtage.Name = "txtage"
         Me.txtage.ReadOnly = True
         Me.txtage.Size = New System.Drawing.Size(44, 21)
@@ -277,10 +306,10 @@ Partial Class FrmDrugsbill
         Me.txtsex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtsex.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtsex.ForeColor = System.Drawing.Color.Black
-        Me.txtsex.Location = New System.Drawing.Point(308, 30)
+        Me.txtsex.Location = New System.Drawing.Point(233, 30)
         Me.txtsex.Name = "txtsex"
         Me.txtsex.ReadOnly = True
-        Me.txtsex.Size = New System.Drawing.Size(85, 21)
+        Me.txtsex.Size = New System.Drawing.Size(83, 21)
         Me.txtsex.TabIndex = 17
         '
         'TxtSurname
@@ -301,10 +330,10 @@ Partial Class FrmDrugsbill
         Me.txtaccnt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtaccnt.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtaccnt.ForeColor = System.Drawing.Color.Black
-        Me.txtaccnt.Location = New System.Drawing.Point(567, 31)
+        Me.txtaccnt.Location = New System.Drawing.Point(77, 58)
         Me.txtaccnt.Name = "txtaccnt"
         Me.txtaccnt.ReadOnly = True
-        Me.txtaccnt.Size = New System.Drawing.Size(227, 21)
+        Me.txtaccnt.Size = New System.Drawing.Size(210, 21)
         Me.txtaccnt.TabIndex = 13
         '
         'txtHnum
@@ -316,7 +345,7 @@ Partial Class FrmDrugsbill
         Me.txtHnum.Location = New System.Drawing.Point(100, 30)
         Me.txtHnum.Name = "txtHnum"
         Me.txtHnum.ReadOnly = True
-        Me.txtHnum.Size = New System.Drawing.Size(162, 21)
+        Me.txtHnum.Size = New System.Drawing.Size(92, 21)
         Me.txtHnum.TabIndex = 12
         '
         'Label9
@@ -324,7 +353,7 @@ Partial Class FrmDrugsbill
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Navy
-        Me.Label9.Location = New System.Drawing.Point(271, 31)
+        Me.Label9.Location = New System.Drawing.Point(196, 33)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(31, 15)
         Me.Label9.TabIndex = 11
@@ -335,7 +364,7 @@ Partial Class FrmDrugsbill
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Navy
-        Me.Label2.Location = New System.Drawing.Point(30, 60)
+        Me.Label2.Location = New System.Drawing.Point(405, 33)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(72, 15)
         Me.Label2.TabIndex = 4
@@ -368,7 +397,7 @@ Partial Class FrmDrugsbill
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Navy
-        Me.Label5.Location = New System.Drawing.Point(13, 31)
+        Me.Label5.Location = New System.Drawing.Point(13, 32)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(89, 15)
         Me.Label5.TabIndex = 7
@@ -379,7 +408,7 @@ Partial Class FrmDrugsbill
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Navy
-        Me.Label6.Location = New System.Drawing.Point(474, 61)
+        Me.Label6.Location = New System.Drawing.Point(540, 61)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(89, 15)
         Me.Label6.TabIndex = 8
@@ -390,7 +419,7 @@ Partial Class FrmDrugsbill
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Navy
-        Me.Label7.Location = New System.Drawing.Point(399, 30)
+        Me.Label7.Location = New System.Drawing.Point(322, 33)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(33, 15)
         Me.Label7.TabIndex = 9
@@ -401,18 +430,18 @@ Partial Class FrmDrugsbill
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Navy
-        Me.Label8.Location = New System.Drawing.Point(480, 30)
+        Me.Label8.Location = New System.Drawing.Point(21, 60)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(81, 15)
+        Me.Label8.Size = New System.Drawing.Size(56, 15)
         Me.Label8.TabIndex = 10
-        Me.Label8.Text = "Account type:"
+        Me.Label8.Text = "Account:"
         '
         'LblPaymentstatus
         '
         Me.LblPaymentstatus.AutoSize = True
         Me.LblPaymentstatus.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblPaymentstatus.ForeColor = System.Drawing.Color.Red
-        Me.LblPaymentstatus.Location = New System.Drawing.Point(422, 8)
+        Me.LblPaymentstatus.Location = New System.Drawing.Point(418, 9)
         Me.LblPaymentstatus.Name = "LblPaymentstatus"
         Me.LblPaymentstatus.Size = New System.Drawing.Size(12, 17)
         Me.LblPaymentstatus.TabIndex = 25
@@ -470,20 +499,24 @@ Partial Class FrmDrugsbill
         Me.Controls.Add(Me.lbldte)
         Me.Controls.Add(Me.lblconfirmby)
         Me.Controls.Add(Me.lblrqstid)
-        Me.Controls.Add(Me.LblPaymentstatus)
         Me.Controls.Add(Me.lblpay)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.txtpword)
         Me.Controls.Add(Me.LblTotalcost)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.LblPaymentstatus)
         Me.Controls.Add(Me.BtnPrint)
         Me.Controls.Add(Me.BtnSave)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.ForeColor = System.Drawing.Color.Black
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmDrugsbill"
-        Me.Text = " DRUGS BILL"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = " DRUGS BILLING FORM"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         CType(Me.DtgDrugbill, System.ComponentModel.ISupportInitialize).EndInit()
@@ -529,4 +562,6 @@ Partial Class FrmDrugsbill
     Friend WithEvents lblconfirmby As Label
     Friend WithEvents txtdatebill As Label
     Friend WithEvents lbldte As Label
+    Friend WithEvents Txtacctcat As TextBox
+    Friend WithEvents Label11 As Label
 End Class

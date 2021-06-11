@@ -24,13 +24,13 @@ Partial Class frmRADResult
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRADResult))
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Txtactcat = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Lblreprtby = New System.Windows.Forms.Label()
         Me.lbltim = New System.Windows.Forms.Label()
         Me.lbldte = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Lblrqstnum = New System.Windows.Forms.Label()
-        Me.lblbilledby = New System.Windows.Forms.Label()
         Me.txtOname = New System.Windows.Forms.TextBox()
         Me.txtRqstby = New System.Windows.Forms.TextBox()
         Me.txtage = New System.Windows.Forms.TextBox()
@@ -47,6 +47,8 @@ Partial Class frmRADResult
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Lblrqstnum = New System.Windows.Forms.Label()
+        Me.lblbilledby = New System.Windows.Forms.Label()
         Me.lblinvest = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.chkcomp = New System.Windows.Forms.CheckBox()
@@ -73,6 +75,8 @@ Partial Class frmRADResult
         'Panel3
         '
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.Txtactcat)
+        Me.Panel3.Controls.Add(Me.Label12)
         Me.Panel3.Controls.Add(Me.Label11)
         Me.Panel3.Controls.Add(Me.Lblreprtby)
         Me.Panel3.Controls.Add(Me.lbltim)
@@ -82,6 +86,29 @@ Partial Class frmRADResult
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1011, 100)
         Me.Panel3.TabIndex = 1
+        '
+        'Txtactcat
+        '
+        Me.Txtactcat.BackColor = System.Drawing.Color.White
+        Me.Txtactcat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Txtactcat.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtactcat.ForeColor = System.Drawing.Color.Black
+        Me.Txtactcat.Location = New System.Drawing.Point(649, 60)
+        Me.Txtactcat.Name = "Txtactcat"
+        Me.Txtactcat.ReadOnly = True
+        Me.Txtactcat.Size = New System.Drawing.Size(156, 21)
+        Me.Txtactcat.TabIndex = 22
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.Navy
+        Me.Label12.Location = New System.Drawing.Point(562, 62)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(81, 15)
+        Me.Label12.TabIndex = 21
+        Me.Label12.Text = "Account type:"
         '
         'Label11
         '
@@ -129,8 +156,6 @@ Partial Class frmRADResult
         'Panel4
         '
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel4.Controls.Add(Me.Lblrqstnum)
-        Me.Panel4.Controls.Add(Me.lblbilledby)
         Me.Panel4.Controls.Add(Me.txtOname)
         Me.Panel4.Controls.Add(Me.txtRqstby)
         Me.Panel4.Controls.Add(Me.txtage)
@@ -151,30 +176,6 @@ Partial Class frmRADResult
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(803, 88)
         Me.Panel4.TabIndex = 16
-        '
-        'Lblrqstnum
-        '
-        Me.Lblrqstnum.AutoSize = True
-        Me.Lblrqstnum.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lblrqstnum.ForeColor = System.Drawing.Color.Navy
-        Me.Lblrqstnum.Location = New System.Drawing.Point(661, 57)
-        Me.Lblrqstnum.Name = "Lblrqstnum"
-        Me.Lblrqstnum.Size = New System.Drawing.Size(95, 17)
-        Me.Lblrqstnum.TabIndex = 22
-        Me.Lblrqstnum.Text = "Request num"
-        Me.Lblrqstnum.Visible = False
-        '
-        'lblbilledby
-        '
-        Me.lblbilledby.AutoSize = True
-        Me.lblbilledby.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblbilledby.ForeColor = System.Drawing.Color.Navy
-        Me.lblbilledby.Location = New System.Drawing.Point(577, 57)
-        Me.lblbilledby.Name = "lblbilledby"
-        Me.lblbilledby.Size = New System.Drawing.Size(71, 17)
-        Me.lblbilledby.TabIndex = 21
-        Me.lblbilledby.Text = "Billed by:"
-        Me.lblbilledby.Visible = False
         '
         'txtOname
         '
@@ -197,7 +198,7 @@ Partial Class frmRADResult
         Me.txtRqstby.Location = New System.Drawing.Point(308, 56)
         Me.txtRqstby.Name = "txtRqstby"
         Me.txtRqstby.ReadOnly = True
-        Me.txtRqstby.Size = New System.Drawing.Size(263, 21)
+        Me.txtRqstby.Size = New System.Drawing.Size(238, 21)
         Me.txtRqstby.TabIndex = 19
         '
         'txtage
@@ -218,7 +219,7 @@ Partial Class frmRADResult
         Me.txtsex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtsex.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtsex.ForeColor = System.Drawing.Color.Black
-        Me.txtsex.Location = New System.Drawing.Point(308, 30)
+        Me.txtsex.Location = New System.Drawing.Point(303, 30)
         Me.txtsex.Name = "txtsex"
         Me.txtsex.ReadOnly = True
         Me.txtsex.Size = New System.Drawing.Size(85, 21)
@@ -277,7 +278,7 @@ Partial Class frmRADResult
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Navy
-        Me.Label9.Location = New System.Drawing.Point(271, 31)
+        Me.Label9.Location = New System.Drawing.Point(267, 33)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(31, 15)
         Me.Label9.TabIndex = 11
@@ -343,7 +344,7 @@ Partial Class frmRADResult
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Navy
-        Me.Label7.Location = New System.Drawing.Point(399, 30)
+        Me.Label7.Location = New System.Drawing.Point(392, 33)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(33, 15)
         Me.Label7.TabIndex = 9
@@ -354,17 +355,41 @@ Partial Class frmRADResult
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Navy
-        Me.Label8.Location = New System.Drawing.Point(480, 30)
+        Me.Label8.Location = New System.Drawing.Point(480, 33)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(81, 15)
         Me.Label8.TabIndex = 10
         Me.Label8.Text = "Account type:"
         '
+        'Lblrqstnum
+        '
+        Me.Lblrqstnum.AutoSize = True
+        Me.Lblrqstnum.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lblrqstnum.ForeColor = System.Drawing.Color.Navy
+        Me.Lblrqstnum.Location = New System.Drawing.Point(902, 8)
+        Me.Lblrqstnum.Name = "Lblrqstnum"
+        Me.Lblrqstnum.Size = New System.Drawing.Size(95, 17)
+        Me.Lblrqstnum.TabIndex = 22
+        Me.Lblrqstnum.Text = "Request num"
+        Me.Lblrqstnum.Visible = False
+        '
+        'lblbilledby
+        '
+        Me.lblbilledby.AutoSize = True
+        Me.lblbilledby.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblbilledby.ForeColor = System.Drawing.Color.Navy
+        Me.lblbilledby.Location = New System.Drawing.Point(825, 8)
+        Me.lblbilledby.Name = "lblbilledby"
+        Me.lblbilledby.Size = New System.Drawing.Size(71, 17)
+        Me.lblbilledby.TabIndex = 21
+        Me.lblbilledby.Text = "Billed by:"
+        Me.lblbilledby.Visible = False
+        '
         'lblinvest
         '
         Me.lblinvest.AutoSize = True
         Me.lblinvest.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblinvest.ForeColor = System.Drawing.Color.DarkRed
+        Me.lblinvest.ForeColor = System.Drawing.Color.Navy
         Me.lblinvest.Location = New System.Drawing.Point(306, 13)
         Me.lblinvest.Name = "lblinvest"
         Me.lblinvest.Size = New System.Drawing.Size(39, 15)
@@ -374,7 +399,9 @@ Partial Class frmRADResult
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Lblrqstnum)
         Me.Panel1.Controls.Add(Me.chkcomp)
+        Me.Panel1.Controls.Add(Me.lblbilledby)
         Me.Panel1.Controls.Add(Me.BTNcancel)
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.TxtPass)
@@ -403,7 +430,7 @@ Partial Class frmRADResult
         '
         Me.BTNcancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNcancel.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNcancel.ForeColor = System.Drawing.Color.OrangeRed
+        Me.BTNcancel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BTNcancel.Location = New System.Drawing.Point(838, 350)
         Me.BTNcancel.Name = "BTNcancel"
         Me.BTNcancel.Size = New System.Drawing.Size(75, 32)
@@ -437,11 +464,13 @@ Partial Class frmRADResult
         Me.Btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btnsave.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btnsave.ForeColor = System.Drawing.Color.DarkGreen
-        Me.Btnsave.Location = New System.Drawing.Point(919, 352)
+        Me.Btnsave.Image = CType(resources.GetObject("Btnsave.Image"), System.Drawing.Image)
+        Me.Btnsave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btnsave.Location = New System.Drawing.Point(919, 351)
         Me.Btnsave.Name = "Btnsave"
         Me.Btnsave.Size = New System.Drawing.Size(75, 30)
         Me.Btnsave.TabIndex = 2
-        Me.Btnsave.Text = "SAVE "
+        Me.Btnsave.Text = "     SAVE "
         Me.Btnsave.UseVisualStyleBackColor = True
         '
         'Dtgradinvest
@@ -591,4 +620,6 @@ Partial Class frmRADResult
     Friend WithEvents lbltrtd As Label
     Friend WithEvents TxtRadresult As TextBox
     Friend WithEvents chkcomp As CheckBox
+    Friend WithEvents Txtactcat As TextBox
+    Friend WithEvents Label12 As Label
 End Class

@@ -339,11 +339,13 @@ Partial Class FrmCashreceipt
         Me.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSave.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSave.ForeColor = System.Drawing.Color.Green
+        Me.BtnSave.Image = CType(resources.GetObject("BtnSave.Image"), System.Drawing.Image)
+        Me.BtnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnSave.Location = New System.Drawing.Point(262, 324)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(69, 25)
         Me.BtnSave.TabIndex = 2
-        Me.BtnSave.Text = "SAVE"
+        Me.BtnSave.Text = "      SAVE"
         Me.BtnSave.UseVisualStyleBackColor = True
         '
         'Label4

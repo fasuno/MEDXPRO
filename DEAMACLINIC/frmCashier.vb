@@ -21,7 +21,7 @@ Public Class frmCashier
     Public Sub LoadReceipts()
 
         Dim tbls As New DataTable()
-        cmd = New SqlCommand("Select * from RECEIPTS WHERE Date BETWEEN @dafrom And @dato", con)
+        cmd = New SqlCommand("Select * from RECEIPTS WHERE Date BETWEEN @dafrom And @dato ORDER BY 'Receipt_No'", con)
         cmd.Parameters.Add("@dafrom", SqlDbType.Date).Value = Datefrom.Value
         cmd.Parameters.Add("@dato", SqlDbType.Date).Value = DateTo.Value
 
@@ -54,17 +54,11 @@ Public Class frmCashier
         LoadReceipts()
         LoadCashiers()
 
-        Dim dtval As String = "7:00:00 AM"
-        Dim dtvals As String = "11:59:59 PM"
-        timeFrm.Value = Convert.ToDateTime(dtval)
-        Timeto.Value = Convert.ToDateTime(dtvals)
-
         GetTotalCost()
     End Sub
 
     Private Sub DtgPendbills_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DtgPendbills.CellDoubleClick
-        Dim frms = New FrmReceipts
-
+        'Dim frms = New FrmReceipts
         FrmReceipts.txtname.Text = DtgPendbills.CurrentRow.Cells(4).Value + "  " + DtgPendbills.CurrentRow.Cells(5).Value '// Concatenate the first name and other names in one textbox
         FrmReceipts.Txthnum.Text = DtgPendbills.CurrentRow.Cells(3).Value
         FrmReceipts.Txtserv.Text = DtgPendbills.CurrentRow.Cells(7).Value
@@ -72,7 +66,9 @@ Public Class frmCashier
         FrmReceipts.txtaccnt.Text = DtgPendbills.CurrentRow.Cells(8).Value
         FrmReceipts.Txtservno.Text = DtgPendbills.CurrentRow.Cells(0).Value
 
+        FrmReceipts.BtnSave.BringToFront()
         FrmReceipts.ShowDialog()
+
     End Sub
 
     Private Sub Cbocashiers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cbocashiers.SelectedIndexChanged
@@ -242,26 +238,25 @@ Public Class frmCashier
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
-        Dim tbls As New DataTable()
-        cmd = New SqlCommand("Select * from RECEIPTS WHERE Date BETWEEN @dafrom And @dato AND Time >='" & timeFrm.Value & "' AND Time >='" & Timeto.Value & "'", con)
-        cmd.Parameters.Add("@dafrom", SqlDbType.Date).Value = Datefrom.Value
-        cmd.Parameters.Add("@dato", SqlDbType.Date).Value = DateTo.Value
-
-        Dim adapter As New SqlDataAdapter(cmd)
-        adapter.Fill(tbls)
-
-        Dtgreceipts.DataSource = tbls
-        Dtgreceipts.AutoResizeColumns()
-        Dtgreceipts.Columns(3).Width = 250
-        Dtgreceipts.Columns(7).Width = 200
-
-        GetTotalCost()
-    End Sub
 
     Private Sub BtnCreate_Click_1(sender As Object, e As EventArgs) Handles BtnCreate.Click
         FrmCashreceipt.ShowDialog()
 
     End Sub
+
+    Private Sub Dtgreceipts_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dtgreceipts.CellDoubleClick
+        FrmReceipts.txtname.Text = Dtgreceipts.CurrentRow.Cells(3).Value
+        FrmReceipts.Txthnum.Text = Dtgreceipts.CurrentRow.Cells(4).Value
+        FrmReceipts.Txtserv.Text = Dtgreceipts.CurrentRow.Cells(6).Value
+        FrmReceipts.lblBill.Text = Dtgreceipts.CurrentRow.Cells(5).Value
+        FrmReceipts.txtaccnt.Text = Dtgreceipts.CurrentRow.Cells(9).Value.ToString
+        FrmReceipts.Txtservno.Text = Dtgreceipts.CurrentRow.Cells(8).Value.ToString
+        FrmReceipts.LblReceiptnum.Text = Dtgreceipts.CurrentRow.Cells(2).Value
+        FrmReceipts.lblcashiername.Text = Dtgreceipts.CurrentRow.Cells(7).Value
+
+        FrmReceipts.btnreprint.BringToFront()
+        FrmReceipts.ShowDialog()
+    End Sub
+
+
 End Class

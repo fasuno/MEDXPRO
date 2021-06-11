@@ -22,6 +22,7 @@ Partial Class ANCBooking
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ANCBooking))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -35,7 +36,7 @@ Partial Class ANCBooking
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Purple
+        Me.Panel1.BackColor = System.Drawing.Color.Blue
         Me.Panel1.Controls.Add(Me.BtnNewBook)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -48,11 +49,13 @@ Partial Class ANCBooking
         Me.BtnNewBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnNewBook.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNewBook.ForeColor = System.Drawing.Color.White
-        Me.BtnNewBook.Location = New System.Drawing.Point(533, 9)
+        Me.BtnNewBook.Image = CType(resources.GetObject("BtnNewBook.Image"), System.Drawing.Image)
+        Me.BtnNewBook.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnNewBook.Location = New System.Drawing.Point(561, 9)
         Me.BtnNewBook.Name = "BtnNewBook"
-        Me.BtnNewBook.Size = New System.Drawing.Size(108, 28)
+        Me.BtnNewBook.Size = New System.Drawing.Size(79, 28)
         Me.BtnNewBook.TabIndex = 0
-        Me.BtnNewBook.Text = "New Booking"
+        Me.BtnNewBook.Text = "   New"
         Me.BtnNewBook.UseVisualStyleBackColor = True
         '
         'Panel2

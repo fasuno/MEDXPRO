@@ -341,7 +341,7 @@ Partial Class FrmNewdrugs
         '
         Me.BtnSavedrug.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSavedrug.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSavedrug.Location = New System.Drawing.Point(323, 268)
+        Me.BtnSavedrug.Location = New System.Drawing.Point(322, 268)
         Me.BtnSavedrug.Name = "BtnSavedrug"
         Me.BtnSavedrug.Size = New System.Drawing.Size(76, 31)
         Me.BtnSavedrug.TabIndex = 17
@@ -414,7 +414,7 @@ Partial Class FrmNewdrugs
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.Purple
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Lbldate)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Location = New System.Drawing.Point(1, 0)
@@ -446,7 +446,7 @@ Partial Class FrmNewdrugs
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.Purple
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Panel3.Location = New System.Drawing.Point(1, 306)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(504, 12)

@@ -14,13 +14,9 @@ Public Class frmAllwaitingList
 
         adapt = New SqlDataAdapter(cmd)
 
-        ' con.Open()
-
         adapt.Fill(tbl)
         DtgAllPendWaitlist.DataSource = tbl
         lblCountPend.Text = DtgAllPendWaitlist.RowCount
-
-        ' con.Close()
 
     End Sub
 
@@ -30,18 +26,15 @@ Public Class frmAllwaitingList
 
         cmd = New SqlCommand("Select * from Treated_Waitinglist WHERE  Date BETWEEN @datfrom AND @datto", con)
 
-
         cmd.Parameters.Add("@datfrom", SqlDbType.Date).Value = from.Value
         cmd.Parameters.Add("@datto", SqlDbType.Date).Value = dto.Value
 
         adapt = New SqlDataAdapter(cmd)
 
-        ' con.Open()
-
         adapt.Fill(tbl)
         DtgTreatWaitlist.DataSource = tbl
         LblcountTreat.Text = DtgTreatWaitlist.RowCount
-        'con.Close()
+
     End Sub
 
     Private Sub Tabwaitinglist_TabIndexChanged(sender As Object, e As EventArgs) Handles Tabwaitinglist.TabIndexChanged
@@ -83,7 +76,7 @@ Public Class frmAllwaitingList
 
     Private Sub btnfindTreat_Click(sender As Object, e As EventArgs) Handles btnfindTreat.Click
 
-        cmd = New SqlCommand("Select * from Treated_Waitinglist WHERE Hospital_No=@HNum", con)
+        cmd = New SqlCommand("Select * from Treated_Waitinglist WHERE Hospital_Num=@HNum", con)
 
         cmd.Parameters.Add("@HNum", SqlDbType.VarChar).Value = Txtfindpt.Text
 
@@ -131,7 +124,7 @@ Public Class frmAllwaitingList
     End Sub
 
     Private Sub DtgAllPendWaitlist_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DtgAllPendWaitlist.CellDoubleClick
-        Dim frm = New FrmPtRecords
+        ' Dim frms = New FrmPtRecords
 
         FrmPtRecords.Lblsurname.Text = DtgAllPendWaitlist.CurrentRow.Cells(2).Value.ToString
         FrmPtRecords.Lblothernmaes.Text = DtgAllPendWaitlist.CurrentRow.Cells(3).Value.ToString
@@ -146,11 +139,18 @@ Public Class frmAllwaitingList
         FrmPtRecords.lblsex.Text = DtgAllPendWaitlist.CurrentRow.Cells(6).Value.ToString
         FrmPtRecords.lblacct.Text = DtgAllPendWaitlist.CurrentRow.Cells(7).Value.ToString
 
+        If FrmPtRecords.lblsex.Text = "Male" Then
+            FrmPtRecords.Consultations1.BtnNewanc.Enabled = False
+
+        ElseIf FrmPtRecords.lblsex.Text = "Female" Then
+            FrmPtRecords.Consultations1.BtnNewanc.Enabled = True
+        End If
         FrmPtRecords.ShowDialog()
+
     End Sub
 
     Private Sub DtgTreatWaitlist_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DtgTreatWaitlist.CellDoubleClick
-        Dim frm = New FrmPtRecords
+        ' Dim frm = New FrmPtRecords
 
         FrmPtRecords.Lblsurname.Text = DtgTreatWaitlist.CurrentRow.Cells(2).Value.ToString
         FrmPtRecords.Lblothernmaes.Text = DtgTreatWaitlist.CurrentRow.Cells(3).Value.ToString
@@ -159,6 +159,16 @@ Public Class frmAllwaitingList
         FrmPtRecords.lblsex.Text = DtgTreatWaitlist.CurrentRow.Cells(6).Value.ToString
         FrmPtRecords.lblacct.Text = DtgTreatWaitlist.CurrentRow.Cells(7).Value.ToString
 
+
+        If FrmPtRecords.lblsex.Text = "Male" Then
+            FrmPtRecords.Consultations1.BtnNewanc.Enabled = False
+
+        ElseIf FrmPtRecords.lblsex.Text = "Female" Then
+            FrmPtRecords.Consultations1.BtnNewanc.Enabled = True
+        End If
+
         FrmPtRecords.ShowDialog()
     End Sub
+
+
 End Class

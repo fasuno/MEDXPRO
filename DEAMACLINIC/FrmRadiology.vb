@@ -39,7 +39,7 @@ Public Class FrmRadiology
 
     Private Sub DtgRAdtreated_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DtgRAdtreated.CellDoubleClick
 
-        Dim frms = New FrmRadViewResult
+        '  Dim frms = New FrmRadViewResult
 
         FrmRadViewResult.Txtrqstnum.Text = DtgRAdtreated.CurrentRow.Cells(0).Value.ToString
         FrmRadViewResult.txtHnum.Text = DtgRAdtreated.CurrentRow.Cells(2).Value.ToString
@@ -60,7 +60,7 @@ Public Class FrmRadiology
 
         Dim mtbls As New DataTable()
 
-        cmd = New SqlCommand("Select DISTINCT Request_NUm, Date_Requested, Hospital_No, Surname, Other_Name, Age, Sex, Account, Requested_by, Date_Reported from VwRADResult WHERE Date_Reported BETWEEN @Tdatefrom AND @Tdateto ", con)
+        cmd = New SqlCommand("Select DISTINCT Request_NUm, Date_Requested, Hospital_No, Surname, Other_Name, Age, Sex, Account, Requested_by, Date_Reported, Report_Status from VwRADResult WHERE Date_Reported BETWEEN @Tdatefrom AND @Tdateto ", con)
         cmd.Parameters.Add("@Tdatefrom", SqlDbType.Date).Value = DateTrtdFrom.Value
         cmd.Parameters.Add("@Tdateto", SqlDbType.Date).Value = DateTrtdTo.Value
         ' cmd.Parameters.Add("@Accnt", SqlDbType.VarChar).Value = CboacctTrtd.Text
@@ -78,7 +78,7 @@ Public Class FrmRadiology
     Private Sub BtnSearch_Click(sender As Object, e As EventArgs) Handles BtnSearch.Click
 
         cmd = New SqlCommand("Select * from Pend_RadRequest where Hospital_No=@Hosp_Num", con)
-        cmd.Parameters.Add("@Hosp_Num", SqlDbType.VarChar).Value = Txtfinrad.Text
+        cmd.Parameters.Add("@Hosp_Num", SqlDbType.Int).Value = Txtfinrad.Text
 
         adapt = New SqlDataAdapter(cmd)
         Dim tbl As New DataTable
@@ -88,7 +88,7 @@ Public Class FrmRadiology
             Dtgpendrad.DataSource = tbl
 
         Else
-            MessageBox.Show("RADIOLOGY RESQUEST(s) NOT FOUND", "RADIOLOGY", MessageBoxButtons.OK)
+            MessageBox.Show("NO PENDING REQUEST(s) FOUND", "RADIOLOGY", MessageBoxButtons.OK)
 
         End If
     End Sub
@@ -98,7 +98,7 @@ Public Class FrmRadiology
     End Sub
 
     Private Sub Dtgpendrad_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dtgpendrad.CellDoubleClick
-        Dim frm = New FrmRadInv
+        ' Dim frm = New FrmRadInv
 
         FrmRadInv.Txtrqstid.Text = Dtgpendrad.CurrentRow.Cells(0).Value
         FrmRadInv.txtdate.Text = Dtgpendrad.CurrentRow.Cells(1).Value
@@ -108,7 +108,8 @@ Public Class FrmRadiology
         FrmRadInv.txtage.Text = Dtgpendrad.CurrentRow.Cells(6).Value.ToString
         FrmRadInv.txtsex.Text = Dtgpendrad.CurrentRow.Cells(7).Value.ToString
         FrmRadInv.txtacct.Text = Dtgpendrad.CurrentRow.Cells(8).Value.ToString
-        FrmRadInv.txtrqstby.Text = Dtgpendrad.CurrentRow.Cells(11).Value.ToString
+        FrmRadInv.Txtactcat.Text = Dtgpendrad.CurrentRow.Cells(9).Value.ToString
+        FrmRadInv.txtrqstby.Text = Dtgpendrad.CurrentRow.Cells(12).Value.ToString
 
         FrmRadInv.ShowDialog()
     End Sub
@@ -116,7 +117,7 @@ Public Class FrmRadiology
     Private Sub Btnfindbill_Click(sender As Object, e As EventArgs) Handles Btnfindbill.Click
 
         cmd = New SqlCommand("Select * from Pend_RADBill where Hospital_Num=@Hospt_Num", con)
-        cmd.Parameters.Add("Hospt_Num", SqlDbType.VarChar).Value = TxtfindBill.Text
+        cmd.Parameters.Add("Hospt_Num", SqlDbType.Int).Value = TxtfindBill.Text
 
         adapt = New SqlDataAdapter(cmd)
         Dim ntbl As New DataTable
@@ -126,7 +127,7 @@ Public Class FrmRadiology
             DtgRadBilled.DataSource = ntbl
 
         Else
-            MessageBox.Show("RADIOLOGY RESQUEST(s) NOT FOUND", "RADIOLOGY", MessageBoxButtons.OK)
+            MessageBox.Show("NO IMCOMPLETE RESQUEST(s) FOUND", "RADIOLOGY", MessageBoxButtons.OK)
 
 
             lblrec.Text = DtgRadBilled.RowCount
@@ -140,7 +141,7 @@ Public Class FrmRadiology
     End Sub
 
     Private Sub DtgRadBilled_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DtgRadBilled.CellDoubleClick
-        Dim frms = New frmRADResult
+        'Dim frms = New frmRADResult
 
         frmRADResult.Lblrqstnum.Text = DtgRadBilled.CurrentRow.Cells(0).Value.ToString
         frmRADResult.txtHnum.Text = DtgRadBilled.CurrentRow.Cells(3).Value.ToString
@@ -149,8 +150,9 @@ Public Class FrmRadiology
         frmRADResult.txtsex.Text = DtgRadBilled.CurrentRow.Cells(7).Value.ToString
         frmRADResult.txtage.Text = DtgRadBilled.CurrentRow.Cells(6).Value.ToString
         frmRADResult.txtacct.Text = DtgRadBilled.CurrentRow.Cells(8).Value.ToString
-        frmRADResult.TxtRqstdate.Text = DtgRadBilled.CurrentRow.Cells(13).Value
-        frmRADResult.txtRqstby.Text = DtgRadBilled.CurrentRow.Cells(12).Value.ToString
+        frmRADResult.Txtactcat.Text = DtgRadBilled.CurrentRow.Cells(9).Value.ToString
+        frmRADResult.TxtRqstdate.Text = DtgRadBilled.CurrentRow.Cells(14).Value
+        frmRADResult.txtRqstby.Text = DtgRadBilled.CurrentRow.Cells(13).Value.ToString
 
 
 
@@ -165,8 +167,8 @@ Public Class FrmRadiology
 
     Private Sub Btnsearchtrtd_Click(sender As Object, e As EventArgs) Handles Btnsearchtrtd.Click
 
-        cmd = New SqlCommand("Select * from VwRADResult where Hospital_Num=@Hospt_Num", con)
-        cmd.Parameters.Add("Hospt_Num", SqlDbType.VarChar).Value = TxtfindTrtd.Text
+        cmd = New SqlCommand("Select Request_Num, Date_Requested, Hospital_No, Surname, Other_Name, Age, Sex, Account, Requested_by, Date_Reported, Report_Status From VwRADResult where Hospital_No=@H_Num", con)
+        cmd.Parameters.Add("@H_Num", SqlDbType.Int).Value = TxtfindTrtd.Text
 
         adapt = New SqlDataAdapter(cmd)
         Dim ftbl As New DataTable
@@ -174,9 +176,9 @@ Public Class FrmRadiology
         adapt.Fill(ftbl)
         If ftbl.Rows.Count() > 0 Then
             DtgRAdtreated.DataSource = ftbl
-
+            TxtfindTrtd.Text = ""
         Else
-            MessageBox.Show("RADIOLOGY RESULT NOT FOUND", "RADIOLOGY", MessageBoxButtons.OK)
+            MessageBox.Show("NO RADIOLOGY RESULT FOUND", "RADIOLOGY", MessageBoxButtons.OK)
 
         End If
     End Sub

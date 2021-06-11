@@ -24,6 +24,8 @@ Partial Class FrmPTdrugs
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPTdrugs))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Txtacctcat = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.txtOname = New System.Windows.Forms.TextBox()
         Me.txtprescby = New System.Windows.Forms.TextBox()
         Me.txtage = New System.Windows.Forms.TextBox()
@@ -61,6 +63,7 @@ Partial Class FrmPTdrugs
         Me.Label11 = New System.Windows.Forms.Label()
         Me.LblPayStatus = New System.Windows.Forms.Label()
         Me.txtpercent = New System.Windows.Forms.TextBox()
+        Me.txtpresnum = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -73,6 +76,8 @@ Partial Class FrmPTdrugs
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Txtacctcat)
+        Me.Panel1.Controls.Add(Me.Label12)
         Me.Panel1.Controls.Add(Me.txtOname)
         Me.Panel1.Controls.Add(Me.txtprescby)
         Me.Panel1.Controls.Add(Me.txtage)
@@ -89,10 +94,33 @@ Partial Class FrmPTdrugs
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Location = New System.Drawing.Point(26, 38)
+        Me.Panel1.Location = New System.Drawing.Point(7, 38)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(803, 88)
         Me.Panel1.TabIndex = 0
+        '
+        'Txtacctcat
+        '
+        Me.Txtacctcat.BackColor = System.Drawing.Color.White
+        Me.Txtacctcat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Txtacctcat.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtacctcat.ForeColor = System.Drawing.Color.Black
+        Me.Txtacctcat.Location = New System.Drawing.Point(632, 56)
+        Me.Txtacctcat.Name = "Txtacctcat"
+        Me.Txtacctcat.ReadOnly = True
+        Me.Txtacctcat.Size = New System.Drawing.Size(112, 21)
+        Me.Txtacctcat.TabIndex = 22
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.Navy
+        Me.Label12.Location = New System.Drawing.Point(518, 59)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(109, 15)
+        Me.Label12.TabIndex = 21
+        Me.Label12.Text = "Account Category:"
         '
         'txtOname
         '
@@ -112,10 +140,10 @@ Partial Class FrmPTdrugs
         Me.txtprescby.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtprescby.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtprescby.ForeColor = System.Drawing.Color.Black
-        Me.txtprescby.Location = New System.Drawing.Point(308, 56)
+        Me.txtprescby.Location = New System.Drawing.Point(304, 56)
         Me.txtprescby.Name = "txtprescby"
         Me.txtprescby.ReadOnly = True
-        Me.txtprescby.Size = New System.Drawing.Size(263, 21)
+        Me.txtprescby.Size = New System.Drawing.Size(209, 21)
         Me.txtprescby.TabIndex = 19
         '
         'txtage
@@ -124,7 +152,7 @@ Partial Class FrmPTdrugs
         Me.txtage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtage.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtage.ForeColor = System.Drawing.Color.Black
-        Me.txtage.Location = New System.Drawing.Point(435, 30)
+        Me.txtage.Location = New System.Drawing.Point(376, 30)
         Me.txtage.Name = "txtage"
         Me.txtage.ReadOnly = True
         Me.txtage.Size = New System.Drawing.Size(44, 21)
@@ -136,7 +164,7 @@ Partial Class FrmPTdrugs
         Me.txtsex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtsex.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtsex.ForeColor = System.Drawing.Color.Black
-        Me.txtsex.Location = New System.Drawing.Point(306, 30)
+        Me.txtsex.Location = New System.Drawing.Point(247, 30)
         Me.txtsex.Name = "txtsex"
         Me.txtsex.ReadOnly = True
         Me.txtsex.Size = New System.Drawing.Size(85, 21)
@@ -160,7 +188,7 @@ Partial Class FrmPTdrugs
         Me.txtdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtdate.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtdate.ForeColor = System.Drawing.Color.Black
-        Me.txtdate.Location = New System.Drawing.Point(100, 56)
+        Me.txtdate.Location = New System.Drawing.Point(100, 54)
         Me.txtdate.Name = "txtdate"
         Me.txtdate.ReadOnly = True
         Me.txtdate.Size = New System.Drawing.Size(107, 21)
@@ -172,7 +200,7 @@ Partial Class FrmPTdrugs
         Me.txtacct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtacct.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtacct.ForeColor = System.Drawing.Color.Black
-        Me.txtacct.Location = New System.Drawing.Point(567, 31)
+        Me.txtacct.Location = New System.Drawing.Point(517, 31)
         Me.txtacct.Name = "txtacct"
         Me.txtacct.ReadOnly = True
         Me.txtacct.Size = New System.Drawing.Size(227, 21)
@@ -187,7 +215,7 @@ Partial Class FrmPTdrugs
         Me.txtHno.Location = New System.Drawing.Point(100, 30)
         Me.txtHno.Name = "txtHno"
         Me.txtHno.ReadOnly = True
-        Me.txtHno.Size = New System.Drawing.Size(162, 21)
+        Me.txtHno.Size = New System.Drawing.Size(107, 21)
         Me.txtHno.TabIndex = 12
         '
         'Label9
@@ -195,7 +223,7 @@ Partial Class FrmPTdrugs
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Navy
-        Me.Label9.Location = New System.Drawing.Point(268, 33)
+        Me.Label9.Location = New System.Drawing.Point(209, 33)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(31, 15)
         Me.Label9.TabIndex = 11
@@ -206,7 +234,7 @@ Partial Class FrmPTdrugs
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Navy
-        Me.Label2.Location = New System.Drawing.Point(3, 59)
+        Me.Label2.Location = New System.Drawing.Point(3, 57)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(99, 15)
         Me.Label2.TabIndex = 4
@@ -261,7 +289,7 @@ Partial Class FrmPTdrugs
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Navy
-        Me.Label7.Location = New System.Drawing.Point(398, 33)
+        Me.Label7.Location = New System.Drawing.Point(339, 33)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(33, 15)
         Me.Label7.TabIndex = 9
@@ -272,7 +300,7 @@ Partial Class FrmPTdrugs
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Navy
-        Me.Label8.Location = New System.Drawing.Point(480, 34)
+        Me.Label8.Location = New System.Drawing.Point(430, 34)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(81, 15)
         Me.Label8.TabIndex = 10
@@ -344,7 +372,9 @@ Partial Class FrmPTdrugs
         '
         'BtnSave
         '
+        Me.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSave.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSave.ForeColor = System.Drawing.Color.Green
         Me.BtnSave.Location = New System.Drawing.Point(701, 425)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(144, 27)
@@ -500,12 +530,22 @@ Partial Class FrmPTdrugs
         Me.txtpercent.TabIndex = 16
         Me.txtpercent.Visible = False
         '
+        'txtpresnum
+        '
+        Me.txtpresnum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtpresnum.Location = New System.Drawing.Point(135, 430)
+        Me.txtpresnum.Name = "txtpresnum"
+        Me.txtpresnum.Size = New System.Drawing.Size(32, 20)
+        Me.txtpresnum.TabIndex = 17
+        Me.txtpresnum.Visible = False
+        '
         'FrmPTdrugs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(854, 456)
+        Me.Controls.Add(Me.txtpresnum)
         Me.Controls.Add(Me.txtpercent)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.LblPayStatus)
@@ -530,7 +570,7 @@ Partial Class FrmPTdrugs
         Me.MinimizeBox = False
         Me.Name = "FrmPTdrugs"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "DRUGS REQUEST"
+        Me.Text = "  DRUGS REQUEST"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
@@ -582,4 +622,7 @@ Partial Class FrmPTdrugs
     Friend WithEvents Dgvconsult As DataGridView
     Friend WithEvents txtpercent As TextBox
     Friend WithEvents DtgPtDrugs As DataGridView
+    Friend WithEvents Txtacctcat As TextBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents txtpresnum As TextBox
 End Class

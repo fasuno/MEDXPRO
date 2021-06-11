@@ -49,7 +49,7 @@ Public Class FrmRadTreatResult
         adapt.Fill(tbl)
         If tbl.Rows.Count() > 0 Then
 
-            Txtradresult.Text = tbl.Rows(0)(18).ToString()
+            Txtradresult.Text = tbl.Rows(0)(19).ToString()
             ' TxtDaterpt.Text = tbl.Rows(0)(14).ToString()
             Txtrptby.Text = tbl.Rows(0)(16).ToString()
 
@@ -58,7 +58,7 @@ Public Class FrmRadTreatResult
             'TxtDaterpt.Text = Format(CDate(TxtDaterpt.Text), "MM/dd/yyyy")
 
         Else
-
+            MsgBox("NO RESULT FOUND FOR THE SELECTED INVESTIGATION", MsgBoxStyle.Information, "RADIOLOGY")
         End If
 
     End Sub

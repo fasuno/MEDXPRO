@@ -100,7 +100,7 @@ Partial Class FrmTestDetails
         '
         Me.BtnAdddetails.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnAdddetails.ForeColor = System.Drawing.Color.Black
-        Me.BtnAdddetails.Location = New System.Drawing.Point(410, 71)
+        Me.BtnAdddetails.Location = New System.Drawing.Point(410, 69)
         Me.BtnAdddetails.Name = "BtnAdddetails"
         Me.BtnAdddetails.Size = New System.Drawing.Size(70, 26)
         Me.BtnAdddetails.TabIndex = 1

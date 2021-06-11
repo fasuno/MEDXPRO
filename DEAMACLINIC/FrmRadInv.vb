@@ -42,8 +42,9 @@ Public Class FrmRadInv
 
     Public Sub BillPercentages()
 
-        cmd = New SqlCommand("Select * from BillSetting where Account_type=@Acct", con)
+        cmd = New SqlCommand("Select * from BillSetting where Account_type=@Acct And Account_Category=@Actcat", con)
         cmd.Parameters.Add("@Acct", SqlDbType.NVarChar).Value = txtacct.Text
+        cmd.Parameters.Add("@Actcat", SqlDbType.NVarChar).Value = Txtactcat.Text
 
         Dim adpt As New SqlDataAdapter(cmd)
         Dim tbl As New DataTable()
@@ -140,7 +141,7 @@ Public Class FrmRadInv
         Try
 
             cmd.CommandType = System.Data.CommandType.Text
-            cmd.CommandText = "insert into Pend_RADBill Values ('" & Txtrqstid.Text & "', '" & lbldate.Text.ToString & "', '" & lbltime.Text.ToString & "', '" & txtHno.Text & "', '" & TxtSname.Text & "', '" & txtOname.Text & "',  '" & txtage.Text & "', '" & txtsex.Text & "', '" & txtacct.Text & "', '" & LblTotalcost.Text & "', '" & lblbilledby.Text & "', '" & LblPayStat.Text & "','" & txtrqstby.Text & "', '" & txtdate.Text.ToString & "')"
+            cmd.CommandText = "insert into Pend_RADBill Values ('" & Txtrqstid.Text & "', '" & lbldate.Text.ToString & "', '" & lbltime.Text.ToString & "', '" & txtHno.Text & "', '" & TxtSname.Text & "', '" & txtOname.Text & "',  '" & txtage.Text & "', '" & txtsex.Text & "', '" & txtacct.Text & "', '" & Txtactcat.Text & "', '" & LblTotalcost.Text & "', '" & lblbilledby.Text & "', '" & LblPayStat.Text & "','" & txtrqstby.Text & "', '" & txtdate.Text.ToString & "')"
 
             cmd.Connection = con
             con.Open()
@@ -158,7 +159,7 @@ Public Class FrmRadInv
         Try
 
             cmd.CommandType = System.Data.CommandType.Text
-            cmd.CommandText = "insert into PendingBills Values ('" & Txtrqstid.Text & "', '" & lbldate.Text.ToString & "', '" & lbltime.Text.ToString & "', '" & txtHno.Text & "', '" & TxtSname.Text & "', '" & txtOname.Text & "', '" & LblTotalcost.Text & "',  '" & lblrad.Text & "', '" & txtacct.Text & "', '" & lblbilledby.Text & "')"
+            cmd.CommandText = "insert into PendingBills Values ('" & Txtrqstid.Text & "', '" & lbldate.Text.ToString & "', '" & lbltime.Text.ToString & "', '" & txtHno.Text & "', '" & TxtSname.Text & "', '" & txtOname.Text & "', '" & LblTotalcost.Text & "',  '" & lblrad.Text & "', '" & txtacct.Text & "', '" & lblbilledby.Text & "', '" & Txtactcat.Text & "')"
 
             cmd.Connection = con
             con.Open()
@@ -180,7 +181,7 @@ Public Class FrmRadInv
             For Each row As DataGridViewRow In DtgPtRadInv.Rows
 
                 Using con As New SqlConnection(constring)
-                    Using cmd As New SqlCommand("INSERT INTO AllRADBilled VALUES(@RqstID, @Dte, @Tim, @Hnum, @Sname, @Onames, @InvstgName, @Comm, @Age, @Sex, @Acnt, @cost, @BBy, @Rby, @Service, @PayStat)", con)
+                    Using cmd As New SqlCommand("INSERT INTO AllRADBilled VALUES(@RqstID, @Dte, @Tim, @Hnum, @Sname, @Onames, @InvstgName, @Comm, @Age, @Sex, @Acnt, @Acntcat, @cost, @BBy, @Rby, @Service, @PayStat)", con)
 
                         cmd.Parameters.Add("@RqstID", SqlDbType.Int).Value = Txtrqstid.Text
                         cmd.Parameters.Add("@Dte", SqlDbType.Date).Value = txtdate.Text
@@ -193,6 +194,7 @@ Public Class FrmRadInv
                         cmd.Parameters.Add("@Age", SqlDbType.VarChar).Value = txtage.Text
                         cmd.Parameters.Add("@Sex", SqlDbType.VarChar).Value = txtsex.Text
                         cmd.Parameters.Add("@Acnt", SqlDbType.VarChar).Value = txtacct.Text
+                        cmd.Parameters.Add("@Acntcat", SqlDbType.VarChar).Value = Txtactcat.Text
                         cmd.Parameters.AddWithValue("@cost", row.Cells("COST").Value)
 
                         ' cmd.Parameters.AddWithValue("@Tcost", row.Cells("Total_Cost").Value)
@@ -200,8 +202,6 @@ Public Class FrmRadInv
                         cmd.Parameters.Add("@RBY", SqlDbType.VarChar).Value = txtrqstby.Text
                         cmd.Parameters.Add("@Service", SqlDbType.VarChar).Value = lblrad.Text
                         cmd.Parameters.Add("@PayStat", SqlDbType.VarChar).Value = LblPayStat.Text
-
-
 
                         con.Open()
                         cmd.ExecuteNonQuery()
@@ -211,8 +211,6 @@ Public Class FrmRadInv
             Next
 
             MsgBox("PATIENT BILL HAVE BEEN SENT", vbOKOnly, "RADIOLOGY REQUEST")
-
-
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -243,5 +241,17 @@ Public Class FrmRadInv
 
     End Sub
 
+    Private Sub BtnPrint_Click(sender As Object, e As EventArgs) Handles BtnPrint.Click
+        frmPrinRAdrqst.Lblptname.Text = TxtSname.Text + " " + txtOname.Text
+        frmPrinRAdrqst.Lblaccount.Text = txtacct.Text + " | " + Txtactcat.Text
+        frmPrinRAdrqst.lblhospnum.Text = txtHno.Text
+        frmPrinRAdrqst.lblsex.Text = txtsex.Text
+        frmPrinRAdrqst.lblage.Text = txtage.Text
+        frmPrinRAdrqst.lblpresby.Text = txtrqstby.Text
+        frmPrinRAdrqst.lblbillby.Text = lblbilledby.Text
+        frmPrinRAdrqst.lbltotbill.Text = LblTotalcost.Text
+        frmPrinRAdrqst.LBLID.Text = Txtrqstid.Text
 
+        frmPrinRAdrqst.Show()
+    End Sub
 End Class

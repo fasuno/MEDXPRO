@@ -435,7 +435,7 @@ Partial Class frmGenConsult
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Purple
+        Me.Panel1.BackColor = System.Drawing.Color.Blue
         Me.Panel1.Controls.Add(Me.lblusrrname)
         Me.Panel1.Controls.Add(Me.txtPword)
         Me.Panel1.Controls.Add(Me.Btnsave)
@@ -475,11 +475,13 @@ Partial Class frmGenConsult
         Me.Btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Btnsave.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btnsave.ForeColor = System.Drawing.Color.Green
+        Me.Btnsave.Image = CType(resources.GetObject("Btnsave.Image"), System.Drawing.Image)
+        Me.Btnsave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Btnsave.Location = New System.Drawing.Point(818, 28)
         Me.Btnsave.Name = "Btnsave"
         Me.Btnsave.Size = New System.Drawing.Size(77, 30)
         Me.Btnsave.TabIndex = 4
-        Me.Btnsave.Text = "SAVE"
+        Me.Btnsave.Text = "     SAVE"
         Me.Btnsave.UseVisualStyleBackColor = False
         '
         'Btnadmit
@@ -531,14 +533,14 @@ Partial Class frmGenConsult
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.Purple
+        Me.Panel2.BackColor = System.Drawing.Color.Blue
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.Cboclinic)
         Me.Panel2.Controls.Add(Me.lbltime)
         Me.Panel2.Controls.Add(Me.lbldate)
-        Me.Panel2.Location = New System.Drawing.Point(6, 1)
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(902, 29)
+        Me.Panel2.Size = New System.Drawing.Size(913, 29)
         Me.Panel2.TabIndex = 7
         '
         'Label3
@@ -559,7 +561,7 @@ Partial Class frmGenConsult
         Me.Cboclinic.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cboclinic.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cboclinic.FormattingEnabled = True
-        Me.Cboclinic.Items.AddRange(New Object() {"GOPD", "MOPD", "SOPD", "NEURO", "ENT", "DERMA"})
+        Me.Cboclinic.Items.AddRange(New Object() {"GOPD", "MOPD", "SOPD", "NEUROLORY", "ENT", "DERMATOLOGY", "PAEDIATRIC", "DENTAL", "PHSIOTHERAPY"})
         Me.Cboclinic.Location = New System.Drawing.Point(97, 4)
         Me.Cboclinic.Name = "Cboclinic"
         Me.Cboclinic.Size = New System.Drawing.Size(165, 21)

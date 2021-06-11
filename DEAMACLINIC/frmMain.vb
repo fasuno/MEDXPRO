@@ -7,9 +7,10 @@ Public Class frmMain
         Me.WindowState = FormWindowState.Maximized
         frmlogin.ShowDialog()
         frmlogin.MdiParent = Me
-        lblmail.Visible = False
-
-        lbldate.Text = Now.ToLocalTime
+        'lblmail.Visible = False
+        RoleAcess()
+        Timer1.Start()
+        lbldate.Text = Now.Date
     End Sub
 
     Public Sub showusername()
@@ -24,15 +25,11 @@ Public Class frmMain
 
         If tbl.Rows.Count() > 0 Then
 
-            'Display the person data
-
             lblname.Text = tbl.Rows(0)(1).ToString()
             lblrole.Text = tbl.Rows(0)(5).ToString()
-
+            lblroleid.Text = tbl.Rows(0)(4).ToString()
 
         Else
-
-
         End If
 
     End Sub
@@ -46,7 +43,7 @@ Public Class frmMain
         For Each ChildForm As Form In Me.MdiChildren
             ChildForm.Close()
         Next
-        lblmail.Text = ""
+        lblroleid.Text = ""
         lblname.Text = ""
 
         frmlogin.WindowState = FormWindowState.Normal
@@ -114,8 +111,9 @@ Public Class frmMain
         frmCashier.MdiParent = Me
     End Sub
     Private Sub btnnewuser_Click(sender As Object, e As EventArgs) Handles btnnewuser.Click
-        frmusers.MdiParent = Me
-        frmusers.Show()
+        Dim frm = New frmusers
+        ' frm.MdiParent = Me
+        frm.ShowDialog()
     End Sub
 
     Private Sub btnsetservice_Click(sender As Object, e As EventArgs) Handles btnsetservice.Click
@@ -126,4 +124,83 @@ Public Class frmMain
         Dim frm = New FrmANCreg
         frm.ShowDialog()
     End Sub
+
+
+
+    Private Sub BtnRadInv_Click(sender As Object, e As EventArgs) Handles BtnRadInv.Click
+        FrmScanlist.MdiParent = Me
+        FrmScanlist.Show()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        lbltime.Text = DateTime.Now.ToString("hh:mm:ss tt")
+    End Sub
+
+    Public Sub RoleAcess()
+
+        If lblroleid.Text = "11" Then
+
+            btnedituser.Enabled = False
+            btnnewuser.Enabled = False
+            btnsetservice.Enabled = False
+            btncashpoint.Enabled = False
+            BtnRadInv.Enabled = False
+            btnradrqst.Enabled = False
+            btndruglist.Enabled = False
+            btnnewdrg.Enabled = False
+            btnanc.Enabled = False
+            btnreg.Enabled = False
+            FrmPharmacy.tabpharm.Enabled = False
+            frmLABORATORY.tabLaboratory.Enabled = False
+            Frmrecords.Btnnew.Enabled = False
+            Frmrecords.BtnNewAnc.Enabled = False
+            btnlabtestlist.Enabled = False
+
+        ElseIf lblroleid.Text = "12" Then
+
+            btnedituser.Enabled = False
+            btnnewuser.Enabled = False
+            btnsetservice.Enabled = False
+            btncashpoint.Enabled = False
+            BtnRadInv.Enabled = False
+            btnradrqst.Enabled = False
+            btndruglist.Enabled = False
+            btnnewdrg.Enabled = False
+            btnanc.Enabled = False
+            btnreg.Enabled = False
+            FrmPharmacy.tabpharm.Enabled = False
+            frmLABORATORY.tabLaboratory.Enabled = False
+            Frmrecords.Btnnew.Enabled = False
+            Frmrecords.BtnNewAnc.Enabled = False
+            btnlabtestlist.Enabled = False
+            FrmPtRecords.PtDrugs11.Btnnew.Enabled = False
+            FrmPtRecords.PtLabHist1.Btnnew.Enabled = False
+            FrmPtRecords.PtRadHist1.Btnnew.Enabled = False
+            FrmPtRecords.Consultations1.BtnNewcons.Enabled = False
+
+        End If
+    End Sub
+
+    Private Sub Btnappt_Click(sender As Object, e As EventArgs) Handles Btnappt.Click
+        Dim frmapt = New FrmAppointment
+        frmapt.ShowDialog()
+        frmapt.BtnReschedule.Enabled = False
+    End Sub
+
+    Private Sub btnreg_Click(sender As Object, e As EventArgs) Handles btnreg.Click
+        Dim frm = New FrmPtreg
+
+        frm.Populateacct()
+
+        frm.ShowDialog()
+        frm.Btnupdate.SendToBack()
+    End Sub
+
+    Private Sub btnadmit_Click(sender As Object, e As EventArgs) Handles btnadmit.Click
+        FrmWardManager.MdiParent = Me
+        FrmWardManager.Show()
+
+    End Sub
+
+
 End Class

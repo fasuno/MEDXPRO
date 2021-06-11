@@ -114,18 +114,19 @@ Public Class frmNursing
             Dim frms = New FrmANCform
             FrmANCform.lblhospnum.Text = dtgpendingvitals.CurrentRow.Cells(4).Value
 
-            frms.ShowDialog()
+            FrmANCform.ShowDialog()
         Else
 
-            Dim frm As New frmvitals
+            Dim frm = New frmvitals
 
-            frmvitals.lblsurname.Text = dtgpendingvitals.CurrentRow.Cells(2).Value.ToString()
-            frmvitals.lblothernames.Text = dtgpendingvitals.CurrentRow.Cells(3).Value.ToString()
-            frmvitals.lblhospnum.Text = dtgpendingvitals.CurrentRow.Cells(4).Value.ToString()
-            frmvitals.lblage.Text = dtgpendingvitals.CurrentRow.Cells(5).Value.ToString()
-            frmvitals.lblsex.Text = dtgpendingvitals.CurrentRow.Cells(6).Value.ToString()
-            frmvitals.lblaccounttype.Text = dtgpendingvitals.CurrentRow.Cells(7).Value.ToString()
-            frmvitals.lblclinic.Text = dtgpendingvitals.CurrentRow.Cells(8).Value.ToString()
+            frm.lblsurname.Text = dtgpendingvitals.CurrentRow.Cells(2).Value.ToString()
+            frm.lblothernames.Text = dtgpendingvitals.CurrentRow.Cells(3).Value.ToString()
+            frm.lblhospnum.Text = dtgpendingvitals.CurrentRow.Cells(4).Value.ToString()
+            frm.lblage.Text = dtgpendingvitals.CurrentRow.Cells(5).Value.ToString()
+            frm.lblsex.Text = dtgpendingvitals.CurrentRow.Cells(6).Value.ToString()
+            frm.lblaccounttype.Text = dtgpendingvitals.CurrentRow.Cells(7).Value.ToString()
+            frm.lblclinic.Text = dtgpendingvitals.CurrentRow.Cells(8).Value.ToString()
+            frm.lblcat.Text = dtgpendingvitals.CurrentRow.Cells(9).Value.ToString()
 
             frm.ShowDialog()
             frm.cleartxt()

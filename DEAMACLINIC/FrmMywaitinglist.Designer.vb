@@ -237,7 +237,7 @@ Partial Class FrmMywaitinglist
         'txtfindpt
         '
         Me.txtfindpt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtfindpt.Location = New System.Drawing.Point(873, 29)
+        Me.txtfindpt.Location = New System.Drawing.Point(858, 31)
         Me.txtfindpt.Name = "txtfindpt"
         Me.txtfindpt.Size = New System.Drawing.Size(170, 20)
         Me.txtfindpt.TabIndex = 14
@@ -248,11 +248,13 @@ Partial Class FrmMywaitinglist
         Me.btnrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnrefresh.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnrefresh.ForeColor = System.Drawing.Color.Navy
+        Me.btnrefresh.Image = CType(resources.GetObject("btnrefresh.Image"), System.Drawing.Image)
+        Me.btnrefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnrefresh.Location = New System.Drawing.Point(480, 25)
         Me.btnrefresh.Name = "btnrefresh"
-        Me.btnrefresh.Size = New System.Drawing.Size(68, 25)
+        Me.btnrefresh.Size = New System.Drawing.Size(93, 25)
         Me.btnrefresh.TabIndex = 12
-        Me.btnrefresh.Text = "Refresh"
+        Me.btnrefresh.Text = "    Refresh"
         Me.btnrefresh.UseVisualStyleBackColor = False
         '
         'btnfindpt
@@ -261,11 +263,13 @@ Partial Class FrmMywaitinglist
         Me.btnfindpt.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnfindpt.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnfindpt.ForeColor = System.Drawing.Color.Green
-        Me.btnfindpt.Location = New System.Drawing.Point(1049, 25)
+        Me.btnfindpt.Image = CType(resources.GetObject("btnfindpt.Image"), System.Drawing.Image)
+        Me.btnfindpt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnfindpt.Location = New System.Drawing.Point(1034, 25)
         Me.btnfindpt.Name = "btnfindpt"
-        Me.btnfindpt.Size = New System.Drawing.Size(75, 26)
+        Me.btnfindpt.Size = New System.Drawing.Size(90, 26)
         Me.btnfindpt.TabIndex = 15
-        Me.btnfindpt.Text = "Search"
+        Me.btnfindpt.Text = "     Search"
         Me.btnfindpt.UseVisualStyleBackColor = False
         '
         'TabPageappt
@@ -331,10 +335,10 @@ Partial Class FrmMywaitinglist
         Me.DtgMyconsultation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.DtgMyconsultation.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DtgMyconsultation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DtgMyconsultation.Location = New System.Drawing.Point(3, 53)
+        Me.DtgMyconsultation.Location = New System.Drawing.Point(3, 47)
         Me.DtgMyconsultation.Name = "DtgMyconsultation"
         Me.DtgMyconsultation.ReadOnly = True
-        Me.DtgMyconsultation.Size = New System.Drawing.Size(1135, 361)
+        Me.DtgMyconsultation.Size = New System.Drawing.Size(1135, 367)
         Me.DtgMyconsultation.TabIndex = 1
         '
         'Panel4
@@ -349,7 +353,7 @@ Partial Class FrmMywaitinglist
         Me.Panel4.ForeColor = System.Drawing.Color.White
         Me.Panel4.Location = New System.Drawing.Point(2, 3)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1137, 47)
+        Me.Panel4.Size = New System.Drawing.Size(1137, 44)
         Me.Panel4.TabIndex = 2
         '
         'Label12
@@ -381,7 +385,7 @@ Partial Class FrmMywaitinglist
         'txtgetpt
         '
         Me.txtgetpt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtgetpt.Location = New System.Drawing.Point(872, 17)
+        Me.txtgetpt.Location = New System.Drawing.Point(866, 17)
         Me.txtgetpt.Name = "txtgetpt"
         Me.txtgetpt.Size = New System.Drawing.Size(170, 20)
         Me.txtgetpt.TabIndex = 14
@@ -391,12 +395,14 @@ Partial Class FrmMywaitinglist
         Me.btnrefreshconsult.BackColor = System.Drawing.Color.White
         Me.btnrefreshconsult.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnrefreshconsult.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnrefreshconsult.ForeColor = System.Drawing.Color.Black
+        Me.btnrefreshconsult.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnrefreshconsult.Image = CType(resources.GetObject("btnrefreshconsult.Image"), System.Drawing.Image)
+        Me.btnrefreshconsult.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnrefreshconsult.Location = New System.Drawing.Point(485, 13)
         Me.btnrefreshconsult.Name = "btnrefreshconsult"
-        Me.btnrefreshconsult.Size = New System.Drawing.Size(74, 25)
+        Me.btnrefreshconsult.Size = New System.Drawing.Size(95, 25)
         Me.btnrefreshconsult.TabIndex = 12
-        Me.btnrefreshconsult.Text = "Refresh"
+        Me.btnrefreshconsult.Text = "      Refresh"
         Me.btnrefreshconsult.UseVisualStyleBackColor = False
         '
         'btngetpt
@@ -405,11 +411,13 @@ Partial Class FrmMywaitinglist
         Me.btngetpt.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btngetpt.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btngetpt.ForeColor = System.Drawing.Color.Green
-        Me.btngetpt.Location = New System.Drawing.Point(1048, 11)
+        Me.btngetpt.Image = CType(resources.GetObject("btngetpt.Image"), System.Drawing.Image)
+        Me.btngetpt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btngetpt.Location = New System.Drawing.Point(1042, 11)
         Me.btngetpt.Name = "btngetpt"
-        Me.btngetpt.Size = New System.Drawing.Size(75, 26)
+        Me.btngetpt.Size = New System.Drawing.Size(92, 26)
         Me.btngetpt.TabIndex = 15
-        Me.btngetpt.Text = "Search"
+        Me.btngetpt.Text = "      Search"
         Me.btngetpt.UseVisualStyleBackColor = False
         '
         'Btnnew

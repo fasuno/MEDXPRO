@@ -30,20 +30,20 @@ Partial Class FrmANCform
         Me.btnlab = New System.Windows.Forms.Button()
         Me.btnfolwup = New System.Windows.Forms.Button()
         Me.Btnprof = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Btnseedoc = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblhospnum = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblbkid = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.AncBooking1 = New DEAMACLINIC.ANCBooking()
         Me.AnCfollowup1 = New DEAMACLINIC.ANCfollowup()
         Me.AncProfile2 = New DEAMACLINIC.AncProfile()
-        Me.lblbkid = New System.Windows.Forms.Label()
-        Me.lblhospnum = New System.Windows.Forms.Label()
-        Me.AncBooking1 = New DEAMACLINIC.ANCBooking()
-        Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -131,55 +131,10 @@ Partial Class FrmANCform
         Me.Btnprof.Text = "PROFILE"
         Me.Btnprof.UseVisualStyleBackColor = True
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(378, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(206, 19)
-        Me.Label1.TabIndex = 16
-        Me.Label1.Text = "ANTE-NATAL CARE CARD"
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.DarkMagenta
-        Me.Panel1.Controls.Add(Me.lblhospnum)
-        Me.Panel1.Controls.Add(Me.lblbkid)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(2, 2)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(834, 36)
-        Me.Panel1.TabIndex = 25
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(151, 12)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(76, 15)
-        Me.Label3.TabIndex = 20
-        Me.Label3.Text = "Hospital No.:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(10, 13)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(24, 15)
-        Me.Label2.TabIndex = 18
-        Me.Label2.Text = "ID:"
-        '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.DarkMagenta
+        Me.Panel2.BackColor = System.Drawing.Color.Blue
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.Btnseedoc)
         Me.Panel2.Controls.Add(Me.btnlab)
         Me.Panel2.Controls.Add(Me.Btnprof)
@@ -205,6 +160,71 @@ Partial Class FrmANCform
         Me.Btnseedoc.Text = "SEE DOCTOR"
         Me.Btnseedoc.UseVisualStyleBackColor = True
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Blue
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.lblhospnum)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.lblbkid)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.ForeColor = System.Drawing.Color.White
+        Me.Panel1.Location = New System.Drawing.Point(2, 2)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(834, 35)
+        Me.Panel1.TabIndex = 28
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(458, 11)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(160, 15)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "ANTE-NATAL CARE CARD"
+        '
+        'lblhospnum
+        '
+        Me.lblhospnum.AutoSize = True
+        Me.lblhospnum.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblhospnum.Location = New System.Drawing.Point(236, 11)
+        Me.lblhospnum.Name = "lblhospnum"
+        Me.lblhospnum.Size = New System.Drawing.Size(10, 15)
+        Me.lblhospnum.TabIndex = 3
+        Me.lblhospnum.Text = " "
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(159, 11)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(76, 15)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Hospital No.:"
+        '
+        'lblbkid
+        '
+        Me.lblbkid.AutoSize = True
+        Me.lblbkid.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblbkid.Location = New System.Drawing.Point(72, 11)
+        Me.lblbkid.Name = "lblbkid"
+        Me.lblbkid.Size = New System.Drawing.Size(10, 15)
+        Me.lblbkid.TabIndex = 1
+        Me.lblbkid.Text = " "
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(3, 11)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(71, 15)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Booking ID:"
+        '
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.AncBooking1)
@@ -215,8 +235,18 @@ Partial Class FrmANCform
         Me.Panel3.Size = New System.Drawing.Size(703, 422)
         Me.Panel3.TabIndex = 27
         '
+        'AncBooking1
+        '
+        Me.AncBooking1.Location = New System.Drawing.Point(4, 0)
+        Me.AncBooking1.Name = "AncBooking1"
+        Me.AncBooking1.Size = New System.Drawing.Size(699, 416)
+        Me.AncBooking1.TabIndex = 3
+        '
         'AnCfollowup1
         '
+        Me.AnCfollowup1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.AnCfollowup1.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AnCfollowup1.ForeColor = System.Drawing.Color.Black
         Me.AnCfollowup1.Location = New System.Drawing.Point(3, 2)
         Me.AnCfollowup1.Name = "AnCfollowup1"
         Me.AnCfollowup1.Size = New System.Drawing.Size(697, 414)
@@ -230,54 +260,25 @@ Partial Class FrmANCform
         Me.AncProfile2.Size = New System.Drawing.Size(697, 419)
         Me.AncProfile2.TabIndex = 0
         '
-        'lblbkid
-        '
-        Me.lblbkid.AutoSize = True
-        Me.lblbkid.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblbkid.ForeColor = System.Drawing.Color.White
-        Me.lblbkid.Location = New System.Drawing.Point(40, 13)
-        Me.lblbkid.Name = "lblbkid"
-        Me.lblbkid.Size = New System.Drawing.Size(10, 15)
-        Me.lblbkid.TabIndex = 21
-        Me.lblbkid.Text = " "
-        '
-        'lblhospnum
-        '
-        Me.lblhospnum.AutoSize = True
-        Me.lblhospnum.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblhospnum.ForeColor = System.Drawing.Color.White
-        Me.lblhospnum.Location = New System.Drawing.Point(233, 13)
-        Me.lblhospnum.Name = "lblhospnum"
-        Me.lblhospnum.Size = New System.Drawing.Size(10, 15)
-        Me.lblhospnum.TabIndex = 22
-        Me.lblhospnum.Text = " "
-        '
-        'AncBooking1
-        '
-        Me.AncBooking1.Location = New System.Drawing.Point(4, 0)
-        Me.AncBooking1.Name = "AncBooking1"
-        Me.AncBooking1.Size = New System.Drawing.Size(699, 416)
-        Me.AncBooking1.TabIndex = 3
-        '
         'FrmANCform
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(836, 459)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FrmANCform"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "ANC"
+        Me.Text = "  ANTE-NATAL "
+        Me.Panel2.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -290,17 +291,17 @@ Partial Class FrmANCform
     Friend WithEvents btnlab As Button
     Friend WithEvents btnfolwup As Button
     Friend WithEvents Btnprof As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel3 As Panel
     Friend WithEvents AncProfile1 As AncProfile
-    Friend WithEvents AncProfile2 As AncProfile
-    Friend WithEvents AnCfollowup1 As ANCfollowup
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents Btnseedoc As Button
-    Friend WithEvents lblbkid As Label
+    Friend WithEvents Panel1 As Panel
     Friend WithEvents lblhospnum As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents lblbkid As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Panel3 As Panel
     Friend WithEvents AncBooking1 As ANCBooking
+    Friend WithEvents AnCfollowup1 As ANCfollowup
+    Friend WithEvents AncProfile2 As AncProfile
 End Class

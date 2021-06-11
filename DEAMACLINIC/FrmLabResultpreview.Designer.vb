@@ -68,6 +68,7 @@ Partial Class FrmLabResultpreview
         Me.panel1.Controls.Add(Me.Txtdatrqst)
         Me.panel1.Controls.Add(Me.Label5)
         Me.panel1.Controls.Add(Me.Label1)
+        Me.panel1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.panel1.Location = New System.Drawing.Point(4, 7)
         Me.panel1.Name = "panel1"
         Me.panel1.Size = New System.Drawing.Size(880, 75)
@@ -76,19 +77,19 @@ Partial Class FrmLabResultpreview
         'Txtreprtby
         '
         Me.Txtreprtby.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Txtreprtby.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtreprtby.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txtreprtby.Location = New System.Drawing.Point(369, 39)
         Me.Txtreprtby.Name = "Txtreprtby"
-        Me.Txtreprtby.Size = New System.Drawing.Size(237, 20)
+        Me.Txtreprtby.Size = New System.Drawing.Size(237, 21)
         Me.Txtreprtby.TabIndex = 8
         '
         'Txtdaterprt
         '
         Me.Txtdaterprt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Txtdaterprt.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtdaterprt.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txtdaterprt.Location = New System.Drawing.Point(164, 41)
         Me.Txtdaterprt.Name = "Txtdaterprt"
-        Me.Txtdaterprt.Size = New System.Drawing.Size(108, 20)
+        Me.Txtdaterprt.Size = New System.Drawing.Size(108, 21)
         Me.Txtdaterprt.TabIndex = 10
         '
         'Label3
@@ -125,19 +126,19 @@ Partial Class FrmLabResultpreview
         'txtclinic
         '
         Me.txtclinic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtclinic.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtclinic.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtclinic.Location = New System.Drawing.Point(663, 39)
         Me.txtclinic.Name = "txtclinic"
-        Me.txtclinic.Size = New System.Drawing.Size(114, 20)
+        Me.txtclinic.Size = New System.Drawing.Size(114, 21)
         Me.txtclinic.TabIndex = 3
         '
         'Txtdiag
         '
         Me.Txtdiag.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Txtdiag.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtdiag.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txtdiag.Location = New System.Drawing.Point(650, 5)
         Me.Txtdiag.Name = "Txtdiag"
-        Me.Txtdiag.Size = New System.Drawing.Size(195, 20)
+        Me.Txtdiag.Size = New System.Drawing.Size(195, 21)
         Me.Txtdiag.TabIndex = 4
         '
         'Label4
@@ -163,19 +164,19 @@ Partial Class FrmLabResultpreview
         'TxtRqstBy
         '
         Me.TxtRqstBy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtRqstBy.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtRqstBy.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtRqstBy.Location = New System.Drawing.Point(335, 7)
         Me.TxtRqstBy.Name = "TxtRqstBy"
-        Me.TxtRqstBy.Size = New System.Drawing.Size(237, 20)
+        Me.TxtRqstBy.Size = New System.Drawing.Size(237, 21)
         Me.TxtRqstBy.TabIndex = 5
         '
         'Txtdatrqst
         '
         Me.Txtdatrqst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Txtdatrqst.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtdatrqst.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txtdatrqst.Location = New System.Drawing.Point(130, 7)
         Me.Txtdatrqst.Name = "Txtdatrqst"
-        Me.Txtdatrqst.Size = New System.Drawing.Size(108, 20)
+        Me.Txtdatrqst.Size = New System.Drawing.Size(108, 21)
         Me.Txtdatrqst.TabIndex = 1
         '
         'Label5

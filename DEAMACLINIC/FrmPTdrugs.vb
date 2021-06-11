@@ -28,8 +28,9 @@ Public Class FrmPTdrugs
 
     Public Sub BillPercentages()
 
-        cmd = New SqlCommand("Select * from BillSetting where Account_type=@Acct", con)
+        cmd = New SqlCommand("Select * from BillSetting where Account_type=@Acct And Account_Category=@Actcat", con)
         cmd.Parameters.Add("@Acct", SqlDbType.NVarChar).Value = txtacct.Text
+        cmd.Parameters.Add("@Actcat", SqlDbType.NVarChar).Value = Txtacctcat.Text
 
         Dim adpt As New SqlDataAdapter(cmd)
         Dim tbl As New DataTable()
@@ -146,7 +147,7 @@ Public Class FrmPTdrugs
         Try
 
             cmd.CommandType = System.Data.CommandType.Text
-            cmd.CommandText = "insert into PharmPend_Bill Values ('" & DtgPtDrugs.Rows(0).Cells(0).Value & "', '" & lbldte.Text.ToString & "', '" & lbltim.Text.ToString & "', '" & txtHno.Text & "', '" & TxtSname.Text & "', '" & txtOname.Text & "', '" & txtsex.Text & "', '" & txtage.Text & "', '" & txtacct.Text & "', '" & LblTotalcost.Text & "', '" & lblbilledby.Text & "', '" & LblPayStatus.Text & "','" & txtprescby.Text & "' )"
+            cmd.CommandText = "insert into PharmPend_Bill Values ('" & DtgPtDrugs.Rows(0).Cells(0).Value & "', '" & lbldte.Text.ToString & "', '" & lbltim.Text.ToString & "', '" & txtHno.Text & "', '" & TxtSname.Text & "', '" & txtOname.Text & "',  '" & txtage.Text & "', '" & txtsex.Text & "', '" & txtacct.Text & "', '" & Txtacctcat.Text & "', '" & LblTotalcost.Text & "', '" & lblbilledby.Text & "', '" & LblPayStatus.Text & "','" & txtprescby.Text & "' )"
 
             cmd.Connection = con
             con.Open()
@@ -164,7 +165,7 @@ Public Class FrmPTdrugs
         Try
 
             cmd.CommandType = System.Data.CommandType.Text
-            cmd.CommandText = "insert into PendingBills Values ('" & DtgPtDrugs.Rows(0).Cells(0).Value & "', '" & lbldte.Text.ToString & "', '" & lbltim.Text.ToString & "', '" & txtHno.Text & "', '" & TxtSname.Text & "', '" & txtOname.Text & "', '" & LblTotalcost.Text & "',  '" & lblpharm.Text & "', '" & txtacct.Text & "', '" & lblbilledby.Text & "')"
+            cmd.CommandText = "insert into PendingBills Values ('" & DtgPtDrugs.Rows(0).Cells(0).Value & "', '" & lbldte.Text.ToString & "', '" & lbltim.Text.ToString & "', '" & txtHno.Text & "', '" & TxtSname.Text & "', '" & txtOname.Text & "', '" & LblTotalcost.Text & "',  '" & lblpharm.Text & "', '" & txtacct.Text & "', '" & Txtacctcat.Text & "', '" & lblbilledby.Text & "')"
 
             cmd.Connection = con
             con.Open()
@@ -187,7 +188,7 @@ Public Class FrmPTdrugs
             For Each row As DataGridViewRow In DtgPtDrugs.Rows
 
                 Using con As New SqlConnection(constring)
-                    Using cmd As New SqlCommand("INSERT INTO AllDrugsBilled VALUES(@PresNum, @Dte, @Tim, @Hnum, @Sname, @Onames, @DrugName, @Presc, @Age, @Sex, @Acnt, @Qtygvn, @Ucost, @Tcost, @BBy, @Pby, @Service, @PayStat)", con)
+                    Using cmd As New SqlCommand("INSERT INTO AllDrugsBilled VALUES(@PresNum, @Dte, @Tim, @Hnum, @Sname, @Onames, @DrugName, @Presc, @Age, @Sex, @Acnt, @Acntcat, @Qtygvn, @Ucost, @Tcost, @BBy, @Pby, @Service, @PayStat)", con)
 
                         cmd.Parameters.AddWithValue("@PresNum", row.Cells("Presc_Num").Value)
                         cmd.Parameters.Add("@Dte", SqlDbType.Date).Value = lbldte.Text
@@ -200,6 +201,7 @@ Public Class FrmPTdrugs
                         cmd.Parameters.Add("@Age", SqlDbType.VarChar).Value = txtage.Text
                         cmd.Parameters.Add("@Sex", SqlDbType.VarChar).Value = txtsex.Text
                         cmd.Parameters.Add("@Acnt", SqlDbType.VarChar).Value = txtacct.Text
+                        cmd.Parameters.Add("@Acntcat", SqlDbType.VarChar).Value = Txtacctcat.Text
                         cmd.Parameters.AddWithValue("@Qtygvn", row.Cells("Qty_given").Value)
                         cmd.Parameters.AddWithValue("@Ucost", row.Cells(3).Value) ''/// Means Insert the value in all the cells under column 4, instead of using the name
                         cmd.Parameters.AddWithValue("@Tcost", row.Cells("Total_Cost").Value)
@@ -311,6 +313,20 @@ Public Class FrmPTdrugs
             MessageBox.Show(ex.Message)
         End Try
 
+    End Sub
+
+    Private Sub BtnPrint_Click(sender As Object, e As EventArgs) Handles BtnPrint.Click
+        FrmPrintDrugPresc.Lblptname.Text = TxtSname.Text + " " + txtOname.Text
+        FrmPrintDrugPresc.Lblaccount.Text = txtacct.Text + " | " + Txtacctcat.Text
+        FrmPrintDrugPresc.lblhospnum.Text = txtHno.Text
+        FrmPrintDrugPresc.lblsex.Text = txtsex.Text
+        FrmPrintDrugPresc.lblage.Text = txtage.Text
+        FrmPrintDrugPresc.lblpresby.Text = txtprescby.Text
+        FrmPrintDrugPresc.lblbillby.Text = lblbilledby.Text
+        FrmPrintDrugPresc.lbltotbill.Text = LblTotalcost.Text
+        FrmPrintDrugPresc.LBLID.Text = txtpresnum.Text
+
+        FrmPrintDrugPresc.Show()
     End Sub
 
 

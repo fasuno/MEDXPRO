@@ -2,6 +2,7 @@
     Private Sub FrmPtRecords_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Consultations1.BringToFront()
+
     End Sub
 
     Private Sub BtnProfile_Click(sender As Object, e As EventArgs) Handles BtnProfile.Click

@@ -22,13 +22,13 @@ Partial Class frmAllwaitingList
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAllwaitingList))
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dto = New System.Windows.Forms.DateTimePicker()
@@ -36,7 +36,6 @@ Partial Class frmAllwaitingList
         Me.Txtfindpt = New System.Windows.Forms.TextBox()
         Me.Btnref = New System.Windows.Forms.Button()
         Me.btnfindTreat = New System.Windows.Forms.Button()
-        Me.Btnexport = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.DateTimePicker5 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker6 = New System.Windows.Forms.DateTimePicker()
@@ -100,7 +99,7 @@ Partial Class frmAllwaitingList
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(455, 15)
+        Me.Label4.Location = New System.Drawing.Point(389, 15)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(20, 15)
         Me.Label4.TabIndex = 7
@@ -108,14 +107,14 @@ Partial Class frmAllwaitingList
         '
         'dto
         '
-        Me.dto.Location = New System.Drawing.Point(487, 11)
+        Me.dto.Location = New System.Drawing.Point(421, 11)
         Me.dto.Name = "dto"
         Me.dto.Size = New System.Drawing.Size(209, 20)
         Me.dto.TabIndex = 6
         '
         'from
         '
-        Me.from.Location = New System.Drawing.Point(237, 11)
+        Me.from.Location = New System.Drawing.Point(171, 11)
         Me.from.Name = "from"
         Me.from.Size = New System.Drawing.Size(206, 20)
         Me.from.TabIndex = 5
@@ -134,11 +133,13 @@ Partial Class frmAllwaitingList
         Me.Btnref.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Btnref.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btnref.ForeColor = System.Drawing.Color.Navy
-        Me.Btnref.Location = New System.Drawing.Point(704, 9)
+        Me.Btnref.Image = CType(resources.GetObject("Btnref.Image"), System.Drawing.Image)
+        Me.Btnref.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btnref.Location = New System.Drawing.Point(638, 9)
         Me.Btnref.Name = "Btnref"
-        Me.Btnref.Size = New System.Drawing.Size(69, 23)
+        Me.Btnref.Size = New System.Drawing.Size(92, 23)
         Me.Btnref.TabIndex = 2
-        Me.Btnref.Text = "Refresh"
+        Me.Btnref.Text = "      Refresh"
         Me.Btnref.UseVisualStyleBackColor = False
         '
         'btnfindTreat
@@ -147,25 +148,14 @@ Partial Class frmAllwaitingList
         Me.btnfindTreat.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnfindTreat.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnfindTreat.ForeColor = System.Drawing.Color.Green
+        Me.btnfindTreat.Image = CType(resources.GetObject("btnfindTreat.Image"), System.Drawing.Image)
+        Me.btnfindTreat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnfindTreat.Location = New System.Drawing.Point(1027, 9)
         Me.btnfindTreat.Name = "btnfindTreat"
-        Me.btnfindTreat.Size = New System.Drawing.Size(75, 26)
+        Me.btnfindTreat.Size = New System.Drawing.Size(85, 26)
         Me.btnfindTreat.TabIndex = 4
-        Me.btnfindTreat.Text = "Search"
+        Me.btnfindTreat.Text = "     Search"
         Me.btnfindTreat.UseVisualStyleBackColor = False
-        '
-        'Btnexport
-        '
-        Me.Btnexport.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Btnexport.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Btnexport.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btnexport.ForeColor = System.Drawing.Color.Navy
-        Me.Btnexport.Location = New System.Drawing.Point(8, 6)
-        Me.Btnexport.Name = "Btnexport"
-        Me.Btnexport.Size = New System.Drawing.Size(72, 29)
-        Me.Btnexport.TabIndex = 1
-        Me.Btnexport.Text = "Export"
-        Me.Btnexport.UseVisualStyleBackColor = False
         '
         'Panel5
         '
@@ -403,7 +393,7 @@ Partial Class frmAllwaitingList
         'txtSrchPend
         '
         Me.txtSrchPend.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtSrchPend.Location = New System.Drawing.Point(862, 11)
+        Me.txtSrchPend.Location = New System.Drawing.Point(852, 12)
         Me.txtSrchPend.Name = "txtSrchPend"
         Me.txtSrchPend.Size = New System.Drawing.Size(170, 20)
         Me.txtSrchPend.TabIndex = 4
@@ -414,11 +404,13 @@ Partial Class frmAllwaitingList
         Me.btnrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnrefresh.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnrefresh.ForeColor = System.Drawing.Color.Navy
+        Me.btnrefresh.Image = CType(resources.GetObject("btnrefresh.Image"), System.Drawing.Image)
+        Me.btnrefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnrefresh.Location = New System.Drawing.Point(483, 7)
         Me.btnrefresh.Name = "btnrefresh"
-        Me.btnrefresh.Size = New System.Drawing.Size(68, 25)
+        Me.btnrefresh.Size = New System.Drawing.Size(88, 25)
         Me.btnrefresh.TabIndex = 2
-        Me.btnrefresh.Text = "Refresh"
+        Me.btnrefresh.Text = "     Refresh"
         Me.btnrefresh.UseVisualStyleBackColor = False
         '
         'BtnsearchPend
@@ -427,11 +419,13 @@ Partial Class frmAllwaitingList
         Me.BtnsearchPend.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnsearchPend.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnsearchPend.ForeColor = System.Drawing.Color.Green
-        Me.BtnsearchPend.Location = New System.Drawing.Point(1038, 7)
+        Me.BtnsearchPend.Image = CType(resources.GetObject("BtnsearchPend.Image"), System.Drawing.Image)
+        Me.BtnsearchPend.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnsearchPend.Location = New System.Drawing.Point(1030, 7)
         Me.BtnsearchPend.Name = "BtnsearchPend"
-        Me.BtnsearchPend.Size = New System.Drawing.Size(75, 26)
+        Me.BtnsearchPend.Size = New System.Drawing.Size(83, 26)
         Me.BtnsearchPend.TabIndex = 4
-        Me.BtnsearchPend.Text = "Search"
+        Me.BtnsearchPend.Text = "     Search"
         Me.BtnsearchPend.UseVisualStyleBackColor = False
         '
         'lblCountPend
@@ -472,24 +466,24 @@ Partial Class frmAllwaitingList
         '
         Me.DtgAllPendWaitlist.AllowUserToAddRows = False
         Me.DtgAllPendWaitlist.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.DtgAllPendWaitlist.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.DtgAllPendWaitlist.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.DtgAllPendWaitlist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.DtgAllPendWaitlist.BackgroundColor = System.Drawing.Color.White
         Me.DtgAllPendWaitlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DtgAllPendWaitlist.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DtgAllPendWaitlist.DefaultCellStyle = DataGridViewCellStyle8
         Me.DtgAllPendWaitlist.Location = New System.Drawing.Point(3, 49)
         Me.DtgAllPendWaitlist.Name = "DtgAllPendWaitlist"
         Me.DtgAllPendWaitlist.ReadOnly = True
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        Me.DtgAllPendWaitlist.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
+        Me.DtgAllPendWaitlist.RowsDefaultCellStyle = DataGridViewCellStyle9
         Me.DtgAllPendWaitlist.Size = New System.Drawing.Size(1122, 369)
         Me.DtgAllPendWaitlist.TabIndex = 3
         '
@@ -547,24 +541,24 @@ Partial Class frmAllwaitingList
         Me.DtgTreatWaitlist.AllowUserToAddRows = False
         Me.DtgTreatWaitlist.AllowUserToDeleteRows = False
         Me.DtgTreatWaitlist.AllowUserToOrderColumns = True
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Green
-        Me.DtgTreatWaitlist.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Green
+        Me.DtgTreatWaitlist.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
         Me.DtgTreatWaitlist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.DtgTreatWaitlist.BackgroundColor = System.Drawing.Color.Honeydew
         Me.DtgTreatWaitlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DtgTreatWaitlist.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DtgTreatWaitlist.DefaultCellStyle = DataGridViewCellStyle11
         Me.DtgTreatWaitlist.Location = New System.Drawing.Point(3, 50)
         Me.DtgTreatWaitlist.Name = "DtgTreatWaitlist"
         Me.DtgTreatWaitlist.ReadOnly = True
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        Me.DtgTreatWaitlist.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
+        Me.DtgTreatWaitlist.RowsDefaultCellStyle = DataGridViewCellStyle12
         Me.DtgTreatWaitlist.Size = New System.Drawing.Size(1122, 372)
         Me.DtgTreatWaitlist.TabIndex = 1
         '
@@ -579,7 +573,6 @@ Partial Class frmAllwaitingList
         Me.Panel4.Controls.Add(Me.Txtfindpt)
         Me.Panel4.Controls.Add(Me.Btnref)
         Me.Panel4.Controls.Add(Me.btnfindTreat)
-        Me.Panel4.Controls.Add(Me.Btnexport)
         Me.Panel4.ForeColor = System.Drawing.Color.White
         Me.Panel4.Location = New System.Drawing.Point(0, 3)
         Me.Panel4.Name = "Panel4"
@@ -591,9 +584,9 @@ Partial Class frmAllwaitingList
         Me.Cboclinic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Cboclinic.FormattingEnabled = True
         Me.Cboclinic.Items.AddRange(New Object() {"SELECT CLINIC", "GOPD", "MOPD", "POPD", "SOPD", "ANC", "GYNAE", "A&E", "EUROLOGY", "DEMATOLOGY", "ART"})
-        Me.Cboclinic.Location = New System.Drawing.Point(87, 11)
+        Me.Cboclinic.Location = New System.Drawing.Point(8, 11)
         Me.Cboclinic.Name = "Cboclinic"
-        Me.Cboclinic.Size = New System.Drawing.Size(144, 21)
+        Me.Cboclinic.Size = New System.Drawing.Size(157, 21)
         Me.Cboclinic.TabIndex = 6
         '
         'frmAllwaitingList
@@ -632,7 +625,6 @@ Partial Class frmAllwaitingList
     Friend WithEvents Txtfindpt As TextBox
     Friend WithEvents Btnref As Button
     Friend WithEvents btnfindTreat As Button
-    Friend WithEvents Btnexport As Button
     Friend WithEvents Panel5 As Panel
     Friend WithEvents DateTimePicker5 As DateTimePicker
     Friend WithEvents DateTimePicker6 As DateTimePicker

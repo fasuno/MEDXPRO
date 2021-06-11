@@ -86,33 +86,41 @@ Public Class FrmANCinfo
     End Sub
 
     Private Sub DtLMP_ValueChanged(sender As Object, e As EventArgs) Handles DtLMP.ValueChanged
-        '// Computer the expeted delivery date, Oxford handbook suugest this callculation
+        '// To Compute the expeted delivery date, Oxford handbook suugest this callculation
         '//Usual cycle length; LMP (a normal period?); Naegele's rule: expected delivery date â‰ˆ1yr and 7 days after LMP minus 3 monthsâ€”
         '//(not if last period a Pill withdrawal bleed; for cycles shorter than 28 days subtract the difference from 28; 
         '//If longer Then, add the difference from 28). 
         '// A revised rule suggests the addition Of 10 days rather than 7 Is more accurate.
         '// I adopt the revise rule here.
 
+        '====Prevent Users from selecting future date for LMP.
 
-        Dim d As Date = DtLMP.Value
-        Dim b As Date
-        d = d.AddDays(+375)
-        b = d.AddDays(-90)
-        DtEDD.Value = b
+        If DtLMP.Value > DateTime.Today Then
+            MsgBox("YOU CANNOT CHOOSE FUTURE DATE", MsgBoxStyle.Critical, "INVALID LMP DATE")
+            DtLMP.MaxDate = DateTime.Today
+            DtLMP.Focus()
+        Else
+            '=======================
+            Dim d As Date = DtLMP.Value
+            Dim b As Date
+            d = d.AddDays(+375)
+            b = d.AddDays(-90)
+            DtEDD.Value = b
 
-        '// Now To get the Geatstational  Age, is the age of the pregnancy from the last normal menstrual period (LMP)
-        '// Also Add this to the LOad event of the ANCbooking form, so the it will be gotten base on the LMP date loaded
-        Dim d1, d2 As Date
-        Dim tt As TimeSpan
-        Dim ga As Integer
-        d1 = DtLMP.Value
-        d2 = Now.Date
-        tt = d2 - d1
-        ga = tt.Days / 7
+            '// Now To get the Geatstational  Age, is the age of the pregnancy from the last normal menstrual period (LMP)
+            '// I also Add this to the LOad event of the ANCbooking form, so the it will be gotten base on the LMP date loaded
 
-        Txtgest.Text = ga
+            Dim d1, d2 As Date
+            Dim tt As TimeSpan
+            Dim ga As Integer
+            d1 = DtLMP.Value
+            d2 = Now.Date
+            tt = d2 - d1
+            ga = tt.Days / 7
 
+            Txtgest.Text = ga
 
+        End If
     End Sub
 
     Private Sub FrmANCinfo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -181,8 +189,9 @@ Public Class FrmANCinfo
     End Sub
 
     Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
+
         If txtpass.Text = "" Then
-            MsgBox("Please Enter Your Password", MsgBoxStyle.Information, "ANC")
+            MsgBox("PLEASE ENTER YOUR PASSWORD", MsgBoxStyle.Information, "ANC")
 
         Else
 
@@ -202,7 +211,9 @@ Public Class FrmANCinfo
 
             End If
         End If
+
     End Sub
 
+    '//
 
 End Class

@@ -77,7 +77,7 @@ Public Class FrmDrugsbill
         Try
 
             cmd.CommandType = System.Data.CommandType.Text
-            cmd.CommandText = "insert into Treated_Pharm Values ('" & DtgDrugbill.Rows(0).Cells(0).Value & "', '" & lbldte.Text & "', '" & txtHnum.Text & "', '" & TxtSurname.Text & "', '" & txtOthername.Text & "','" & txtsex.Text & "', '" & txtage.Text & "', '" & txtaccnt.Text & "', '" & txtdatebill.Text & "','" & lblbilledby.Text & "', '" & LblTotalcost.Text & "', '" & lblconfirmby.Text & "', '" & txtpresby.Text & "')"
+            cmd.CommandText = "insert into Treated_Pharm Values ('" & DtgDrugbill.Rows(0).Cells(0).Value & "', '" & lbldte.Text & "', '" & txtHnum.Text & "', '" & TxtSurname.Text & "', '" & txtOthername.Text & "','" & txtsex.Text & "', '" & txtage.Text & "', '" & txtaccnt.Text & "', '" & Txtacctcat.Text & "', '" & txtdatebill.Text & "','" & lblbilledby.Text & "', '" & LblTotalcost.Text & "', '" & lblconfirmby.Text & "', '" & txtpresby.Text & "')"
 
             cmd.Connection = con
             con.Open()
@@ -89,6 +89,7 @@ Public Class FrmDrugsbill
 
         End Try
         con.Close()
+
     End Sub
 
     Public Sub CheckPassowrd()
@@ -160,5 +161,26 @@ Public Class FrmDrugsbill
             Me.Close()
         End If
     End Sub
+
+    Private Sub BtnPrint_Click(sender As Object, e As EventArgs) Handles BtnPrint.Click
+
+
+        FrmPrintDrugPresc.Lblptname.Text = TxtSurname.Text + " " + txtOthername.Text
+        FrmPrintDrugPresc.Lblaccount.Text = txtaccnt.Text + " | " + Txtacctcat.Text
+        FrmPrintDrugPresc.lblhospnum.Text = txtHnum.Text
+        FrmPrintDrugPresc.lblsex.Text = txtsex.Text
+        FrmPrintDrugPresc.lblage.Text = txtage.Text
+        FrmPrintDrugPresc.lblpresby.Text = txtpresby.Text
+        FrmPrintDrugPresc.lblbillby.Text = txtbilledby.Text
+        FrmPrintDrugPresc.lbltotbill.Text = LblTotalcost.Text
+        FrmPrintDrugPresc.LBLID.Text = lblrqstid.Text
+
+        FrmPrintDrugPresc.showCompDetails()
+
+        FrmPrintDrugPresc.Show()
+
+    End Sub
+
+
 
 End Class

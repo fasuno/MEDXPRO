@@ -68,7 +68,7 @@ Partial Class FrmPtreg
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Txtprovi = New System.Windows.Forms.TextBox()
+        Me.Txtprovi = New System.Windows.Forms.ComboBox()
         Me.txtemployer = New System.Windows.Forms.TextBox()
         Me.txtenrolnum = New System.Windows.Forms.TextBox()
         Me.cboenrol = New System.Windows.Forms.ComboBox()
@@ -94,12 +94,12 @@ Partial Class FrmPtreg
         Me.txtrecptnum = New System.Windows.Forms.TextBox()
         Me.txtpass = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Lbluser = New System.Windows.Forms.Label()
         Me.Btnupdate = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.txtcaution = New System.Windows.Forms.TextBox()
         Me.btncaution = New System.Windows.Forms.Button()
-        Me.lblpicture = New System.Windows.Forms.Label()
-        Me.ptpics = New System.Windows.Forms.PictureBox()
+        Me.Btnupload = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -107,12 +107,11 @@ Partial Class FrmPtreg
         Me.GroupBox2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        CType(Me.ptpics, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Purple
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Panel1.Controls.Add(Me.regdate)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Label3)
@@ -124,6 +123,8 @@ Partial Class FrmPtreg
         '
         'regdate
         '
+        Me.regdate.CalendarForeColor = System.Drawing.Color.Navy
+        Me.regdate.Enabled = False
         Me.regdate.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.regdate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.regdate.Location = New System.Drawing.Point(110, 33)
@@ -164,7 +165,7 @@ Partial Class FrmPtreg
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.Gainsboro
+        Me.GroupBox1.BackColor = System.Drawing.Color.White
         Me.GroupBox1.Controls.Add(Me.Label30)
         Me.GroupBox1.Controls.Add(Me.Txtdays)
         Me.GroupBox1.Controls.Add(Me.Label32)
@@ -595,7 +596,7 @@ Partial Class FrmPtreg
         '
         'GroupBox4
         '
-        Me.GroupBox4.BackColor = System.Drawing.Color.Gainsboro
+        Me.GroupBox4.BackColor = System.Drawing.Color.White
         Me.GroupBox4.Controls.Add(Me.Txtprovi)
         Me.GroupBox4.Controls.Add(Me.txtemployer)
         Me.GroupBox4.Controls.Add(Me.txtenrolnum)
@@ -607,9 +608,9 @@ Partial Class FrmPtreg
         Me.GroupBox4.Controls.Add(Me.cboacct)
         Me.GroupBox4.Controls.Add(Me.Label11)
         Me.GroupBox4.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(332, 263)
+        Me.GroupBox4.Location = New System.Drawing.Point(321, 263)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(314, 163)
+        Me.GroupBox4.Size = New System.Drawing.Size(322, 163)
         Me.GroupBox4.TabIndex = 3
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "ACCOUNT DETAILS :"
@@ -618,13 +619,12 @@ Partial Class FrmPtreg
         '
         Me.Txtprovi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.Txtprovi.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.Txtprovi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Txtprovi.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.Txtprovi.Enabled = False
         Me.Txtprovi.ForeColor = System.Drawing.Color.Black
-        Me.Txtprovi.Location = New System.Drawing.Point(102, 53)
+        Me.Txtprovi.FormattingEnabled = True
+        Me.Txtprovi.Items.AddRange(New Object() {"NORMAL", "CLASSIC", "VIP", "ELITE"})
+        Me.Txtprovi.Location = New System.Drawing.Point(123, 54)
         Me.Txtprovi.Name = "Txtprovi"
-        Me.Txtprovi.Size = New System.Drawing.Size(197, 22)
+        Me.Txtprovi.Size = New System.Drawing.Size(196, 23)
         Me.Txtprovi.TabIndex = 35
         '
         'txtemployer
@@ -632,7 +632,7 @@ Partial Class FrmPtreg
         Me.txtemployer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtemployer.Enabled = False
         Me.txtemployer.ForeColor = System.Drawing.Color.Black
-        Me.txtemployer.Location = New System.Drawing.Point(103, 107)
+        Me.txtemployer.Location = New System.Drawing.Point(123, 107)
         Me.txtemployer.Name = "txtemployer"
         Me.txtemployer.Size = New System.Drawing.Size(197, 22)
         Me.txtemployer.TabIndex = 33
@@ -642,7 +642,7 @@ Partial Class FrmPtreg
         Me.txtenrolnum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtenrolnum.Enabled = False
         Me.txtenrolnum.ForeColor = System.Drawing.Color.Black
-        Me.txtenrolnum.Location = New System.Drawing.Point(103, 133)
+        Me.txtenrolnum.Location = New System.Drawing.Point(123, 133)
         Me.txtenrolnum.Name = "txtenrolnum"
         Me.txtenrolnum.Size = New System.Drawing.Size(197, 22)
         Me.txtenrolnum.TabIndex = 34
@@ -656,9 +656,9 @@ Partial Class FrmPtreg
         Me.cboenrol.ForeColor = System.Drawing.Color.Black
         Me.cboenrol.FormattingEnabled = True
         Me.cboenrol.Items.AddRange(New Object() {"Principal", "Spouse", "Child"})
-        Me.cboenrol.Location = New System.Drawing.Point(103, 80)
+        Me.cboenrol.Location = New System.Drawing.Point(123, 80)
         Me.cboenrol.Name = "cboenrol"
-        Me.cboenrol.Size = New System.Drawing.Size(198, 23)
+        Me.cboenrol.Size = New System.Drawing.Size(196, 23)
         Me.cboenrol.TabIndex = 23
         '
         'Label27
@@ -666,7 +666,7 @@ Partial Class FrmPtreg
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label27.ForeColor = System.Drawing.Color.Black
-        Me.Label27.Location = New System.Drawing.Point(-1, 135)
+        Me.Label27.Location = New System.Drawing.Point(22, 137)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(98, 15)
         Me.Label27.TabIndex = 20
@@ -677,7 +677,7 @@ Partial Class FrmPtreg
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.Color.Black
-        Me.Label26.Location = New System.Drawing.Point(17, 80)
+        Me.Label26.Location = New System.Drawing.Point(40, 84)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(79, 15)
         Me.Label26.TabIndex = 19
@@ -688,18 +688,18 @@ Partial Class FrmPtreg
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label25.ForeColor = System.Drawing.Color.Black
-        Me.Label25.Location = New System.Drawing.Point(38, 57)
+        Me.Label25.Location = New System.Drawing.Point(61, 57)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(58, 15)
+        Me.Label25.Size = New System.Drawing.Size(57, 15)
         Me.Label25.TabIndex = 18
-        Me.Label25.Text = "Provider:"
+        Me.Label25.Text = "Caegory:"
         '
         'Label24
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.Color.Black
-        Me.Label24.Location = New System.Drawing.Point(34, 110)
+        Me.Label24.Location = New System.Drawing.Point(57, 110)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(62, 15)
         Me.Label24.TabIndex = 17
@@ -712,10 +712,9 @@ Partial Class FrmPtreg
         Me.cboacct.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.cboacct.ForeColor = System.Drawing.Color.Black
         Me.cboacct.FormattingEnabled = True
-        Me.cboacct.Items.AddRange(New Object() {"Private", "Hmo / Retainer"})
-        Me.cboacct.Location = New System.Drawing.Point(103, 27)
+        Me.cboacct.Location = New System.Drawing.Point(123, 27)
         Me.cboacct.Name = "cboacct"
-        Me.cboacct.Size = New System.Drawing.Size(141, 23)
+        Me.cboacct.Size = New System.Drawing.Size(196, 23)
         Me.cboacct.TabIndex = 16
         '
         'Label11
@@ -723,15 +722,15 @@ Partial Class FrmPtreg
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(15, 30)
+        Me.Label11.Location = New System.Drawing.Point(7, 30)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(81, 15)
+        Me.Label11.Size = New System.Drawing.Size(110, 15)
         Me.Label11.TabIndex = 15
-        Me.Label11.Text = "Account type:"
+        Me.Label11.Text = "Account/ Provider:"
         '
         'GroupBox2
         '
-        Me.GroupBox2.BackColor = System.Drawing.Color.Gainsboro
+        Me.GroupBox2.BackColor = System.Drawing.Color.White
         Me.GroupBox2.Controls.Add(Me.txtkinphone)
         Me.GroupBox2.Controls.Add(Me.cborelat)
         Me.GroupBox2.Controls.Add(Me.txtkinname)
@@ -743,7 +742,7 @@ Partial Class FrmPtreg
         Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(3, 262)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(329, 167)
+        Me.GroupBox2.Size = New System.Drawing.Size(317, 167)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "  NEXT OF KIN DETAILS"
@@ -838,7 +837,9 @@ Partial Class FrmPtreg
         Me.btnsave.BackColor = System.Drawing.Color.White
         Me.btnsave.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnsave.ForeColor = System.Drawing.Color.Green
-        Me.btnsave.Location = New System.Drawing.Point(262, 30)
+        Me.btnsave.Image = CType(resources.GetObject("btnsave.Image"), System.Drawing.Image)
+        Me.btnsave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnsave.Location = New System.Drawing.Point(263, 29)
         Me.btnsave.Name = "btnsave"
         Me.btnsave.Size = New System.Drawing.Size(89, 25)
         Me.btnsave.TabIndex = 33
@@ -851,11 +852,13 @@ Partial Class FrmPtreg
         Me.btncls.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncls.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncls.ForeColor = System.Drawing.Color.DarkRed
-        Me.btncls.Location = New System.Drawing.Point(357, 30)
+        Me.btncls.Image = CType(resources.GetObject("btncls.Image"), System.Drawing.Image)
+        Me.btncls.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btncls.Location = New System.Drawing.Point(353, 29)
         Me.btncls.Name = "btncls"
-        Me.btncls.Size = New System.Drawing.Size(81, 25)
+        Me.btncls.Size = New System.Drawing.Size(88, 25)
         Me.btncls.TabIndex = 34
-        Me.btncls.Text = "CANCEL"
+        Me.btncls.Text = "      CANCEL"
         Me.btncls.UseVisualStyleBackColor = False
         '
         'Label17
@@ -899,19 +902,31 @@ Partial Class FrmPtreg
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.Purple
-        Me.Panel3.Controls.Add(Me.Btnupdate)
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Lbluser)
         Me.Panel3.Controls.Add(Me.Label17)
         Me.Panel3.Controls.Add(Me.txtrecptnum)
         Me.Panel3.Controls.Add(Me.Label18)
         Me.Panel3.Controls.Add(Me.txtpass)
         Me.Panel3.Controls.Add(Me.btncls)
         Me.Panel3.Controls.Add(Me.btnsave)
+        Me.Panel3.Controls.Add(Me.Btnupdate)
         Me.Panel3.ForeColor = System.Drawing.Color.Black
         Me.Panel3.Location = New System.Drawing.Point(337, 7)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(511, 62)
         Me.Panel3.TabIndex = 35
+        '
+        'Lbluser
+        '
+        Me.Lbluser.AutoSize = True
+        Me.Lbluser.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbluser.Location = New System.Drawing.Point(260, 8)
+        Me.Lbluser.Name = "Lbluser"
+        Me.Lbluser.Size = New System.Drawing.Size(10, 15)
+        Me.Lbluser.TabIndex = 44
+        Me.Lbluser.Text = " "
+        Me.Lbluser.Visible = False
         '
         'Btnupdate
         '
@@ -919,6 +934,8 @@ Partial Class FrmPtreg
         Me.Btnupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btnupdate.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btnupdate.ForeColor = System.Drawing.Color.Green
+        Me.Btnupdate.Image = CType(resources.GetObject("Btnupdate.Image"), System.Drawing.Image)
+        Me.Btnupdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Btnupdate.Location = New System.Drawing.Point(263, 29)
         Me.Btnupdate.Name = "Btnupdate"
         Me.Btnupdate.Size = New System.Drawing.Size(87, 25)
@@ -931,23 +948,23 @@ Partial Class FrmPtreg
         Me.Panel4.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel4.Controls.Add(Me.txtcaution)
         Me.Panel4.Controls.Add(Me.btncaution)
-        Me.Panel4.Controls.Add(Me.lblpicture)
-        Me.Panel4.Controls.Add(Me.ptpics)
         Me.Panel4.Location = New System.Drawing.Point(653, 74)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(193, 429)
+        Me.Panel4.Size = New System.Drawing.Size(193, 256)
         Me.Panel4.TabIndex = 36
         '
         'txtcaution
         '
+        Me.txtcaution.BackColor = System.Drawing.Color.White
+        Me.txtcaution.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcaution.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcaution.ForeColor = System.Drawing.Color.Red
-        Me.txtcaution.Location = New System.Drawing.Point(7, 219)
+        Me.txtcaution.Location = New System.Drawing.Point(3, 3)
         Me.txtcaution.Multiline = True
         Me.txtcaution.Name = "txtcaution"
         Me.txtcaution.ReadOnly = True
         Me.txtcaution.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.txtcaution.Size = New System.Drawing.Size(173, 147)
+        Me.txtcaution.Size = New System.Drawing.Size(184, 209)
         Me.txtcaution.TabIndex = 4
         '
         'btncaution
@@ -955,35 +972,25 @@ Partial Class FrmPtreg
         Me.btncaution.BackColor = System.Drawing.Color.Red
         Me.btncaution.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncaution.ForeColor = System.Drawing.Color.White
-        Me.btncaution.Location = New System.Drawing.Point(10, 376)
+        Me.btncaution.Location = New System.Drawing.Point(10, 218)
         Me.btncaution.Name = "btncaution"
         Me.btncaution.Size = New System.Drawing.Size(177, 34)
         Me.btncaution.TabIndex = 3
         Me.btncaution.Text = "Special Caution/ Allegies"
         Me.btncaution.UseVisualStyleBackColor = False
         '
-        'lblpicture
+        'Btnupload
         '
-        Me.lblpicture.AutoSize = True
-        Me.lblpicture.BackColor = System.Drawing.Color.Transparent
-        Me.lblpicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblpicture.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblpicture.ForeColor = System.Drawing.Color.Green
-        Me.lblpicture.Location = New System.Drawing.Point(14, 184)
-        Me.lblpicture.Name = "lblpicture"
-        Me.lblpicture.Size = New System.Drawing.Size(160, 17)
-        Me.lblpicture.TabIndex = 1
-        Me.lblpicture.Text = "CLICK TO TAKE PICTURE"
-        '
-        'ptpics
-        '
-        Me.ptpics.BackColor = System.Drawing.Color.Transparent
-        Me.ptpics.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ptpics.Location = New System.Drawing.Point(10, 11)
-        Me.ptpics.Name = "ptpics"
-        Me.ptpics.Size = New System.Drawing.Size(170, 162)
-        Me.ptpics.TabIndex = 0
-        Me.ptpics.TabStop = False
+        Me.Btnupload.BackColor = System.Drawing.Color.White
+        Me.Btnupload.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btnupload.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btnupload.ForeColor = System.Drawing.Color.Green
+        Me.Btnupload.Location = New System.Drawing.Point(674, 338)
+        Me.Btnupload.Name = "Btnupload"
+        Me.Btnupload.Size = New System.Drawing.Size(155, 27)
+        Me.Btnupload.TabIndex = 5
+        Me.Btnupload.Text = "UPLOAD DOCUMENTS"
+        Me.Btnupload.UseVisualStyleBackColor = False
         '
         'FrmPtreg
         '
@@ -992,6 +999,7 @@ Partial Class FrmPtreg
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(852, 509)
+        Me.Controls.Add(Me.Btnupload)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -1002,7 +1010,7 @@ Partial Class FrmPtreg
         Me.MinimizeBox = False
         Me.Name = "FrmPtreg"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "     PATIENT FOLDER"
+        Me.Text = " PATIENT PROFILE"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -1016,7 +1024,6 @@ Partial Class FrmPtreg
         Me.Panel3.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        CType(Me.ptpics, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1085,8 +1092,6 @@ Partial Class FrmPtreg
     Friend WithEvents txtstate As TextBox
     Friend WithEvents txtnin As TextBox
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents lblpicture As Label
-    Friend WithEvents ptpics As PictureBox
     Friend WithEvents btncaution As Button
     Friend WithEvents Btnupdate As Button
     Friend WithEvents txtcaution As TextBox
@@ -1097,5 +1102,7 @@ Partial Class FrmPtreg
     Friend WithEvents regdate As DateTimePicker
     Friend WithEvents Label30 As Label
     Friend WithEvents Txtdays As TextBox
-    Friend WithEvents Txtprovi As TextBox
+    Friend WithEvents Txtprovi As ComboBox
+    Friend WithEvents Lbluser As Label
+    Friend WithEvents Btnupload As Button
 End Class

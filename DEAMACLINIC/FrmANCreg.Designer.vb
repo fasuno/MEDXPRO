@@ -40,14 +40,14 @@ Partial Class FrmANCreg
         Me.Label23 = New System.Windows.Forms.Label()
         Me.txthusadd = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.txtacctcat = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.txtenrolletype = New System.Windows.Forms.TextBox()
-        Me.txtprov = New System.Windows.Forms.TextBox()
         Me.txtaccount = New System.Windows.Forms.TextBox()
         Me.txtemployer = New System.Windows.Forms.TextBox()
         Me.txtenrolnum = New System.Windows.Forms.TextBox()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label25 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -97,7 +97,7 @@ Partial Class FrmANCreg
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Purple
+        Me.Panel1.BackColor = System.Drawing.Color.Blue
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.BtnSearch)
         Me.Panel1.Controls.Add(Me.txtsearch)
@@ -114,11 +114,13 @@ Partial Class FrmANCreg
         Me.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSearch.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSearch.ForeColor = System.Drawing.Color.Green
+        Me.BtnSearch.Image = CType(resources.GetObject("BtnSearch.Image"), System.Drawing.Image)
+        Me.BtnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnSearch.Location = New System.Drawing.Point(518, 2)
         Me.BtnSearch.Name = "BtnSearch"
-        Me.BtnSearch.Size = New System.Drawing.Size(82, 27)
+        Me.BtnSearch.Size = New System.Drawing.Size(97, 27)
         Me.BtnSearch.TabIndex = 2
-        Me.BtnSearch.Text = "SEARCH"
+        Me.BtnSearch.Text = "    SEARCH"
         Me.BtnSearch.UseVisualStyleBackColor = False
         '
         'txtsearch
@@ -153,7 +155,7 @@ Partial Class FrmANCreg
         '
         'GroupBox2
         '
-        Me.GroupBox2.BackColor = System.Drawing.Color.Gainsboro
+        Me.GroupBox2.BackColor = System.Drawing.Color.White
         Me.GroupBox2.Controls.Add(Me.txthusempl)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.txtHusoccup)
@@ -278,15 +280,15 @@ Partial Class FrmANCreg
         '
         'GroupBox4
         '
-        Me.GroupBox4.BackColor = System.Drawing.Color.Gainsboro
+        Me.GroupBox4.BackColor = System.Drawing.Color.White
+        Me.GroupBox4.Controls.Add(Me.txtacctcat)
+        Me.GroupBox4.Controls.Add(Me.Label18)
         Me.GroupBox4.Controls.Add(Me.txtenrolletype)
-        Me.GroupBox4.Controls.Add(Me.txtprov)
         Me.GroupBox4.Controls.Add(Me.txtaccount)
         Me.GroupBox4.Controls.Add(Me.txtemployer)
         Me.GroupBox4.Controls.Add(Me.txtenrolnum)
         Me.GroupBox4.Controls.Add(Me.Label27)
         Me.GroupBox4.Controls.Add(Me.Label26)
-        Me.GroupBox4.Controls.Add(Me.Label25)
         Me.GroupBox4.Controls.Add(Me.Label24)
         Me.GroupBox4.Controls.Add(Me.Label11)
         Me.GroupBox4.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -297,27 +299,38 @@ Partial Class FrmANCreg
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "ACCOUNT DETAILS :"
         '
+        'txtacctcat
+        '
+        Me.txtacctcat.BackColor = System.Drawing.Color.White
+        Me.txtacctcat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtacctcat.ForeColor = System.Drawing.Color.Black
+        Me.txtacctcat.Location = New System.Drawing.Point(398, 23)
+        Me.txtacctcat.Name = "txtacctcat"
+        Me.txtacctcat.ReadOnly = True
+        Me.txtacctcat.Size = New System.Drawing.Size(194, 22)
+        Me.txtacctcat.TabIndex = 39
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.ForeColor = System.Drawing.Color.Black
+        Me.Label18.Location = New System.Drawing.Point(281, 27)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(109, 15)
+        Me.Label18.TabIndex = 38
+        Me.Label18.Text = "Account Category:"
+        '
         'txtenrolletype
         '
         Me.txtenrolletype.BackColor = System.Drawing.Color.White
         Me.txtenrolletype.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtenrolletype.ForeColor = System.Drawing.Color.Black
-        Me.txtenrolletype.Location = New System.Drawing.Point(397, 48)
+        Me.txtenrolletype.Location = New System.Drawing.Point(102, 48)
         Me.txtenrolletype.Name = "txtenrolletype"
         Me.txtenrolletype.ReadOnly = True
-        Me.txtenrolletype.Size = New System.Drawing.Size(197, 22)
+        Me.txtenrolletype.Size = New System.Drawing.Size(188, 22)
         Me.txtenrolletype.TabIndex = 37
-        '
-        'txtprov
-        '
-        Me.txtprov.BackColor = System.Drawing.Color.White
-        Me.txtprov.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtprov.ForeColor = System.Drawing.Color.Black
-        Me.txtprov.Location = New System.Drawing.Point(103, 49)
-        Me.txtprov.Name = "txtprov"
-        Me.txtprov.ReadOnly = True
-        Me.txtprov.Size = New System.Drawing.Size(187, 22)
-        Me.txtprov.TabIndex = 36
         '
         'txtaccount
         '
@@ -327,7 +340,7 @@ Partial Class FrmANCreg
         Me.txtaccount.Location = New System.Drawing.Point(103, 24)
         Me.txtaccount.Name = "txtaccount"
         Me.txtaccount.ReadOnly = True
-        Me.txtaccount.Size = New System.Drawing.Size(144, 22)
+        Me.txtaccount.Size = New System.Drawing.Size(172, 22)
         Me.txtaccount.TabIndex = 35
         '
         'txtemployer
@@ -346,7 +359,7 @@ Partial Class FrmANCreg
         Me.txtenrolnum.BackColor = System.Drawing.Color.White
         Me.txtenrolnum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtenrolnum.ForeColor = System.Drawing.Color.Black
-        Me.txtenrolnum.Location = New System.Drawing.Point(398, 73)
+        Me.txtenrolnum.Location = New System.Drawing.Point(398, 48)
         Me.txtenrolnum.Name = "txtenrolnum"
         Me.txtenrolnum.ReadOnly = True
         Me.txtenrolnum.Size = New System.Drawing.Size(197, 22)
@@ -357,7 +370,7 @@ Partial Class FrmANCreg
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label27.ForeColor = System.Drawing.Color.Black
-        Me.Label27.Location = New System.Drawing.Point(294, 77)
+        Me.Label27.Location = New System.Drawing.Point(294, 52)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(98, 15)
         Me.Label27.TabIndex = 20
@@ -368,22 +381,11 @@ Partial Class FrmANCreg
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.Color.Black
-        Me.Label26.Location = New System.Drawing.Point(311, 52)
+        Me.Label26.Location = New System.Drawing.Point(16, 52)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(79, 15)
         Me.Label26.TabIndex = 19
         Me.Label26.Text = "Enrolle Type:"
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.ForeColor = System.Drawing.Color.Black
-        Me.Label25.Location = New System.Drawing.Point(2, 53)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(94, 15)
-        Me.Label25.TabIndex = 18
-        Me.Label25.Text = "Hmo / Retainer:"
         '
         'Label24
         '
@@ -409,7 +411,7 @@ Partial Class FrmANCreg
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.Gainsboro
+        Me.GroupBox1.BackColor = System.Drawing.Color.White
         Me.GroupBox1.Controls.Add(Me.lbltime)
         Me.GroupBox1.Controls.Add(Me.dtreg)
         Me.GroupBox1.Controls.Add(Me.Txtdob)
@@ -758,11 +760,13 @@ Partial Class FrmANCreg
         Me.BtnCls.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCls.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCls.ForeColor = System.Drawing.Color.DarkRed
-        Me.BtnCls.Location = New System.Drawing.Point(449, 444)
+        Me.BtnCls.Image = CType(resources.GetObject("BtnCls.Image"), System.Drawing.Image)
+        Me.BtnCls.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnCls.Location = New System.Drawing.Point(433, 444)
         Me.BtnCls.Name = "BtnCls"
-        Me.BtnCls.Size = New System.Drawing.Size(74, 27)
+        Me.BtnCls.Size = New System.Drawing.Size(90, 27)
         Me.BtnCls.TabIndex = 3
-        Me.BtnCls.Text = "CANCEL"
+        Me.BtnCls.Text = "      CANCEL"
         Me.BtnCls.UseVisualStyleBackColor = False
         '
         'Btnsave
@@ -771,16 +775,18 @@ Partial Class FrmANCreg
         Me.Btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btnsave.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btnsave.ForeColor = System.Drawing.Color.Green
-        Me.Btnsave.Location = New System.Drawing.Point(525, 444)
+        Me.Btnsave.Image = CType(resources.GetObject("Btnsave.Image"), System.Drawing.Image)
+        Me.Btnsave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btnsave.Location = New System.Drawing.Point(525, 445)
         Me.Btnsave.Name = "Btnsave"
-        Me.Btnsave.Size = New System.Drawing.Size(74, 27)
+        Me.Btnsave.Size = New System.Drawing.Size(83, 27)
         Me.Btnsave.TabIndex = 4
-        Me.Btnsave.Text = "SAVE"
+        Me.Btnsave.Text = "     SAVE"
         Me.Btnsave.UseVisualStyleBackColor = False
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.Purple
+        Me.Panel3.BackColor = System.Drawing.Color.Blue
         Me.Panel3.Location = New System.Drawing.Point(0, 475)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(620, 10)
@@ -889,13 +895,11 @@ Partial Class FrmANCreg
     Friend WithEvents txthusadd As TextBox
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents txtenrolletype As TextBox
-    Friend WithEvents txtprov As TextBox
     Friend WithEvents txtaccount As TextBox
     Friend WithEvents txtemployer As TextBox
     Friend WithEvents txtenrolnum As TextBox
     Friend WithEvents Label27 As Label
     Friend WithEvents Label26 As Label
-    Friend WithEvents Label25 As Label
     Friend WithEvents Label24 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents GroupBox1 As GroupBox
@@ -940,4 +944,6 @@ Partial Class FrmANCreg
     Friend WithEvents lblclinic As Label
     Friend WithEvents lblstatus As Label
     Friend WithEvents BtnUpdate As Button
+    Friend WithEvents txtacctcat As TextBox
+    Friend WithEvents Label18 As Label
 End Class

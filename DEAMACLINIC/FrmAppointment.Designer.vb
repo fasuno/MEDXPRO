@@ -24,6 +24,8 @@ Partial Class FrmAppointment
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAppointment))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Txtcat = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.txtage = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -44,11 +46,11 @@ Partial Class FrmAppointment
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Btnsend = New System.Windows.Forms.Button()
         Me.lbltime = New System.Windows.Forms.Label()
         Me.Apptime = New System.Windows.Forms.DateTimePicker()
         Me.BtnCancel = New System.Windows.Forms.Button()
         Me.BtnReschedule = New System.Windows.Forms.Button()
-        Me.btnSend = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -56,7 +58,9 @@ Partial Class FrmAppointment
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Purple
+        Me.Panel1.BackColor = System.Drawing.Color.Blue
+        Me.Panel1.Controls.Add(Me.Txtcat)
+        Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.txtage)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.GroupBox1)
@@ -70,15 +74,34 @@ Partial Class FrmAppointment
         Me.Panel1.Controls.Add(Me.txtsurname)
         Me.Panel1.Location = New System.Drawing.Point(2, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(635, 140)
+        Me.Panel1.Size = New System.Drawing.Size(635, 154)
         Me.Panel1.TabIndex = 0
+        '
+        'Txtcat
+        '
+        Me.Txtcat.Enabled = False
+        Me.Txtcat.Location = New System.Drawing.Point(392, 103)
+        Me.Txtcat.Name = "Txtcat"
+        Me.Txtcat.Size = New System.Drawing.Size(149, 20)
+        Me.Txtcat.TabIndex = 22
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label10.Location = New System.Drawing.Point(280, 106)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(109, 15)
+        Me.Label10.TabIndex = 21
+        Me.Label10.Text = "Account Category:"
         '
         'txtage
         '
         Me.txtage.Enabled = False
-        Me.txtage.Location = New System.Drawing.Point(206, 105)
+        Me.txtage.Location = New System.Drawing.Point(356, 131)
         Me.txtage.Name = "txtage"
-        Me.txtage.Size = New System.Drawing.Size(74, 20)
+        Me.txtage.Size = New System.Drawing.Size(71, 20)
         Me.txtage.TabIndex = 20
         '
         'Label1
@@ -86,7 +109,7 @@ Partial Class FrmAppointment
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(167, 107)
+        Me.Label1.Location = New System.Drawing.Point(317, 133)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(33, 15)
         Me.Label1.TabIndex = 19
@@ -111,11 +134,13 @@ Partial Class FrmAppointment
         Me.Btnsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btnsearch.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btnsearch.ForeColor = System.Drawing.Color.Black
+        Me.Btnsearch.Image = CType(resources.GetObject("Btnsearch.Image"), System.Drawing.Image)
+        Me.Btnsearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Btnsearch.Location = New System.Drawing.Point(319, 22)
         Me.Btnsearch.Name = "Btnsearch"
-        Me.Btnsearch.Size = New System.Drawing.Size(97, 31)
+        Me.Btnsearch.Size = New System.Drawing.Size(83, 31)
         Me.Btnsearch.TabIndex = 19
-        Me.Btnsearch.Text = "Search"
+        Me.Btnsearch.Text = "     Search"
         Me.Btnsearch.UseVisualStyleBackColor = False
         '
         'Label8
@@ -140,7 +165,7 @@ Partial Class FrmAppointment
         'txtsex
         '
         Me.txtsex.Enabled = False
-        Me.txtsex.Location = New System.Drawing.Point(77, 105)
+        Me.txtsex.Location = New System.Drawing.Point(227, 131)
         Me.txtsex.Name = "txtsex"
         Me.txtsex.Size = New System.Drawing.Size(84, 20)
         Me.txtsex.TabIndex = 17
@@ -148,7 +173,8 @@ Partial Class FrmAppointment
         'txtothernames
         '
         Me.txtothernames.Enabled = False
-        Me.txtothernames.Location = New System.Drawing.Point(388, 79)
+        Me.txtothernames.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.txtothernames.Location = New System.Drawing.Point(392, 79)
         Me.txtothernames.Name = "txtothernames"
         Me.txtothernames.Size = New System.Drawing.Size(235, 20)
         Me.txtothernames.TabIndex = 16
@@ -156,9 +182,9 @@ Partial Class FrmAppointment
         'txtaccount
         '
         Me.txtaccount.Enabled = False
-        Me.txtaccount.Location = New System.Drawing.Point(388, 105)
+        Me.txtaccount.Location = New System.Drawing.Point(88, 104)
         Me.txtaccount.Name = "txtaccount"
-        Me.txtaccount.Size = New System.Drawing.Size(191, 20)
+        Me.txtaccount.Size = New System.Drawing.Size(189, 20)
         Me.txtaccount.TabIndex = 15
         '
         'Label9
@@ -166,7 +192,7 @@ Partial Class FrmAppointment
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label9.Location = New System.Drawing.Point(298, 110)
+        Me.Label9.Location = New System.Drawing.Point(1, 105)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(84, 15)
         Me.Label9.TabIndex = 14
@@ -177,7 +203,7 @@ Partial Class FrmAppointment
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label7.Location = New System.Drawing.Point(10, 80)
+        Me.Label7.Location = New System.Drawing.Point(24, 82)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(61, 15)
         Me.Label7.TabIndex = 12
@@ -188,7 +214,7 @@ Partial Class FrmAppointment
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label6.Location = New System.Drawing.Point(298, 84)
+        Me.Label6.Location = New System.Drawing.Point(303, 82)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(84, 15)
         Me.Label6.TabIndex = 11
@@ -199,7 +225,7 @@ Partial Class FrmAppointment
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label5.Location = New System.Drawing.Point(40, 105)
+        Me.Label5.Location = New System.Drawing.Point(190, 134)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(31, 15)
         Me.Label5.TabIndex = 10
@@ -208,7 +234,7 @@ Partial Class FrmAppointment
         'txtsurname
         '
         Me.txtsurname.Enabled = False
-        Me.txtsurname.Location = New System.Drawing.Point(77, 79)
+        Me.txtsurname.Location = New System.Drawing.Point(88, 79)
         Me.txtsurname.Name = "txtsurname"
         Me.txtsurname.Size = New System.Drawing.Size(203, 20)
         Me.txtsurname.TabIndex = 6
@@ -217,17 +243,18 @@ Partial Class FrmAppointment
         '
         Me.cboClinic.FormattingEnabled = True
         Me.cboClinic.Items.AddRange(New Object() {"GOPD", "MOPD", "POPD", "SOPD", "ANC", "GYNAE", "A&E", "EUROLOGY", "DEMATOLOGY", "ART", ""})
-        Me.cboClinic.Location = New System.Drawing.Point(256, 35)
+        Me.cboClinic.Location = New System.Drawing.Point(256, 36)
         Me.cboClinic.Name = "cboClinic"
         Me.cboClinic.Size = New System.Drawing.Size(171, 21)
         Me.cboClinic.TabIndex = 8
         '
         'Apptdate
         '
+        Me.Apptdate.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Apptdate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Apptdate.Location = New System.Drawing.Point(206, 9)
+        Me.Apptdate.Location = New System.Drawing.Point(206, 10)
         Me.Apptdate.Name = "Apptdate"
-        Me.Apptdate.Size = New System.Drawing.Size(115, 20)
+        Me.Apptdate.Size = New System.Drawing.Size(115, 21)
         Me.Apptdate.TabIndex = 7
         '
         'Label2
@@ -235,7 +262,7 @@ Partial Class FrmAppointment
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label2.Location = New System.Drawing.Point(203, 41)
+        Me.Label2.Location = New System.Drawing.Point(203, 39)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(45, 15)
         Me.Label2.TabIndex = 2
@@ -246,7 +273,7 @@ Partial Class FrmAppointment
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label3.Location = New System.Drawing.Point(163, 12)
+        Me.Label3.Location = New System.Drawing.Point(163, 13)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(36, 15)
         Me.Label3.TabIndex = 3
@@ -257,7 +284,7 @@ Partial Class FrmAppointment
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label4.Location = New System.Drawing.Point(327, 12)
+        Me.Label4.Location = New System.Drawing.Point(327, 13)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(39, 15)
         Me.Label4.TabIndex = 4
@@ -266,27 +293,39 @@ Partial Class FrmAppointment
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.Controls.Add(Me.Btnsend)
         Me.Panel2.Controls.Add(Me.lbltime)
         Me.Panel2.Controls.Add(Me.Apptime)
         Me.Panel2.Controls.Add(Me.BtnCancel)
         Me.Panel2.Controls.Add(Me.BtnReschedule)
-        Me.Panel2.Controls.Add(Me.btnSend)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.Apptdate)
         Me.Panel2.Controls.Add(Me.cboClinic)
         Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Location = New System.Drawing.Point(2, 143)
+        Me.Panel2.Location = New System.Drawing.Point(2, 162)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(635, 110)
+        Me.Panel2.Size = New System.Drawing.Size(635, 101)
         Me.Panel2.TabIndex = 1
+        '
+        'Btnsend
+        '
+        Me.Btnsend.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btnsend.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btnsend.ForeColor = System.Drawing.Color.Green
+        Me.Btnsend.Location = New System.Drawing.Point(193, 60)
+        Me.Btnsend.Name = "Btnsend"
+        Me.Btnsend.Size = New System.Drawing.Size(85, 25)
+        Me.Btnsend.TabIndex = 25
+        Me.Btnsend.Text = "Send"
+        Me.Btnsend.UseVisualStyleBackColor = True
         '
         'lbltime
         '
         Me.lbltime.AutoSize = True
         Me.lbltime.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbltime.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lbltime.Location = New System.Drawing.Point(493, 11)
+        Me.lbltime.Location = New System.Drawing.Point(493, 30)
         Me.lbltime.Name = "lbltime"
         Me.lbltime.Size = New System.Drawing.Size(10, 15)
         Me.lbltime.TabIndex = 24
@@ -296,7 +335,7 @@ Partial Class FrmAppointment
         'Apptime
         '
         Me.Apptime.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.Apptime.Location = New System.Drawing.Point(372, 9)
+        Me.Apptime.Location = New System.Drawing.Point(372, 10)
         Me.Apptime.Name = "Apptime"
         Me.Apptime.ShowUpDown = True
         Me.Apptime.Size = New System.Drawing.Size(115, 20)
@@ -308,7 +347,7 @@ Partial Class FrmAppointment
         Me.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnCancel.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCancel.ForeColor = System.Drawing.Color.Red
-        Me.BtnCancel.Location = New System.Drawing.Point(378, 65)
+        Me.BtnCancel.Location = New System.Drawing.Point(378, 62)
         Me.BtnCancel.Name = "BtnCancel"
         Me.BtnCancel.Size = New System.Drawing.Size(71, 23)
         Me.BtnCancel.TabIndex = 22
@@ -321,32 +360,20 @@ Partial Class FrmAppointment
         Me.BtnReschedule.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnReschedule.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnReschedule.ForeColor = System.Drawing.Color.Olive
-        Me.BtnReschedule.Location = New System.Drawing.Point(281, 65)
+        Me.BtnReschedule.Location = New System.Drawing.Point(281, 62)
         Me.BtnReschedule.Name = "BtnReschedule"
         Me.BtnReschedule.Size = New System.Drawing.Size(94, 23)
         Me.BtnReschedule.TabIndex = 21
         Me.BtnReschedule.Text = "Reschedule"
         Me.BtnReschedule.UseVisualStyleBackColor = False
         '
-        'btnSend
-        '
-        Me.btnSend.BackColor = System.Drawing.SystemColors.HighlightText
-        Me.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnSend.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSend.ForeColor = System.Drawing.Color.Green
-        Me.btnSend.Location = New System.Drawing.Point(202, 65)
-        Me.btnSend.Name = "btnSend"
-        Me.btnSend.Size = New System.Drawing.Size(76, 23)
-        Me.btnSend.TabIndex = 20
-        Me.btnSend.Text = "Send"
-        Me.btnSend.UseVisualStyleBackColor = False
-        '
         'FrmAppointment
         '
+        Me.AcceptButton = Me.Btnsearch
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(638, 250)
+        Me.ClientSize = New System.Drawing.Size(638, 256)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -356,7 +383,7 @@ Partial Class FrmAppointment
         Me.MinimizeBox = False
         Me.Name = "FrmAppointment"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "             APPOINTMENT"
+        Me.Text = "APPOINTMENT"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -386,11 +413,13 @@ Partial Class FrmAppointment
     Friend WithEvents txtsearch As TextBox
     Friend WithEvents Btnsearch As Button
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents btnSend As Button
     Friend WithEvents BtnCancel As Button
     Friend WithEvents BtnReschedule As Button
     Friend WithEvents Apptime As DateTimePicker
     Friend WithEvents txtage As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents lbltime As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Txtcat As TextBox
+    Friend WithEvents Btnsend As Button
 End Class

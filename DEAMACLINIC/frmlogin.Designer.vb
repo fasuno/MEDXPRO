@@ -37,7 +37,7 @@ Partial Class frmlogin
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Purple
+        Me.Label1.ForeColor = System.Drawing.Color.MediumBlue
         Me.Label1.Location = New System.Drawing.Point(134, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(80, 21)
@@ -48,7 +48,7 @@ Partial Class frmlogin
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Purple
+        Me.Label2.ForeColor = System.Drawing.Color.MediumBlue
         Me.Label2.Location = New System.Drawing.Point(19, 17)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(82, 19)
@@ -59,7 +59,7 @@ Partial Class frmlogin
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Purple
+        Me.Label3.ForeColor = System.Drawing.Color.MediumBlue
         Me.Label3.Location = New System.Drawing.Point(19, 50)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(77, 19)

@@ -55,7 +55,7 @@ Partial Class FrmRadTreatResult
         '
         Me.lblinvest.AutoSize = True
         Me.lblinvest.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblinvest.ForeColor = System.Drawing.Color.DarkRed
+        Me.lblinvest.ForeColor = System.Drawing.Color.Navy
         Me.lblinvest.Location = New System.Drawing.Point(306, 13)
         Me.lblinvest.Name = "lblinvest"
         Me.lblinvest.Size = New System.Drawing.Size(77, 15)

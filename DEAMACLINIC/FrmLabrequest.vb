@@ -177,7 +177,7 @@ Public Class FrmLabrequest
         Try
 
             cmd.CommandType = System.Data.CommandType.Text
-            cmd.CommandText = "insert into Pend_LabRequest Values ('" & dtgLabrequest.Rows(0).Cells(0).Value & "', '" & lbldate.Text.ToString & "', '" & lbltime.Text.ToString & "', '" & FrmPtRecords.Lblhopnum.Text & "', '" & FrmPtRecords.Lblsurname.Text & "', '" & FrmPtRecords.Lblothernmaes.Text & "',  '" & FrmPtRecords.lblage.Text & "', '" & FrmPtRecords.lblsex.Text & "', '" & FrmPtRecords.lblacct.Text & "', '" & cboclinic.Text.ToString & "', '" & txtdiagn.Text & "', '" & lblsendername.Text.ToString & "')"
+            cmd.CommandText = "insert into Pend_LabRequest Values ('" & dtgLabrequest.Rows(0).Cells(0).Value & "', '" & lbldate.Text.ToString & "', '" & lbltime.Text.ToString & "', '" & FrmPtRecords.Lblhopnum.Text & "', '" & FrmPtRecords.Lblsurname.Text & "', '" & FrmPtRecords.Lblothernmaes.Text & "',  '" & FrmPtRecords.lblage.Text & "', '" & FrmPtRecords.lblsex.Text & "', '" & FrmPtRecords.lblacct.Text & "', '" & FrmPtRecords.Profile1.txtprov.Text & "', '" & cboclinic.Text.ToString & "', '" & txtdiagn.Text & "', '" & lblsendername.Text.ToString & "')"
 
             cmd.Connection = con
             ' con.Open()
@@ -201,7 +201,7 @@ Public Class FrmLabrequest
             For Each row As DataGridViewRow In dtgLabrequest.Rows
 
                 Using con As New SqlConnection(constring)
-                    Using cmd As New SqlCommand("INSERT INTO LabRequest VALUES(@RqstNum, @Date, @Time, @Tid, @TestName, @Comm, @Hospnum, @Surname, @Othernames, @Age, @Sex, @Account, @Clinic, @Diag, @PrescBY)", con)
+                    Using cmd As New SqlCommand("INSERT INTO LabRequest VALUES(@RqstNum, @Date, @Time, @Tid, @TestName, @Comm, @Hospnum, @Surname, @Othernames, @Age, @Sex, @Account, @Accntcat, @Clinic, @Diag, @PrescBY)", con)
 
 
                         '// This insertion styles is a combination of datagridview values and other objects such as textboxex and label
@@ -220,6 +220,7 @@ Public Class FrmLabrequest
                         cmd.Parameters.Add("@Age", SqlDbType.VarChar).Value = FrmPtRecords.lblage.Text
                         cmd.Parameters.Add("@Sex", SqlDbType.VarChar).Value = FrmPtRecords.lblsex.Text
                         cmd.Parameters.Add("@Account", SqlDbType.VarChar).Value = FrmPtRecords.lblacct.Text
+                        cmd.Parameters.Add("@Accntcat", SqlDbType.VarChar).Value = FrmPtRecords.Profile1.txtprov.Text
                         cmd.Parameters.Add("@Clinic", SqlDbType.VarChar).Value = cboclinic.Text
                         cmd.Parameters.Add("@Diag", SqlDbType.VarChar).Value = txtdiagn.Text
                         cmd.Parameters.Add("@PrescBY", SqlDbType.VarChar).Value = lblsendername.Text
@@ -322,5 +323,112 @@ Public Class FrmLabrequest
         txtrqstno.Text = ""
         txttestID.Text = ""
     End Sub
+
+    '// This will be use on the ANC form
+    Public Sub PopulateANCLabRequest()
+
+        Try
+
+            cmd.CommandType = System.Data.CommandType.Text
+            cmd.CommandText = "insert into Pend_LabRequest Values ('" & dtgLabrequest.Rows(0).Cells(0).Value & "', '" & lbldate.Text.ToString & "', '" & lbltime.Text.ToString & "', '" & FrmANCform.lblhospnum.Text & "', '" & FrmANCform.AncProfile2.Txtsurname.Text & "', '" & FrmANCform.AncProfile2.txtothernames.Text & "',  '" & FrmANCform.AncProfile2.txtyear.Text & "', '" & FrmANCform.AncProfile2.txtsex.Text & "', '" & FrmANCform.AncProfile2.txtaccount.Text & "', '" & FrmANCform.AncProfile2.txtprov.Text & "', '" & cboclinic.Text.ToString & "', '" & txtdiagn.Text & "', '" & lblsendername.Text.ToString & "')"
+
+            cmd.Connection = con
+            ' con.Open()
+            cmd.ExecuteNonQuery()
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+
+        End Try
+        con.Close()
+    End Sub
+
+    Public Sub SaveANCLabRequest()
+
+        generatenum()
+        PopulateANCLabRequest()
+
+        Try
+
+
+            For Each row As DataGridViewRow In dtgLabrequest.Rows
+
+                Using con As New SqlConnection(constring)
+                    Using cmd As New SqlCommand("INSERT INTO LabRequest VALUES(@RqstNum, @Date, @Time, @Tid, @TestName, @Comm, @Hospnum, @Surname, @Othernames, @Age, @Sex, @Account, @Acctcat @Clinic, @Diag, @PrescBY)", con)
+
+
+                        '// This insertion styles is a combination of datagridview values and other objects such as textboxex and label
+                        '// All will be inserted alongside the values in Drugs presc form dtagridviews rows all at once.
+
+
+                        cmd.Parameters.AddWithValue("@RqstNum", row.Cells("Request_Num").Value) '// Insert the value in the Datagridview requst num cell
+                        cmd.Parameters.Add("@Date", SqlDbType.Date).Value = lbldate.Text
+                        cmd.Parameters.Add("@Time", SqlDbType.VarChar).Value = lbltime.Text
+                        cmd.Parameters.AddWithValue("@Tid", row.Cells("LabTestID").Value)
+                        cmd.Parameters.AddWithValue("@TestName", row.Cells("Test_Name").Value) '// Insert the value in the Datagridview test name cell
+                        cmd.Parameters.Add("@Comm", SqlDbType.VarChar).Value = txtcomment.Text
+                        cmd.Parameters.Add("@Hospnum", SqlDbType.VarChar).Value = FrmANCform.lblhospnum.Text
+                        cmd.Parameters.Add("@Surname", SqlDbType.VarChar).Value = FrmANCform.AncProfile2.Txtsurname.Text
+                        cmd.Parameters.Add("@Othernames", SqlDbType.VarChar).Value = FrmPtRecords.Lblothernmaes.Text
+                        cmd.Parameters.Add("@Age", SqlDbType.VarChar).Value = FrmANCform.AncProfile2.txtyear.Text
+                        cmd.Parameters.Add("@Sex", SqlDbType.VarChar).Value = FrmANCform.AncProfile2.txtsex.Text
+                        cmd.Parameters.Add("@Account", SqlDbType.VarChar).Value = FrmANCform.AncProfile2.txtaccount.Text
+                        cmd.Parameters.Add("@Accnt", SqlDbType.VarChar).Value = FrmANCform.AncProfile2.txtprov.Text
+                        cmd.Parameters.Add("@Clinic", SqlDbType.VarChar).Value = cboclinic.Text
+                        cmd.Parameters.Add("@Diag", SqlDbType.VarChar).Value = txtdiagn.Text
+                        cmd.Parameters.Add("@PrescBY", SqlDbType.VarChar).Value = lblsendername.Text
+
+                        '// Insert also the other objects values
+
+                        con.Open()
+                        cmd.ExecuteNonQuery()
+                        con.Close()
+                    End Using
+                End Using
+            Next
+
+            MsgBox("LABORATORY REQUEST SENT", vbOKOnly, "LAB REQUEST")
+
+            dtgLabrequest.Rows.Clear()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub BtnSndAncLab_Click(sender As Object, e As EventArgs) Handles BtnSndAncLab.Click
+
+        If cboclinic.Text = "" Then
+            MsgBox("PLEASE SELECT CLINIC", MsgBoxStyle.Information, "LAB REQUEST")
+            cboclinic.Focus()
+
+        ElseIf txtdiagn.Text = "" Then
+            MsgBox("PLEASE ENTER YOUR DIAGNOSIS", MsgBoxStyle.Information, "LAB REQUEST")
+            txtdiagn.Focus()
+
+        ElseIf txtpassword.Text = "" Then
+            MsgBox("PLEASE ENTER YOUR PASSWORD", MsgBoxStyle.Information, "LAB REQUEST")
+            txtpassword.Focus()
+
+        Else
+
+            SaveANCLabRequest()
+
+            Me.Close()
+            txtpassword.Text = ""
+            lblsendername.Text = ""
+            txtdiagn.Text = ""
+
+
+        End If
+        frmLABORATORY.SortPendlabRqst()
+        FrmPtRecords.PtLabHist1.LoadLabReqstHx()
+        con.Close()
+
+    End Sub
+
+
 
 End Class

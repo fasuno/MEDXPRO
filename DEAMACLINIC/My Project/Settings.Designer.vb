@@ -57,7 +57,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=HAVILAH;Initial Catalog=PROMEDDB;Integrated Security=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=HAVILAH;Initial Catalog=PROMEDDB; Trusted_Connection=True")>  _
         Public ReadOnly Property DEAMACLINICConnectionString() As String
             Get
                 Return CType(Me("DEAMACLINICConnectionString"),String)

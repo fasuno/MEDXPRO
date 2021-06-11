@@ -95,7 +95,7 @@ Public Class frmLABORATORY
     End Sub
 
     Private Sub DtgPendLabReqst_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DtgPendLabReqst.CellDoubleClick
-        Dim frm As New FrmLabInvRqst
+        'sDim frm As New FrmLabInvRqst
 
         FrmLabInvRqst.Txtrqstid.Text = DtgPendLabReqst.CurrentRow.Cells(0).Value
         FrmLabInvRqst.txtdate.Text = DtgPendLabReqst.CurrentRow.Cells(1).Value
@@ -105,7 +105,8 @@ Public Class frmLABORATORY
         FrmLabInvRqst.txtage.Text = DtgPendLabReqst.CurrentRow.Cells(6).Value.ToString
         FrmLabInvRqst.txtsex.Text = DtgPendLabReqst.CurrentRow.Cells(7).Value.ToString
         FrmLabInvRqst.txtacct.Text = DtgPendLabReqst.CurrentRow.Cells(8).Value.ToString
-        FrmLabInvRqst.txtrqstby.Text = DtgPendLabReqst.CurrentRow.Cells(11).Value.ToString
+        FrmLabInvRqst.Txtacctcat.Text = DtgPendLabReqst.CurrentRow.Cells(9).Value.ToString
+        FrmLabInvRqst.txtrqstby.Text = DtgPendLabReqst.CurrentRow.Cells(12).Value.ToString
 
         FrmLabInvRqst.ShowDialog()
 
@@ -117,7 +118,9 @@ Public Class frmLABORATORY
     End Sub
 
     Private Sub Dtgbiiled_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dtgbiiled.CellDoubleClick
-        Dim frms = New frmLabResult
+
+        'Dim frms = New frmLabResult
+
         frmLabResult.lblrqstnum.Text = Dtgbiiled.CurrentRow.Cells(0).Value.ToString
         frmLabResult.txtHnum.Text = Dtgbiiled.CurrentRow.Cells(3).Value.ToString
         frmLabResult.TxtSname.Text = Dtgbiiled.CurrentRow.Cells(4).Value.ToString
@@ -125,8 +128,9 @@ Public Class frmLABORATORY
         frmLabResult.txtsex.Text = Dtgbiiled.CurrentRow.Cells(7).Value.ToString
         frmLabResult.txtage.Text = Dtgbiiled.CurrentRow.Cells(6).Value.ToString
         frmLabResult.txtacct.Text = Dtgbiiled.CurrentRow.Cells(8).Value.ToString
-        frmLabResult.TxtRqstdate.Text = Dtgbiiled.CurrentRow.Cells(13).Value
-        frmLabResult.txtRqstby.Text = Dtgbiiled.CurrentRow.Cells(12).Value.ToString
+        frmLabResult.Txtactcat.Text = Dtgbiiled.CurrentRow.Cells(9).Value.ToString
+        frmLabResult.TxtRqstdate.Text = Dtgbiiled.CurrentRow.Cells(14).Value
+        frmLabResult.txtRqstby.Text = Dtgbiiled.CurrentRow.Cells(13).Value.ToString
 
         '// Load Test and Notes
         frmLabResult.LoadPatientTest()
@@ -152,7 +156,7 @@ Public Class frmLABORATORY
 
     Private Sub DtgReview_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DtgReview.CellDoubleClick
 
-        Dim fom As New frmLabResult
+        ' Dim fom As New frmLabResult
 
         frmLabResult.lblrqstnum.Text = DtgReview.CurrentRow.Cells(0).Value.ToString
         frmLabResult.txtHnum.Text = DtgReview.CurrentRow.Cells(3).Value.ToString
@@ -161,6 +165,7 @@ Public Class frmLABORATORY
         frmLabResult.txtsex.Text = DtgReview.CurrentRow.Cells(7).Value.ToString
         frmLabResult.txtage.Text = DtgReview.CurrentRow.Cells(6).Value.ToString
         frmLabResult.txtacct.Text = DtgReview.CurrentRow.Cells(8).Value.ToString
+        frmLabResult.Txtactcat.Text = Dtgbiiled.CurrentRow.Cells(9).Value.ToString
         frmLabResult.TxtRqstdate.Text = DtgReview.CurrentRow.Cells(10).Value
         frmLabResult.txtRqstby.Text = DtgReview.CurrentRow.Cells(9).Value.ToString
         frmLabResult.lblreportby.Text = DtgReview.CurrentRow.Cells(11).Value.ToString
@@ -201,7 +206,7 @@ Public Class frmLABORATORY
     End Sub
 
     Private Sub DtgLabtrt_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DtgLabtrt.CellDoubleClick
-        Dim fomr = New frmLabResult
+        ' Dim fomr = New frmLabResult
 
         frmLabResult.lblrqstnum.Text = DtgLabtrt.CurrentRow.Cells(0).Value.ToString
         frmLabResult.txtHnum.Text = DtgLabtrt.CurrentRow.Cells(3).Value.ToString
@@ -210,6 +215,7 @@ Public Class frmLABORATORY
         frmLabResult.txtsex.Text = DtgLabtrt.CurrentRow.Cells(7).Value.ToString
         frmLabResult.txtage.Text = DtgLabtrt.CurrentRow.Cells(6).Value.ToString
         frmLabResult.txtacct.Text = DtgLabtrt.CurrentRow.Cells(8).Value.ToString
+        frmLabResult.Txtactcat.Text = Dtgbiiled.CurrentRow.Cells(9).Value.ToString
         frmLabResult.TxtRqstdate.Text = DtgLabtrt.CurrentRow.Cells(10).Value
         frmLabResult.txtRqstby.Text = DtgLabtrt.CurrentRow.Cells(9).Value.ToString
         frmLabResult.lblreportby.Text = DtgLabtrt.CurrentRow.Cells(11).Value.ToString

@@ -22,9 +22,9 @@ Partial Class frmAllDrugs
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAllDrugs))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAllDrugs))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Btnreload = New System.Windows.Forms.Button()
         Me.Cbocategory = New System.Windows.Forms.ComboBox()
@@ -50,11 +50,13 @@ Partial Class frmAllDrugs
         'Btnreload
         '
         Me.Btnreload.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btnreload.Image = CType(resources.GetObject("Btnreload.Image"), System.Drawing.Image)
+        Me.Btnreload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Btnreload.Location = New System.Drawing.Point(339, 3)
         Me.Btnreload.Name = "Btnreload"
-        Me.Btnreload.Size = New System.Drawing.Size(92, 29)
+        Me.Btnreload.Size = New System.Drawing.Size(79, 29)
         Me.Btnreload.TabIndex = 2
-        Me.Btnreload.Text = "Reload"
+        Me.Btnreload.Text = "      Reload"
         Me.Btnreload.UseVisualStyleBackColor = True
         '
         'Cbocategory

@@ -30,8 +30,8 @@ Partial Class FrmReceipts
         Me.txtname = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DtgDetails = New System.Windows.Forms.DataGridView()
-        Me.BtnDetails = New System.Windows.Forms.Button()
         Me.BtnSave = New System.Windows.Forms.Button()
+        Me.BtnDetails = New System.Windows.Forms.Button()
         Me.Txthnum = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtaccnt = New System.Windows.Forms.TextBox()
@@ -47,6 +47,7 @@ Partial Class FrmReceipts
         Me.lblcashiername = New System.Windows.Forms.Label()
         Me.LblReceiptnum = New System.Windows.Forms.Label()
         Me.lblpaystat = New System.Windows.Forms.Label()
+        Me.btnreprint = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.DtgDetails, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -125,18 +126,6 @@ Partial Class FrmReceipts
         Me.DtgDetails.Size = New System.Drawing.Size(374, 190)
         Me.DtgDetails.TabIndex = 0
         '
-        'BtnDetails
-        '
-        Me.BtnDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnDetails.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnDetails.ForeColor = System.Drawing.Color.DarkRed
-        Me.BtnDetails.Location = New System.Drawing.Point(13, 145)
-        Me.BtnDetails.Name = "BtnDetails"
-        Me.BtnDetails.Size = New System.Drawing.Size(81, 24)
-        Me.BtnDetails.TabIndex = 6
-        Me.BtnDetails.Text = "DETAILS"
-        Me.BtnDetails.UseVisualStyleBackColor = True
-        '
         'BtnSave
         '
         Me.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -148,6 +137,18 @@ Partial Class FrmReceipts
         Me.BtnSave.TabIndex = 7
         Me.BtnSave.Text = "PRINT"
         Me.BtnSave.UseVisualStyleBackColor = True
+        '
+        'BtnDetails
+        '
+        Me.BtnDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnDetails.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnDetails.ForeColor = System.Drawing.Color.DarkRed
+        Me.BtnDetails.Location = New System.Drawing.Point(13, 145)
+        Me.BtnDetails.Name = "BtnDetails"
+        Me.BtnDetails.Size = New System.Drawing.Size(81, 24)
+        Me.BtnDetails.TabIndex = 6
+        Me.BtnDetails.Text = "DETAILS"
+        Me.BtnDetails.UseVisualStyleBackColor = True
         '
         'Txthnum
         '
@@ -242,17 +243,17 @@ Partial Class FrmReceipts
         Me.Txtservno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Txtservno.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txtservno.ForeColor = System.Drawing.Color.Black
-        Me.Txtservno.Location = New System.Drawing.Point(319, 111)
+        Me.Txtservno.Location = New System.Drawing.Point(312, 111)
         Me.Txtservno.Name = "Txtservno"
         Me.Txtservno.ReadOnly = True
-        Me.Txtservno.Size = New System.Drawing.Size(44, 22)
+        Me.Txtservno.Size = New System.Drawing.Size(76, 22)
         Me.Txtservno.TabIndex = 17
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(249, 115)
+        Me.Label9.Location = New System.Drawing.Point(244, 115)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(67, 15)
         Me.Label9.TabIndex = 18
@@ -311,6 +312,18 @@ Partial Class FrmReceipts
         Me.lblpaystat.Text = "Paid"
         Me.lblpaystat.Visible = False
         '
+        'btnreprint
+        '
+        Me.btnreprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnreprint.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnreprint.ForeColor = System.Drawing.Color.Green
+        Me.btnreprint.Location = New System.Drawing.Point(295, 386)
+        Me.btnreprint.Name = "btnreprint"
+        Me.btnreprint.Size = New System.Drawing.Size(81, 24)
+        Me.btnreprint.TabIndex = 24
+        Me.btnreprint.Text = "REPRINT"
+        Me.btnreprint.UseVisualStyleBackColor = True
+        '
         'FrmReceipts
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -318,6 +331,7 @@ Partial Class FrmReceipts
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(398, 418)
         Me.Controls.Add(Me.lblpaystat)
+        Me.Controls.Add(Me.BtnSave)
         Me.Controls.Add(Me.LblReceiptnum)
         Me.Controls.Add(Me.lblcashiername)
         Me.Controls.Add(Me.Label10)
@@ -332,7 +346,6 @@ Partial Class FrmReceipts
         Me.Controls.Add(Me.txtaccnt)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Txthnum)
-        Me.Controls.Add(Me.BtnSave)
         Me.Controls.Add(Me.BtnDetails)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.txtname)
@@ -340,6 +353,7 @@ Partial Class FrmReceipts
         Me.Controls.Add(Me.lbldate)
         Me.Controls.Add(Me.lbltime)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btnreprint)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -378,4 +392,5 @@ Partial Class FrmReceipts
     Friend WithEvents lblcashiername As Label
     Friend WithEvents LblReceiptnum As Label
     Friend WithEvents lblpaystat As Label
+    Friend WithEvents btnreprint As Button
 End Class

@@ -2,6 +2,7 @@
 
 Public Class PtRadHist
     Private Sub Btnnew_Click(sender As Object, e As EventArgs) Handles Btnnew.Click
+        FrmRadrequest.LoadRAdlist()
         FrmRadrequest.ShowDialog()
     End Sub
 

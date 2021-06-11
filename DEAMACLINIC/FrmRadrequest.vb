@@ -121,7 +121,7 @@ Public Class FrmRadrequest
         Try
 
             cmd.CommandType = System.Data.CommandType.Text
-            cmd.CommandText = "insert into Pend_RadRequest Values ('" & dtgRadrequest.Rows(0).Cells(0).Value & "', '" & lbldate.Text.ToString & "', '" & lbltime.Text.ToString & "', '" & FrmPtRecords.Lblhopnum.Text & "', '" & FrmPtRecords.Lblsurname.Text & "', '" & FrmPtRecords.Lblothernmaes.Text & "',  '" & FrmPtRecords.lblage.Text & "', '" & FrmPtRecords.lblsex.Text & "', '" & FrmPtRecords.lblacct.Text & "', '" & cboclinic.Text.ToString & "', '" & txtdiagn.Text & "', '" & lblsendername.Text.ToString & "')"
+            cmd.CommandText = "insert into Pend_RadRequest Values ('" & dtgRadrequest.Rows(0).Cells(0).Value & "', '" & lbldate.Text.ToString & "', '" & lbltime.Text.ToString & "', '" & FrmPtRecords.Lblhopnum.Text & "', '" & FrmPtRecords.Lblsurname.Text & "', '" & FrmPtRecords.Lblothernmaes.Text & "',  '" & FrmPtRecords.lblage.Text & "', '" & FrmPtRecords.lblsex.Text & "', '" & FrmPtRecords.lblacct.Text & "','" & FrmPtRecords.Profile1.txtprov.Text & "', '" & cboclinic.Text.ToString & "', '" & txtdiagn.Text & "', '" & lblsendername.Text.ToString & "')"
 
             cmd.Connection = con
             ' con.Open()
@@ -144,7 +144,7 @@ Public Class FrmRadrequest
             For Each row As DataGridViewRow In dtgRadrequest.Rows
 
                 Using con As New SqlConnection(constring)
-                    Using cmd As New SqlCommand("INSERT INTO RadRequestAndResult VALUES(@RqstNum, @Date, @Time, @InvName, @Comm, @Hospnum, @Surname, @Othernames, @Age, @Sex, @Account, @Clinic, @Diag, @PrescBY, @rlt, @dtrprt, @timrprt, @rptdBy,@stat)", con)
+                    Using cmd As New SqlCommand("INSERT INTO RadRequestAndResult VALUES(@RqstNum, @Date, @Time, @InvName, @Comm, @Hospnum, @Surname, @Othernames, @Age, @Sex, @Account, @Accntcat, @Clinic, @Diag, @PrescBY, @rlt, @dtrprt, @timrprt, @rptdBy,@stat)", con)
 
 
                         '// This insertion styles is a combination of datagridview values and other objects such as textboxex and label
@@ -162,6 +162,7 @@ Public Class FrmRadrequest
                         cmd.Parameters.Add("@Age", SqlDbType.VarChar).Value = FrmPtRecords.lblage.Text
                         cmd.Parameters.Add("@Sex", SqlDbType.VarChar).Value = FrmPtRecords.lblsex.Text
                         cmd.Parameters.Add("@Account", SqlDbType.VarChar).Value = FrmPtRecords.lblacct.Text
+                        cmd.Parameters.Add("@Accntcat", SqlDbType.VarChar).Value = FrmPtRecords.Profile1.txtprov.Text
                         cmd.Parameters.Add("@Clinic", SqlDbType.VarChar).Value = cboclinic.Text
                         cmd.Parameters.Add("@Diag", SqlDbType.VarChar).Value = txtdiagn.Text
                         cmd.Parameters.Add("@PrescBY", SqlDbType.VarChar).Value = lblsendername.Text
@@ -283,6 +284,118 @@ Public Class FrmRadrequest
 
         Me.dtgRadrequest.Rows.Clear()
     End Sub
+
+    '//This is for ANC 
+    Public Sub PopulateANCRadRequest()
+
+        Try
+
+            cmd.CommandType = System.Data.CommandType.Text
+            cmd.CommandText = "insert into Pend_RadRequest Values ('" & dtgRadrequest.Rows(0).Cells(0).Value & "', '" & lbldate.Text.ToString & "', '" & lbltime.Text.ToString & "', '" & FrmANCform.lblhospnum.Text & "', '" & FrmANCform.AncProfile2.Txtsurname.Text & "', '" & FrmANCform.AncProfile2.txtothernames.Text & "',  '" & FrmANCform.AncProfile2.txtyear.Text & "', '" & FrmANCform.AncProfile2.txtsex.Text & "', '" & FrmANCform.AncProfile2.txtaccount.Text & "', '" & FrmANCform.AncProfile2.txtprov.Text & "', '" & cboclinic.Text.ToString & "', '" & txtdiagn.Text & "', '" & lblsendername.Text.ToString & "')"
+
+            cmd.Connection = con
+            ' con.Open()
+            cmd.ExecuteNonQuery()
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+
+        End Try
+        con.Close()
+    End Sub
+
+    Public Sub SaveANCRadRequest()
+
+        generatenum()
+
+        PopulateANCRadRequest()
+
+        Try
+
+            For Each row As DataGridViewRow In dtgRadrequest.Rows
+
+                Using con As New SqlConnection(constring)
+                    Using cmd As New SqlCommand("INSERT INTO RadRequestAndResult VALUES(@RqstNum, @Date, @Time, @InvName, @Comm, @Hospnum, @Surname, @Othernames, @Age, @Sex, @Account, @Acctcat, @Clinic, @Diag, @PrescBY, @rlt, @dtrprt, @timrprt, @rptdBy,@stat)", con)
+
+
+                        '// This insertion styles is a combination of datagridview values and other objects such as textboxex and label
+                        '// All will be inserted alongside the values in Drugs presc form dtagridviews rows all at once.
+
+
+                        cmd.Parameters.AddWithValue("@RqstNum", row.Cells("Request_Num").Value) '// Insert the value in the Datagridview requst num cell
+                        cmd.Parameters.Add("@Date", SqlDbType.Date).Value = lbldate.Text
+                        cmd.Parameters.Add("@Time", SqlDbType.VarChar).Value = lbltime.Text
+                        cmd.Parameters.AddWithValue("@InvName", row.Cells("Investgtn").Value) '// Insert the value in the Datagridview Investigation cell
+                        cmd.Parameters.Add("@Comm", SqlDbType.VarChar).Value = txtcomment.Text
+                        cmd.Parameters.Add("@Hospnum", SqlDbType.VarChar).Value = FrmANCform.lblhospnum.Text
+                        cmd.Parameters.Add("@Surname", SqlDbType.VarChar).Value = FrmANCform.AncProfile2.Txtsurname.Text
+                        cmd.Parameters.Add("@Othernames", SqlDbType.VarChar).Value = FrmANCform.AncProfile2.txtothernames.Text
+                        cmd.Parameters.Add("@Age", SqlDbType.VarChar).Value = FrmANCform.AncProfile2.txtyear.Text
+                        cmd.Parameters.Add("@Sex", SqlDbType.VarChar).Value = FrmANCform.AncProfile2.txtsex.Text
+                        cmd.Parameters.Add("@Account", SqlDbType.VarChar).Value = FrmANCform.AncProfile2.txtaccount.Text
+                        cmd.Parameters.Add("@Acctcat", SqlDbType.VarChar).Value = FrmANCform.AncProfile2.txtprov.Text
+                        cmd.Parameters.Add("@Clinic", SqlDbType.VarChar).Value = cboclinic.Text
+                        cmd.Parameters.Add("@Diag", SqlDbType.VarChar).Value = txtdiagn.Text
+                        cmd.Parameters.Add("@PrescBY", SqlDbType.VarChar).Value = lblsendername.Text
+
+                        '//this below will send a null value to the fields in sqlserver
+                        cmd.Parameters.Add("@timrprt", SqlDbType.VarChar).Value = DBNull.Value
+                        cmd.Parameters.Add("@Dtrprt", SqlDbType.Date).Value = DBNull.Value
+                        cmd.Parameters.Add("@rlt", SqlDbType.NVarChar).Value = DBNull.Value
+                        cmd.Parameters.Add("@rptdby", SqlDbType.VarChar).Value = DBNull.Value
+                        cmd.Parameters.Add("@Stat", SqlDbType.VarChar).Value = DBNull.Value
+
+
+
+                        con.Open()
+                        cmd.ExecuteNonQuery()
+                        con.Close()
+                    End Using
+                End Using
+            Next
+
+            MsgBox("RADIOLOGY REQUEST SENT", vbOKOnly, "RADIOLOGY REQUEST")
+
+            dtgRadrequest.Rows.Clear()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub BtnSndAncRad_Click(sender As Object, e As EventArgs) Handles BtnSndAncRad.Click
+
+        If cboclinic.Text = "" Then
+            MsgBox("PLEASE SELECT CLINIC", MsgBoxStyle.Information, "RADIOLOGY REQUEST")
+            cboclinic.Focus()
+
+        ElseIf txtdiagn.Text = "" Then
+            MsgBox("PLEASE ENTER YOUR DIAGNOSIS", MsgBoxStyle.Information, "RADIOLOGY REQUEST")
+            txtdiagn.Focus()
+
+        ElseIf txtpassword.Text = "" Then
+            MsgBox("PLEASE ENTER YOUR PASSWORD", MsgBoxStyle.Information, "RADIOLOGY REQUEST")
+            txtpassword.Focus()
+
+        Else
+
+            SaveANCRadRequest()
+
+            Me.Close()
+            txtpassword.Text = ""
+            lblsendername.Text = ""
+            txtdiagn.Text = ""
+
+
+        End If
+        FrmRadiology.SortPendRadRqst()
+        FrmPtRecords.PtRadHist1.LoadRAdilogicalHx()
+        con.Close()
+
+    End Sub
+
 
 
 End Class

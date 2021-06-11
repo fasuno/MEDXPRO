@@ -52,6 +52,7 @@ Partial Class FrmRadrequest
         Me.btnaddInv = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.BtnSndAncRad = New System.Windows.Forms.Button()
         Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -80,7 +81,7 @@ Partial Class FrmRadrequest
         '
         'Panel4
         '
-        Me.Panel4.BackColor = System.Drawing.Color.Purple
+        Me.Panel4.BackColor = System.Drawing.Color.Blue
         Me.Panel4.Controls.Add(Me.Label9)
         Me.Panel4.Controls.Add(Me.lbltime)
         Me.Panel4.Controls.Add(Me.lbldate)
@@ -221,8 +222,9 @@ Partial Class FrmRadrequest
         '
         'btnsendrequest
         '
+        Me.btnsendrequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnsendrequest.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnsendrequest.Location = New System.Drawing.Point(342, 309)
+        Me.btnsendrequest.Location = New System.Drawing.Point(344, 309)
         Me.btnsendrequest.Name = "btnsendrequest"
         Me.btnsendrequest.Size = New System.Drawing.Size(118, 28)
         Me.btnsendrequest.TabIndex = 29
@@ -354,6 +356,18 @@ Partial Class FrmRadrequest
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Select Investigation:"
         '
+        'BtnSndAncRad
+        '
+        Me.BtnSndAncRad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSndAncRad.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSndAncRad.ForeColor = System.Drawing.Color.Maroon
+        Me.BtnSndAncRad.Location = New System.Drawing.Point(344, 309)
+        Me.BtnSndAncRad.Name = "BtnSndAncRad"
+        Me.BtnSndAncRad.Size = New System.Drawing.Size(118, 28)
+        Me.BtnSndAncRad.TabIndex = 35
+        Me.BtnSndAncRad.Text = "SEND REQUEST"
+        Me.BtnSndAncRad.UseVisualStyleBackColor = True
+        '
         'FrmRadrequest
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -373,6 +387,7 @@ Partial Class FrmRadrequest
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.BtnSndAncRad)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -422,4 +437,5 @@ Partial Class FrmRadrequest
     Friend WithEvents Label1 As Label
     Friend WithEvents Request_Num As DataGridViewTextBoxColumn
     Friend WithEvents Investgtn As DataGridViewTextBoxColumn
+    Friend WithEvents BtnSndAncRad As Button
 End Class

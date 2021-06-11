@@ -55,6 +55,7 @@ Partial Class FrmLabrequest
         Me.txttestname = New System.Windows.Forms.TextBox()
         Me.txtrqstno = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.BtnSndAncLab = New System.Windows.Forms.Button()
         Me.Panel4.SuspendLayout()
         CType(Me.dtgLabrequest, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -100,14 +101,14 @@ Partial Class FrmLabrequest
         '
         'Panel4
         '
-        Me.Panel4.BackColor = System.Drawing.Color.Purple
+        Me.Panel4.BackColor = System.Drawing.Color.Blue
         Me.Panel4.Controls.Add(Me.Label9)
         Me.Panel4.Controls.Add(Me.lbltime)
         Me.Panel4.Controls.Add(Me.lbldate)
         Me.Panel4.Controls.Add(Me.cboclinic)
         Me.Panel4.Location = New System.Drawing.Point(2, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(553, 29)
+        Me.Panel4.Size = New System.Drawing.Size(550, 29)
         Me.Panel4.TabIndex = 21
         '
         'cboclinic
@@ -187,8 +188,10 @@ Partial Class FrmLabrequest
         '
         'btnsendrequest
         '
+        Me.btnsendrequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnsendrequest.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnsendrequest.Location = New System.Drawing.Point(350, 307)
+        Me.btnsendrequest.ForeColor = System.Drawing.Color.Green
+        Me.btnsendrequest.Location = New System.Drawing.Point(352, 308)
         Me.btnsendrequest.Name = "btnsendrequest"
         Me.btnsendrequest.Size = New System.Drawing.Size(115, 28)
         Me.btnsendrequest.TabIndex = 16
@@ -392,6 +395,18 @@ Partial Class FrmLabrequest
         Me.Label7.Text = "testid"
         Me.Label7.Visible = False
         '
+        'BtnSndAncLab
+        '
+        Me.BtnSndAncLab.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSndAncLab.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSndAncLab.ForeColor = System.Drawing.Color.Green
+        Me.BtnSndAncLab.Location = New System.Drawing.Point(352, 308)
+        Me.BtnSndAncLab.Name = "BtnSndAncLab"
+        Me.BtnSndAncLab.Size = New System.Drawing.Size(115, 28)
+        Me.BtnSndAncLab.TabIndex = 24
+        Me.BtnSndAncLab.Text = "SEND REQUEST"
+        Me.BtnSndAncLab.UseVisualStyleBackColor = True
+        '
         'FrmLabrequest
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -413,6 +428,7 @@ Partial Class FrmLabrequest
         Me.Controls.Add(Me.txtpassword)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.BtnSndAncLab)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -464,4 +480,5 @@ Partial Class FrmLabrequest
     Friend WithEvents Request_Num As DataGridViewTextBoxColumn
     Friend WithEvents LabTestID As DataGridViewTextBoxColumn
     Friend WithEvents Test_name As DataGridViewTextBoxColumn
+    Friend WithEvents BtnSndAncLab As Button
 End Class

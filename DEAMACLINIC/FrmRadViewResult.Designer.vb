@@ -154,13 +154,13 @@ Partial Class FrmRadViewResult
         'Lblrqstnum
         '
         Me.Lblrqstnum.AutoSize = True
-        Me.Lblrqstnum.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lblrqstnum.ForeColor = System.Drawing.Color.DarkRed
-        Me.Lblrqstnum.Location = New System.Drawing.Point(3, 60)
+        Me.Lblrqstnum.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lblrqstnum.ForeColor = System.Drawing.Color.Navy
+        Me.Lblrqstnum.Location = New System.Drawing.Point(20, 59)
         Me.Lblrqstnum.Name = "Lblrqstnum"
-        Me.Lblrqstnum.Size = New System.Drawing.Size(100, 17)
+        Me.Lblrqstnum.Size = New System.Drawing.Size(76, 15)
         Me.Lblrqstnum.TabIndex = 22
-        Me.Lblrqstnum.Text = "Request num:"
+        Me.Lblrqstnum.Text = "Request No.:"
         '
         'txtOname
         '
@@ -180,7 +180,7 @@ Partial Class FrmRadViewResult
         Me.txtRqstby.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtRqstby.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRqstby.ForeColor = System.Drawing.Color.Black
-        Me.txtRqstby.Location = New System.Drawing.Point(278, 58)
+        Me.txtRqstby.Location = New System.Drawing.Point(278, 56)
         Me.txtRqstby.Name = "txtRqstby"
         Me.txtRqstby.ReadOnly = True
         Me.txtRqstby.Size = New System.Drawing.Size(263, 21)
@@ -262,7 +262,7 @@ Partial Class FrmRadViewResult
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.DarkRed
+        Me.Label9.ForeColor = System.Drawing.Color.Navy
         Me.Label9.Location = New System.Drawing.Point(510, 32)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(31, 15)
@@ -273,7 +273,7 @@ Partial Class FrmRadViewResult
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.DarkRed
+        Me.Label2.ForeColor = System.Drawing.Color.Navy
         Me.Label2.Location = New System.Drawing.Point(784, 67)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(88, 15)
@@ -284,8 +284,8 @@ Partial Class FrmRadViewResult
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label3.Location = New System.Drawing.Point(269, 5)
+        Me.Label3.ForeColor = System.Drawing.Color.Navy
+        Me.Label3.Location = New System.Drawing.Point(269, 7)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(84, 15)
         Me.Label3.TabIndex = 5
@@ -295,8 +295,8 @@ Partial Class FrmRadViewResult
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label4.Location = New System.Drawing.Point(41, 6)
+        Me.Label4.ForeColor = System.Drawing.Color.Navy
+        Me.Label4.Location = New System.Drawing.Point(35, 7)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(61, 15)
         Me.Label4.TabIndex = 6
@@ -306,19 +306,19 @@ Partial Class FrmRadViewResult
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label5.Location = New System.Drawing.Point(13, 31)
+        Me.Label5.ForeColor = System.Drawing.Color.Navy
+        Me.Label5.Location = New System.Drawing.Point(19, 33)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(89, 15)
+        Me.Label5.Size = New System.Drawing.Size(77, 15)
         Me.Label5.TabIndex = 7
-        Me.Label5.Text = "Hospital_Num:"
+        Me.Label5.Text = "Hospital No.:"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label6.Location = New System.Drawing.Point(183, 61)
+        Me.Label6.ForeColor = System.Drawing.Color.Navy
+        Me.Label6.Location = New System.Drawing.Point(183, 59)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(85, 15)
         Me.Label6.TabIndex = 8
@@ -328,7 +328,7 @@ Partial Class FrmRadViewResult
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.DarkRed
+        Me.Label7.ForeColor = System.Drawing.Color.Navy
         Me.Label7.Location = New System.Drawing.Point(620, 31)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(33, 15)
@@ -339,7 +339,7 @@ Partial Class FrmRadViewResult
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.DarkRed
+        Me.Label11.ForeColor = System.Drawing.Color.Navy
         Me.Label11.Location = New System.Drawing.Point(837, 7)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(88, 17)
@@ -378,7 +378,7 @@ Partial Class FrmRadViewResult
         Me.txtrqstdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtrqstdate.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtrqstdate.ForeColor = System.Drawing.Color.Black
-        Me.txtrqstdate.Location = New System.Drawing.Point(642, 59)
+        Me.txtrqstdate.Location = New System.Drawing.Point(642, 57)
         Me.txtrqstdate.Name = "txtrqstdate"
         Me.txtrqstdate.ReadOnly = True
         Me.txtrqstdate.Size = New System.Drawing.Size(107, 21)
@@ -388,8 +388,8 @@ Partial Class FrmRadViewResult
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label10.Location = New System.Drawing.Point(547, 61)
+        Me.Label10.ForeColor = System.Drawing.Color.Navy
+        Me.Label10.Location = New System.Drawing.Point(547, 59)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(95, 15)
         Me.Label10.TabIndex = 25
@@ -401,7 +401,7 @@ Partial Class FrmRadViewResult
         Me.Txtrqstnum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Txtrqstnum.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txtrqstnum.ForeColor = System.Drawing.Color.Black
-        Me.Txtrqstnum.Location = New System.Drawing.Point(100, 58)
+        Me.Txtrqstnum.Location = New System.Drawing.Point(100, 56)
         Me.Txtrqstnum.Name = "Txtrqstnum"
         Me.Txtrqstnum.ReadOnly = True
         Me.Txtrqstnum.Size = New System.Drawing.Size(77, 21)
@@ -411,8 +411,8 @@ Partial Class FrmRadViewResult
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label8.Location = New System.Drawing.Point(272, 30)
+        Me.Label8.ForeColor = System.Drawing.Color.Navy
+        Me.Label8.Location = New System.Drawing.Point(272, 33)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(81, 15)
         Me.Label8.TabIndex = 10

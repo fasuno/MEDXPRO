@@ -24,20 +24,7 @@ Partial Class FrmANCfollowUp
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmANCfollowUp))
         Me.Txtremark = New System.Windows.Forms.TextBox()
-        Me.dtbook = New System.Windows.Forms.DateTimePicker()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.cboappnmnt = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.dtflwuptime = New System.Windows.Forms.DateTimePicker()
-        Me.dtfolwup = New System.Windows.Forms.DateTimePicker()
-        Me.txtpar = New System.Windows.Forms.TextBox()
-        Me.txtgrav = New System.Windows.Forms.TextBox()
-        Me.dtedd = New System.Windows.Forms.DateTimePicker()
-        Me.dtlmp = New System.Windows.Forms.DateTimePicker()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -57,8 +44,6 @@ Partial Class FrmANCfollowUp
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.btnsave = New System.Windows.Forms.Button()
-        Me.btnclose = New System.Windows.Forms.Button()
         Me.txtpassw = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.BtnScan = New System.Windows.Forms.Button()
@@ -67,9 +52,27 @@ Partial Class FrmANCfollowUp
         Me.Btnadmit = New System.Windows.Forms.Button()
         Me.lblusername = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.Panel1.SuspendLayout()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.dtbook = New System.Windows.Forms.DateTimePicker()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.dtedd = New System.Windows.Forms.DateTimePicker()
+        Me.txtgravs = New System.Windows.Forms.TextBox()
+        Me.txtpar = New System.Windows.Forms.TextBox()
+        Me.dtfolwup = New System.Windows.Forms.DateTimePicker()
+        Me.dtflwuptime = New System.Windows.Forms.DateTimePicker()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.dtlmp = New System.Windows.Forms.DateTimePicker()
+        Me.lblbkid = New System.Windows.Forms.Label()
+        Me.Btnsendvitals = New System.Windows.Forms.Button()
+        Me.btnsave = New System.Windows.Forms.Button()
+        Me.btnclose = New System.Windows.Forms.Button()
+        Me.btnupdate = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Txtremark
@@ -83,29 +86,9 @@ Partial Class FrmANCfollowUp
         Me.Txtremark.Size = New System.Drawing.Size(488, 122)
         Me.Txtremark.TabIndex = 26
         '
-        'dtbook
-        '
-        Me.dtbook.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtbook.Enabled = False
-        Me.dtbook.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtbook.Location = New System.Drawing.Point(92, 6)
-        Me.dtbook.Name = "dtbook"
-        Me.dtbook.Size = New System.Drawing.Size(218, 22)
-        Me.dtbook.TabIndex = 25
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.DarkMagenta
-        Me.Label1.Location = New System.Drawing.Point(43, 36)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(44, 15)
-        Me.Label1.TabIndex = 24
-        Me.Label1.Text = "L.M.P:"
-        '
         'cboappnmnt
         '
+        Me.cboappnmnt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboappnmnt.FormattingEnabled = True
         Me.cboappnmnt.Items.AddRange(New Object() {"1 week", "2 weeks", "3 weeks", "4 weeks", "5 weeks", "6 weeks", "7 weeks", "8 weeks", "9 weeks", "10 weeks", "11 weeks", "12 weeks", "13 weeks", "14 weeks", "15 weeks", "16 weeks", "17 weeks", "18 weeks", "19 weeks", "20 weeks", "21 weeks"})
         Me.cboappnmnt.Location = New System.Drawing.Point(129, 173)
@@ -113,147 +96,11 @@ Partial Class FrmANCfollowUp
         Me.cboappnmnt.Size = New System.Drawing.Size(137, 21)
         Me.cboappnmnt.TabIndex = 27
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.DarkMagenta
-        Me.Label2.Location = New System.Drawing.Point(9, 9)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(80, 15)
-        Me.Label2.TabIndex = 28
-        Me.Label2.Text = "Date Booked:"
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.dtflwuptime)
-        Me.Panel1.Controls.Add(Me.dtfolwup)
-        Me.Panel1.Controls.Add(Me.txtpar)
-        Me.Panel1.Controls.Add(Me.txtgrav)
-        Me.Panel1.Controls.Add(Me.dtedd)
-        Me.Panel1.Controls.Add(Me.dtlmp)
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.dtbook)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(685, 59)
-        Me.Panel1.TabIndex = 29
-        '
-        'dtflwuptime
-        '
-        Me.dtflwuptime.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtflwuptime.Enabled = False
-        Me.dtflwuptime.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtflwuptime.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtflwuptime.Location = New System.Drawing.Point(584, 8)
-        Me.dtflwuptime.Name = "dtflwuptime"
-        Me.dtflwuptime.Size = New System.Drawing.Size(96, 22)
-        Me.dtflwuptime.TabIndex = 35
-        Me.dtflwuptime.Visible = False
-        '
-        'dtfolwup
-        '
-        Me.dtfolwup.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtfolwup.Enabled = False
-        Me.dtfolwup.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtfolwup.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtfolwup.Location = New System.Drawing.Point(584, 33)
-        Me.dtfolwup.Name = "dtfolwup"
-        Me.dtfolwup.Size = New System.Drawing.Size(96, 22)
-        Me.dtfolwup.TabIndex = 34
-        Me.dtfolwup.Visible = False
-        '
-        'txtpar
-        '
-        Me.txtpar.BackColor = System.Drawing.Color.White
-        Me.txtpar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtpar.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtpar.ForeColor = System.Drawing.Color.Black
-        Me.txtpar.Location = New System.Drawing.Point(509, 6)
-        Me.txtpar.Name = "txtpar"
-        Me.txtpar.ReadOnly = True
-        Me.txtpar.Size = New System.Drawing.Size(67, 22)
-        Me.txtpar.TabIndex = 30
-        '
-        'txtgrav
-        '
-        Me.txtgrav.BackColor = System.Drawing.Color.White
-        Me.txtgrav.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtgrav.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtgrav.ForeColor = System.Drawing.Color.Black
-        Me.txtgrav.Location = New System.Drawing.Point(411, 6)
-        Me.txtgrav.Name = "txtgrav"
-        Me.txtgrav.ReadOnly = True
-        Me.txtgrav.Size = New System.Drawing.Size(54, 22)
-        Me.txtgrav.TabIndex = 31
-        '
-        'dtedd
-        '
-        Me.dtedd.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtedd.Enabled = False
-        Me.dtedd.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtedd.Location = New System.Drawing.Point(358, 32)
-        Me.dtedd.Name = "dtedd"
-        Me.dtedd.Size = New System.Drawing.Size(218, 22)
-        Me.dtedd.TabIndex = 33
-        '
-        'dtlmp
-        '
-        Me.dtlmp.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtlmp.CalendarForeColor = System.Drawing.Color.Black
-        Me.dtlmp.CalendarTitleForeColor = System.Drawing.Color.Black
-        Me.dtlmp.Enabled = False
-        Me.dtlmp.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtlmp.Location = New System.Drawing.Point(92, 33)
-        Me.dtlmp.Name = "dtlmp"
-        Me.dtlmp.Size = New System.Drawing.Size(218, 22)
-        Me.dtlmp.TabIndex = 32
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.DarkMagenta
-        Me.Label5.Location = New System.Drawing.Point(468, 9)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(37, 15)
-        Me.Label5.TabIndex = 31
-        Me.Label5.Text = "Para:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.DarkMagenta
-        Me.Label4.Location = New System.Drawing.Point(354, 8)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(53, 15)
-        Me.Label4.TabIndex = 30
-        Me.Label4.Text = "Gravida:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.DarkMagenta
-        Me.Label3.Location = New System.Drawing.Point(316, 35)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(36, 15)
-        Me.Label3.TabIndex = 29
-        Me.Label3.Text = "EDD:"
-        '
         'Label14
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label14.ForeColor = System.Drawing.Color.Blue
         Me.Label14.Location = New System.Drawing.Point(17, 175)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(107, 15)
@@ -264,7 +111,7 @@ Partial Class FrmANCfollowUp
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label15.ForeColor = System.Drawing.Color.Blue
         Me.Label15.Location = New System.Drawing.Point(17, 204)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(73, 15)
@@ -371,7 +218,7 @@ Partial Class FrmANCfollowUp
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label12.ForeColor = System.Drawing.Color.Blue
         Me.Label12.Location = New System.Drawing.Point(250, 79)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(88, 15)
@@ -382,7 +229,7 @@ Partial Class FrmANCfollowUp
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label13.ForeColor = System.Drawing.Color.Blue
         Me.Label13.Location = New System.Drawing.Point(31, 78)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(51, 15)
@@ -393,7 +240,7 @@ Partial Class FrmANCfollowUp
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label10.ForeColor = System.Drawing.Color.Blue
         Me.Label10.Location = New System.Drawing.Point(309, 54)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(28, 15)
@@ -404,7 +251,7 @@ Partial Class FrmANCfollowUp
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label11.ForeColor = System.Drawing.Color.Blue
         Me.Label11.Location = New System.Drawing.Point(40, 54)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(42, 15)
@@ -415,7 +262,7 @@ Partial Class FrmANCfollowUp
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label8.ForeColor = System.Drawing.Color.Blue
         Me.Label8.Location = New System.Drawing.Point(259, 29)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(78, 15)
@@ -426,7 +273,7 @@ Partial Class FrmANCfollowUp
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label9.ForeColor = System.Drawing.Color.Blue
         Me.Label9.Location = New System.Drawing.Point(52, 27)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(30, 15)
@@ -437,7 +284,7 @@ Partial Class FrmANCfollowUp
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label6.ForeColor = System.Drawing.Color.Blue
         Me.Label6.Location = New System.Drawing.Point(186, 5)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(151, 15)
@@ -448,36 +295,12 @@ Partial Class FrmANCfollowUp
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label7.ForeColor = System.Drawing.Color.Blue
         Me.Label7.Location = New System.Drawing.Point(50, 3)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(32, 15)
         Me.Label7.TabIndex = 46
         Me.Label7.Text = "G.A:"
-        '
-        'btnsave
-        '
-        Me.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnsave.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnsave.ForeColor = System.Drawing.Color.Green
-        Me.btnsave.Location = New System.Drawing.Point(509, 196)
-        Me.btnsave.Name = "btnsave"
-        Me.btnsave.Size = New System.Drawing.Size(80, 23)
-        Me.btnsave.TabIndex = 49
-        Me.btnsave.Text = "SAVE"
-        Me.btnsave.UseVisualStyleBackColor = True
-        '
-        'btnclose
-        '
-        Me.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnclose.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnclose.ForeColor = System.Drawing.Color.DarkRed
-        Me.btnclose.Location = New System.Drawing.Point(595, 196)
-        Me.btnclose.Name = "btnclose"
-        Me.btnclose.Size = New System.Drawing.Size(80, 23)
-        Me.btnclose.TabIndex = 50
-        Me.btnclose.Text = "CLOSE"
-        Me.btnclose.UseVisualStyleBackColor = True
         '
         'txtpassw
         '
@@ -485,6 +308,7 @@ Partial Class FrmANCfollowUp
         Me.txtpassw.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtpassw.Location = New System.Drawing.Point(325, 197)
         Me.txtpassw.Name = "txtpassw"
+        Me.txtpassw.PasswordChar = Global.Microsoft.VisualBasic.ChrW(63)
         Me.txtpassw.Size = New System.Drawing.Size(167, 21)
         Me.txtpassw.TabIndex = 62
         '
@@ -559,12 +383,235 @@ Partial Class FrmANCfollowUp
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.Label16.ForeColor = System.Drawing.Color.Blue
         Me.Label16.Location = New System.Drawing.Point(257, 200)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(63, 15)
         Me.Label16.TabIndex = 67
         Me.Label16.Text = "Password:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Blue
+        Me.Label1.Location = New System.Drawing.Point(43, 36)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(44, 15)
+        Me.Label1.TabIndex = 24
+        Me.Label1.Text = "L.M.P:"
+        '
+        'dtbook
+        '
+        Me.dtbook.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtbook.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtbook.Location = New System.Drawing.Point(92, 6)
+        Me.dtbook.Name = "dtbook"
+        Me.dtbook.Size = New System.Drawing.Size(218, 22)
+        Me.dtbook.TabIndex = 25
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Blue
+        Me.Label2.Location = New System.Drawing.Point(9, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(80, 15)
+        Me.Label2.TabIndex = 28
+        Me.Label2.Text = "Date Booked:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Blue
+        Me.Label3.Location = New System.Drawing.Point(316, 35)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(36, 15)
+        Me.Label3.TabIndex = 29
+        Me.Label3.Text = "EDD:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Blue
+        Me.Label4.Location = New System.Drawing.Point(354, 8)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(53, 15)
+        Me.Label4.TabIndex = 30
+        Me.Label4.Text = "Gravida:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Blue
+        Me.Label5.Location = New System.Drawing.Point(468, 9)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(37, 15)
+        Me.Label5.TabIndex = 31
+        Me.Label5.Text = "Para:"
+        '
+        'dtedd
+        '
+        Me.dtedd.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtedd.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtedd.Location = New System.Drawing.Point(358, 32)
+        Me.dtedd.Name = "dtedd"
+        Me.dtedd.Size = New System.Drawing.Size(218, 22)
+        Me.dtedd.TabIndex = 33
+        '
+        'txtgravs
+        '
+        Me.txtgravs.BackColor = System.Drawing.Color.White
+        Me.txtgravs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtgravs.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtgravs.ForeColor = System.Drawing.Color.Black
+        Me.txtgravs.Location = New System.Drawing.Point(411, 6)
+        Me.txtgravs.Name = "txtgravs"
+        Me.txtgravs.ReadOnly = True
+        Me.txtgravs.Size = New System.Drawing.Size(54, 22)
+        Me.txtgravs.TabIndex = 31
+        '
+        'txtpar
+        '
+        Me.txtpar.BackColor = System.Drawing.Color.White
+        Me.txtpar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtpar.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtpar.ForeColor = System.Drawing.Color.Black
+        Me.txtpar.Location = New System.Drawing.Point(509, 6)
+        Me.txtpar.Name = "txtpar"
+        Me.txtpar.ReadOnly = True
+        Me.txtpar.Size = New System.Drawing.Size(67, 22)
+        Me.txtpar.TabIndex = 30
+        '
+        'dtfolwup
+        '
+        Me.dtfolwup.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtfolwup.Enabled = False
+        Me.dtfolwup.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtfolwup.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtfolwup.Location = New System.Drawing.Point(584, 33)
+        Me.dtfolwup.Name = "dtfolwup"
+        Me.dtfolwup.Size = New System.Drawing.Size(96, 22)
+        Me.dtfolwup.TabIndex = 34
+        Me.dtfolwup.Visible = False
+        '
+        'dtflwuptime
+        '
+        Me.dtflwuptime.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtflwuptime.Enabled = False
+        Me.dtflwuptime.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtflwuptime.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtflwuptime.Location = New System.Drawing.Point(584, 8)
+        Me.dtflwuptime.Name = "dtflwuptime"
+        Me.dtflwuptime.Size = New System.Drawing.Size(96, 22)
+        Me.dtflwuptime.TabIndex = 35
+        Me.dtflwuptime.Visible = False
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.dtflwuptime)
+        Me.Panel1.Controls.Add(Me.dtfolwup)
+        Me.Panel1.Controls.Add(Me.txtpar)
+        Me.Panel1.Controls.Add(Me.txtgravs)
+        Me.Panel1.Controls.Add(Me.dtedd)
+        Me.Panel1.Controls.Add(Me.dtlmp)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.dtbook)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Enabled = False
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(685, 59)
+        Me.Panel1.TabIndex = 29
+        '
+        'dtlmp
+        '
+        Me.dtlmp.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtlmp.CalendarForeColor = System.Drawing.Color.Black
+        Me.dtlmp.CalendarTitleForeColor = System.Drawing.Color.Black
+        Me.dtlmp.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtlmp.Location = New System.Drawing.Point(91, 31)
+        Me.dtlmp.Name = "dtlmp"
+        Me.dtlmp.Size = New System.Drawing.Size(218, 22)
+        Me.dtlmp.TabIndex = 32
+        '
+        'lblbkid
+        '
+        Me.lblbkid.AutoSize = True
+        Me.lblbkid.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblbkid.ForeColor = System.Drawing.Color.Blue
+        Me.lblbkid.Location = New System.Drawing.Point(564, 95)
+        Me.lblbkid.Name = "lblbkid"
+        Me.lblbkid.Size = New System.Drawing.Size(10, 15)
+        Me.lblbkid.TabIndex = 62
+        Me.lblbkid.Text = " "
+        Me.lblbkid.Visible = False
+        '
+        'Btnsendvitals
+        '
+        Me.Btnsendvitals.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btnsendvitals.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btnsendvitals.ForeColor = System.Drawing.Color.Green
+        Me.Btnsendvitals.Image = CType(resources.GetObject("Btnsendvitals.Image"), System.Drawing.Image)
+        Me.Btnsendvitals.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btnsendvitals.Location = New System.Drawing.Point(509, 196)
+        Me.Btnsendvitals.Name = "Btnsendvitals"
+        Me.Btnsendvitals.Size = New System.Drawing.Size(80, 23)
+        Me.Btnsendvitals.TabIndex = 69
+        Me.Btnsendvitals.Text = "    SAVE"
+        Me.Btnsendvitals.UseVisualStyleBackColor = True
+        '
+        'btnsave
+        '
+        Me.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnsave.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnsave.ForeColor = System.Drawing.Color.Green
+        Me.btnsave.Image = CType(resources.GetObject("btnsave.Image"), System.Drawing.Image)
+        Me.btnsave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnsave.Location = New System.Drawing.Point(509, 196)
+        Me.btnsave.Name = "btnsave"
+        Me.btnsave.Size = New System.Drawing.Size(80, 23)
+        Me.btnsave.TabIndex = 49
+        Me.btnsave.Text = "    SAVE"
+        Me.btnsave.UseVisualStyleBackColor = True
+        '
+        'btnclose
+        '
+        Me.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnclose.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnclose.ForeColor = System.Drawing.Color.DarkRed
+        Me.btnclose.Image = CType(resources.GetObject("btnclose.Image"), System.Drawing.Image)
+        Me.btnclose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnclose.Location = New System.Drawing.Point(595, 196)
+        Me.btnclose.Name = "btnclose"
+        Me.btnclose.Size = New System.Drawing.Size(80, 23)
+        Me.btnclose.TabIndex = 50
+        Me.btnclose.Text = "       CLOSE"
+        Me.btnclose.UseVisualStyleBackColor = True
+        '
+        'btnupdate
+        '
+        Me.btnupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnupdate.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnupdate.ForeColor = System.Drawing.Color.Green
+        Me.btnupdate.Image = CType(resources.GetObject("btnupdate.Image"), System.Drawing.Image)
+        Me.btnupdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnupdate.Location = New System.Drawing.Point(509, 196)
+        Me.btnupdate.Name = "btnupdate"
+        Me.btnupdate.Size = New System.Drawing.Size(80, 23)
+        Me.btnupdate.TabIndex = 68
+        Me.btnupdate.Text = "     UPDATE"
+        Me.btnupdate.UseVisualStyleBackColor = True
         '
         'FrmANCfollowUp
         '
@@ -572,6 +619,8 @@ Partial Class FrmANCfollowUp
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(685, 352)
+        Me.Controls.Add(Me.lblbkid)
+        Me.Controls.Add(Me.Btnsendvitals)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.lblusername)
         Me.Controls.Add(Me.txtpassw)
@@ -584,6 +633,7 @@ Partial Class FrmANCfollowUp
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Txtremark)
         Me.Controls.Add(Me.cboappnmnt)
+        Me.Controls.Add(Me.btnupdate)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -591,29 +641,18 @@ Partial Class FrmANCfollowUp
         Me.Name = "FrmANCfollowUp"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "  ANC FOLLOW-UP VISIT"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Txtremark As TextBox
-    Friend WithEvents dtbook As DateTimePicker
-    Friend WithEvents Label1 As Label
     Friend WithEvents cboappnmnt As ComboBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents txtpar As TextBox
-    Friend WithEvents txtgrav As TextBox
-    Friend WithEvents dtedd As DateTimePicker
-    Friend WithEvents dtlmp As DateTimePicker
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Panel2 As Panel
@@ -642,7 +681,21 @@ Partial Class FrmANCfollowUp
     Friend WithEvents BtnScan As Button
     Friend WithEvents btnLAB As Button
     Friend WithEvents lblusername As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents dtbook As DateTimePicker
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents dtedd As DateTimePicker
+    Friend WithEvents txtgravs As TextBox
+    Friend WithEvents txtpar As TextBox
     Friend WithEvents dtfolwup As DateTimePicker
     Friend WithEvents dtflwuptime As DateTimePicker
-    Friend WithEvents Label16 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents dtlmp As DateTimePicker
+    Friend WithEvents btnupdate As Button
+    Friend WithEvents Btnsendvitals As Button
+    Friend WithEvents lblbkid As Label
 End Class

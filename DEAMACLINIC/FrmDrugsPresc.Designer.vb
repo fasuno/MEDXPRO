@@ -49,6 +49,7 @@ Partial Class FrmDrugsPresc
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.txtdrugid = New System.Windows.Forms.TextBox()
         Me.lblprescno = New System.Windows.Forms.Label()
+        Me.BtnANCdrugs = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgprescription, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -181,8 +182,10 @@ Partial Class FrmDrugsPresc
         '
         'btnsendpresc
         '
+        Me.btnsendpresc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnsendpresc.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnsendpresc.Location = New System.Drawing.Point(410, 307)
+        Me.btnsendpresc.ForeColor = System.Drawing.Color.Green
+        Me.btnsendpresc.Location = New System.Drawing.Point(411, 307)
         Me.btnsendpresc.Name = "btnsendpresc"
         Me.btnsendpresc.Size = New System.Drawing.Size(170, 28)
         Me.btnsendpresc.TabIndex = 3
@@ -278,14 +281,14 @@ Partial Class FrmDrugsPresc
         '
         'Panel4
         '
-        Me.Panel4.BackColor = System.Drawing.Color.Purple
+        Me.Panel4.BackColor = System.Drawing.Color.Blue
         Me.Panel4.Controls.Add(Me.Label9)
         Me.Panel4.Controls.Add(Me.lbltime)
         Me.Panel4.Controls.Add(Me.lbldate)
         Me.Panel4.Controls.Add(Me.cboclinic)
-        Me.Panel4.Location = New System.Drawing.Point(4, 0)
+        Me.Panel4.Location = New System.Drawing.Point(3, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(606, 29)
+        Me.Panel4.Size = New System.Drawing.Size(595, 29)
         Me.Panel4.TabIndex = 10
         '
         'txtdrugid
@@ -312,6 +315,18 @@ Partial Class FrmDrugsPresc
         Me.lblprescno.TabIndex = 8
         Me.lblprescno.Text = " "
         '
+        'BtnANCdrugs
+        '
+        Me.BtnANCdrugs.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnANCdrugs.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnANCdrugs.ForeColor = System.Drawing.Color.Navy
+        Me.BtnANCdrugs.Location = New System.Drawing.Point(411, 307)
+        Me.BtnANCdrugs.Name = "BtnANCdrugs"
+        Me.BtnANCdrugs.Size = New System.Drawing.Size(170, 28)
+        Me.BtnANCdrugs.TabIndex = 11
+        Me.BtnANCdrugs.Text = "SEND PRESCRIPTION"
+        Me.BtnANCdrugs.UseVisualStyleBackColor = True
+        '
         'FrmDrugsPresc
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -329,6 +344,7 @@ Partial Class FrmDrugsPresc
         Me.Controls.Add(Me.txtpassword)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.BtnANCdrugs)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -373,4 +389,5 @@ Partial Class FrmDrugsPresc
     Friend WithEvents Drugid As DataGridViewTextBoxColumn
     Friend WithEvents Drug_name As DataGridViewTextBoxColumn
     Friend WithEvents prescription As DataGridViewTextBoxColumn
+    Friend WithEvents BtnANCdrugs As Button
 End Class

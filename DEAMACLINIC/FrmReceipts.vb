@@ -167,12 +167,9 @@ Public Class FrmReceipts
     Public Sub SaveReceipt()
         generatenum()
 
-        '//Thhis will save to AllDrugprescrition table
         Try
 
-            ' Dim constring As String = "Server=HAVILAH-PC; DAtabase=DEAMACLINIC; Integrated Security=true"
-
-            Using cmd As New SqlCommand("INSERT INTO RECEIPTS VALUES(@Dat, @Tim, @Rnum, @Fname, @Hnum, @Amnt, @Serv, @CollBY)", con)
+            Using cmd As New SqlCommand("INSERT INTO RECEIPTS VALUES(@Dat, @Tim, @Rnum, @Fname, @Hnum, @Amnt, @Serv, @CollBY, @Sno, @Act)", con)
 
                 cmd.Parameters.Add("@Dat", SqlDbType.Date).Value = lbldate.Text
                 cmd.Parameters.Add("@Tim", SqlDbType.VarChar).Value = lbltime.Text
@@ -182,7 +179,8 @@ Public Class FrmReceipts
                 cmd.Parameters.Add("@Amnt", SqlDbType.VarChar).Value = lblBill.Text
                 cmd.Parameters.Add("@Serv", SqlDbType.VarChar).Value = Txtserv.Text
                 cmd.Parameters.Add("@CollBy", SqlDbType.VarChar).Value = lblcashiername.Text
-
+                cmd.Parameters.Add("@Sno", SqlDbType.VarChar).Value = Txtservno.Text
+                cmd.Parameters.Add("@Act", SqlDbType.VarChar).Value = txtaccnt.Text
 
                 ' con.Open()
                 cmd.ExecuteNonQuery()
@@ -193,10 +191,11 @@ Public Class FrmReceipts
 
             UpdateLabBilled() '// Update payment status to paid
             UpdateDrugBilled() '// Update payment status to paid
+            UpdatePendPharmBilled()
             UpdateAllRadBilled() '//Update radiology payment status
             frmCashier.LoadReceipts()   '//Refresh Receipts 
-            '//PLACE THE PRINT METHOD HERE, AFTER THE MSGBOX
-            Me.Close()
+            FrmPharmacy.SortBiiled()
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -208,6 +207,13 @@ Public Class FrmReceipts
         SaveReceipt()
         removefrompending()
         frmCashier.sortPendingBilss()
+
+        Dim FRMRCPT As New FrmPrintreceipt
+
+        FRMRCPT.ShowDialog()
+
+        Me.Close()
+
     End Sub
 
     Public Sub UpdateLabBilled()
@@ -235,6 +241,27 @@ Public Class FrmReceipts
 
             Try
                 Dim Updat As String = "Update AllDrugsBilled Set Payment_Status='" & lblpaystat.Text.ToString & "' WHERE Presc_Num= '" & Txtservno.Text & "'"
+
+                con.Open()
+                ExecuteQuery(Updat)
+
+
+                'reloadLAbbilled()
+
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+
+            End Try
+
+        End If
+    End Sub
+
+    Public Sub UpdatePendPharmBilled()
+
+        If Txtserv.Text = "Pharmacy" Then
+
+            Try
+                Dim Updat As String = "Update PharmPend_Bill Set Payment_Status='" & lblpaystat.Text.ToString & "' WHERE Presc_Num= '" & Txtservno.Text & "'"
 
                 con.Open()
                 ExecuteQuery(Updat)
@@ -278,5 +305,8 @@ Public Class FrmReceipts
 
     End Sub
 
-
+    Private Sub btnreprint_Click(sender As Object, e As EventArgs) Handles btnreprint.Click
+        Dim frmprint As New FrmPrintreceipt
+        frmprint.ShowDialog()
+    End Sub
 End Class

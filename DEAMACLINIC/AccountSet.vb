@@ -20,7 +20,7 @@ Public Class AccountSet
         Try
 
             cmd.CommandType = System.Data.CommandType.Text
-            cmd.CommandText = "insert into BillSetting Values ('" & txtacctType.Text & "', '" & txtperc.Text & "', '" & txtcomp.Text.ToString & "', '" & txtaddr.Text & "', '" & txtcontact.Text & "', '" & txtphone.Text & "',  '" & txtemail.Text & "', '" & Lblacctid.Text & "')"
+            cmd.CommandText = "insert into BillSetting Values ('" & txtacctType.Text & "', '" & txtperc.Text & "', '" & txtcomp.Text.ToString & "', '" & txtaddr.Text & "', '" & txtcontact.Text & "', '" & txtphone.Text & "',  '" & txtemail.Text & "', '" & Lblacctid.Text & "', '" & Cbocat.Text & "')"
 
             cmd.Connection = con
             con.Open()
@@ -73,8 +73,8 @@ Public Class AccountSet
         txtemail.Text = ""
         txtperc.Text = ""
         txtphone.Text = ""
+        Cbocat.Text = ""
         txtacctType.Focus()
     End Sub
-
 
 End Class
